@@ -3,10 +3,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Booklet from '@/components/booklet';
-import ImageGallery from '@/components/ImageGallery';
 import TopGoods from '@/components/retails-list';
 import TopReviews from '@/components/reviews';
 import Contact from '@/components/contact';
+
+type ImageGalleryProps = {
+  image: string;
+  alt: string;
+};
 
 type ServiceCardProps = {
   icon: string;
@@ -18,6 +22,14 @@ type HeadSpaItemProps = {
   title: string;
   description: string;
 };
+
+const ImageGallery = ({ image, alt }: ImageGalleryProps) => (
+  <div className='flex mt-2 bg-[#fffaeb]'>
+    <div className='relative aspect-[4/3] w-full'>
+      <Image src={image} alt={alt} fill className='object-cover' />
+    </div>
+  </div>
+);
 
 const ServiceCard = ({ icon, title, description }: ServiceCardProps) => (
   <div className='flex flex-col aspect-[4/3] mt-2 bg-[#fffaeb] p-8 gap-8 transition-transform duration-300 ease-in-out hover:scale-105'>
@@ -40,7 +52,12 @@ const HeadSpaItem = ({ title, description }: HeadSpaItemProps) => (
 );
 
 const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-  <h1 className='text-black font-semibold text-[calc(16px+1.5vw)]'>{children}</h1>
+  <div className='flex items-center gap-2'>
+    <div className='w-[50px] h-[50px] flex-shrink-0'>
+      <Image src='/images/leaf2.png' alt='leaf' width={50} height={50} />
+    </div>
+    <h2 className='text-green-900 font-montserrat font-semibold text-[calc(16px+1.5vw)]'>{children}</h2>
+  </div>
 );
 
 export default function Page() {
@@ -68,26 +85,23 @@ export default function Page() {
       </section>
 
       <section className='grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2 px-2'>
-        <ServiceCard
-          icon='hair_cut'
-          title='Cut & Style'
-          description='This is the space to introduce the Project section. Take this opportunity to give visitors a brief overview of the types of projects'
-        />
-        <ServiceCard
-          icon='hair_color'
-          title='Color & Bleach'
-          description='This is the space to introduce the Project section. Take this opportunity to give visitors a brief overview of the types of projects'
-        />
-        <ServiceCard
-          icon='hair_perm'
-          title='Texture'
-          description='This is the space to introduce the Project section. Take this opportunity to give visitors a brief overview of the types of projects'
-        />
-        <ServiceCard
-          icon='head_spa'
-          title='Head Spa'
-          description='This is the space to introduce the Project section. Take this opportunity to give visitors a brief overview of the types of projects'
-        />
+        <ImageGallery image='/images/store/exterior.png' alt='exterior' />
+        <ImageGallery image='/images/store/chair.png' alt='chair' />
+        <ImageGallery image='/images/store/display.png' alt='display' />
+        <ImageGallery image='/images/store/mirror.png' alt='mirror' />
+      </section>
+
+      <section className='flex flex-col w-full mt-8 md:mt-12 lg:mt-24 justify-center items-center py-8 gap-6 md:gap-8 lg:gap-10'>
+        <div className='flex justify-center w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px]'>
+          <Image src='/images/leaf2.png' alt='leaf' layout='responsive' width={100} height={100} />
+        </div>
+        <div className='flex flex-col justify-center items-center gap-4 md:gap-6 lg:gap-8'>
+          <h1 className='text-green-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-montserrat text-center'>Hello, (Konnichiwa)</h1>
+          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl text-center font-montserrat max-w-3xl px-4'>
+            My name is Kazuyo, and I am Japanese. Until now, I have been working as a hairstylist in Pasadena, but I was able to open my own salon in
+            Sierra Madre. I look forward to meeting everyone.
+          </p>
+        </div>
       </section>
 
       <section className='flex w-full mt-8 md:mt-12 lg:mt-24 justify-center py-8 bg-[#fffaeb]'>
@@ -96,14 +110,60 @@ export default function Page() {
         </React.Suspense>
       </section>
 
-      <section className='flex w-full mt-4 md:mt-12 lg:mt-24 justify-center px-4 md:px-12 lg:px-48'>
-        <div className='flex flex-col w-full'>
-          <SectionTitle>Image Gallery</SectionTitle>
-          <ImageGallery />
+      <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
+        <SectionTitle>Services</SectionTitle>
+        <div className='grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2'>
+          <ServiceCard
+            icon='hair_cut'
+            title='Cut & Style'
+            description='This is the space to introduce the Project section. Take this opportunity to give visitors a brief overview of the types of projects'
+          />
+          <ServiceCard
+            icon='hair_color'
+            title='Color & Bleach'
+            description='This is the space to introduce the Project section. Take this opportunity to give visitors a brief overview of the types of projects'
+          />
+          <ServiceCard
+            icon='hair_perm'
+            title='Texture'
+            description='This is the space to introduce the Project section. Take this opportunity to give visitors a brief overview of the types of projects'
+          />
+          <ServiceCard
+            icon='head_spa'
+            title='Head Spa'
+            description='This is the space to introduce the Project section. Take this opportunity to give visitors a brief overview of the types of projects'
+          />
         </div>
       </section>
 
-      <section className='flex flex-col w-full font-poppins mt-8 md:mt-28 lg:mt-36 px-8 md:px-12 lg:px-48'>
+      <section className='flex flex-col w-full font-poppins mt-8 md:mt-12 lg:mt-24 px-8 md:px-12 lg:px-48'>
+        <SectionTitle>Appointment Policy at OneLeaf Salon</SectionTitle>
+        <div className='flex flex-col gap-8 mt-12'>
+          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat px-4'>
+            Thank you for choosing OneLeaf Salon! We look forward to welcoming you. To ensure that all our clients receive the best possible service,
+            please note the following:
+          </p>
+          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat px-4'>
+            Punctuality: Please arrive on time for your appointment. If you are more than 15 minutes late, we may not be able to accommodate your
+            service, and a cancellation fee equivalent to 50% of the service cost will apply.
+          </p>
+          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat px-4'>
+            No Show: If you do not show up for your appointment without notifying us, a no-show fee equivalent to 100% of the service fee will be
+            charged.
+          </p>
+          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat px-4'>● Cancellation Policy</p>
+          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat px-4'>
+            * Parking * We are located right in front of the City of Pasadena Shoppers Lane Parking Lot, which is 90-minutes free. The available
+            spaces will be limited during the lunch hour however because of the surrounding restaurants. Please arrive accordingly.
+          </p>
+          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat px-4'>● Get the direction</p>
+          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat px-4'>
+            Thank you for your understanding and we hope to see you soon.
+          </p>
+        </div>
+      </section>
+
+      {/* <section className='flex flex-col w-full font-poppins mt-24 px-8 md:px-12 lg:px-48'>
         <SectionTitle>Services</SectionTitle>
         <div className='flex flex-col sm:mt-4 md:mt-8 lg:mt-12 sm:flex-row gap-4'>
           {['cut', 'makeup', 'perm'].map((service) => (
@@ -113,9 +173,9 @@ export default function Page() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
-      <section className='flex flex-col w-full font-poppins sm:mt-8 md:mt-28 lg:mt-36 sm:px-8 md:px-12 lg:px-48'>
+      {/* <section className='flex flex-col w-full font-poppins sm:mt-8 md:mt-28 lg:mt-36 sm:px-8 md:px-12 lg:px-48'>
         <SectionTitle>Sunday Appointment Only Head Spa Menus</SectionTitle>
         {['Oily Improvement', 'Dry Scalp', 'Hair loss', 'Stress relief'].map((title) => (
           <HeadSpaItem
@@ -131,9 +191,9 @@ export default function Page() {
             </Link>
           </Button>
         </div>
-      </section>
+      </section> */}
 
-      <section className='flex flex-col w-full font-poppins sm:mt-8 md:mt-28 lg:mt-36 sm:px-8 md:px-12 lg:px-48'>
+      {/* <section className='flex flex-col w-full font-poppins sm:mt-8 md:mt-28 lg:mt-36 sm:px-8 md:px-12 lg:px-48'>
         <SectionTitle>Personalized Hair Condition Consulting</SectionTitle>
         <p className='text-gray-500 sm:mt-2 md:mt-4 lg:mt-8'>
           Craft engaging titles and subtitles for a head spa&apos;s &quot;Hair Condition Consulting&quot; section to enhance content appeal and
@@ -147,9 +207,9 @@ export default function Page() {
             </Link>
           </Button>
         </div>
-      </section>
+      </section> */}
 
-      <section className='flex flex-col w-full sm:mt-8 md:mt-28 lg:mt-36 sm:px-8 md:px-12 lg:px-48'>
+      {/* <section className='flex flex-col w-full sm:mt-8 md:mt-28 lg:mt-36 sm:px-8 md:px-12 lg:px-48'>
         <SectionTitle>Retail</SectionTitle>
         <p className='text-gray-500 sm:mt-2 md:mt-4 lg:mt-8'>
           This is the space to introduce the Project section. Take this opportunity to give visitors a brief overview of the types of projects
@@ -158,9 +218,9 @@ export default function Page() {
         <div className='flex sm:mt-8 md:mt-12 lg:mt-18'>
           <TopGoods />
         </div>
-      </section>
+      </section> */}
 
-      <section className='flex flex-col w-full sm:mt-8 md:mt-28 lg:mt-36 sm:px-8 md:px-12 lg:px-48'>
+      <section className='flex flex-col w-full mt-8 md:mt-12 lg:mt-24 sm:px-8 md:px-12 lg:px-48'>
         <SectionTitle>Thank you for your reviews</SectionTitle>
         <p className='text-gray-500 sm:mt-2 md:mt-4 lg:mt-8'>
           This is the space to introduce the Project section. Take this opportunity to give visitors a brief overview of the types of projects
