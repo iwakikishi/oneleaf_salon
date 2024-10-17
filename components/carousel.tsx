@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import { AspectRatio } from '@/components/ui/aspect-ratio';
 
@@ -10,7 +10,7 @@ const CarouselComponent = () => {
     <div className='flex flex-col w-full aspect-video'>
       <AspectRatio ratio={16 / 9}>
         <Carousel
-          className='w-full aspect-video'
+          className='w-full aspect-video bg-red-500'
           plugins={[
             Autoplay({
               delay: 3600,

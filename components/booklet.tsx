@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -12,7 +12,7 @@ const Booklet = (props: any) => {
 
   const flipBook = useRef(null);
   // レスポンシブなパディングを計算
-  const padding = width >= 1024 ? 36 : width >= 768 ? 24 : width >= 640 ? 8 : 4;
+  const padding = width >= 1024 ? 24 : width >= 768 ? 12 : width >= 640 ? 8 : 4;
   const adjustedWidth = width - padding * 2; // 両側のパディングを引く
   const adjustedHeight = adjustedWidth / 2;
 
@@ -98,22 +98,21 @@ const Booklet = (props: any) => {
         flippingTime={600}
         mobileScrollSupport={true}
         onFlip={onFlip}
-        className='' // 必要に応じてクラス名を追加
-        style={{}} // 必要に応じてスタイルを追加
-        startPage={0} // 初期ページを設定
-        drawShadow={true} // 影を描画するかどうか
-        useMouseEvents={true} // マウスイベントを使用するかどうか
-        swipeDistance={30} // スワイプ距離を設定
-        clickEventForward={true} // クリックイベントを転送するかどうか
-        usePortrait={false} // ポートレートモードを使用するかどうか
-        showPageCorners={true} // ページの角を表示するかどうか
-      >
+        className=''
+        style={{}}
+        startPage={0}
+        drawShadow={true}
+        useMouseEvents={true}
+        swipeDistance={30}
+        clickEventForward={true}
+        usePortrait={false}
+        showPageCorners={true}>
         {/* <div className='flex flex-col p-10' style={{ width: adjustedWidth / 2, height: adjustedHeight }}>
             <div className='flex flex-col items-center justify-center' style={{ width: adjustedWidth / 2, height: adjustedHeight }}>
             <p className='text-black text-2xl font-bold'>Stories of Kazuyo</p>
             </div>
         </div> */}
-        <div className='flex p-0'>
+        <div className='flex'>
           <Image src={`/images/booklet/0.png`} alt='kazuyo' width={adjustedWidth / 2} height={adjustedHeight} />
         </div>
         {Array.from({ length: 10 }).map((_, index) => (

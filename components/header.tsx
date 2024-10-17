@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <>
       {!isMobile ? (
-        <header className='flex w-full h-16 items-center font-montserrat text-white bg-[rgba(0,0,0,0.3)] px-8 md:px-12 lg:px-24 z-10 absolute'>
+        <header className='flex w-full h-16 items-center font-montserrat text-white bg-lime-700/50 px-8 md:px-12 lg:px-24 z-10 absolute'>
           <Link href='/'>
             <Image alt='ONELEAF Hair by Kazuyo logo' className='mr-3' height='50' src='/images/header/logo.webp' width='50' />
           </Link>
