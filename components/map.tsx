@@ -20,9 +20,9 @@ function Map({ address }: MapProps) {
 
   useEffect(() => {
     const loader = new Loader({
-      apiKey: 'AIzaSyBhJtVwX5URI7JOvYw7pDM6v5f7tLKJODw', // ここに有効なAPIキーを設定
+      apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
       version: 'weekly',
-      libraries: ['places'], // 必要なライブラリを追加
+      libraries: ['places'],
     });
 
     loader.load().then((google) => {
