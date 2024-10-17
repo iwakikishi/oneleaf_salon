@@ -3,11 +3,10 @@
 import React, { useEffect } from 'react';
 import Image from 'next/image';
 
-const appId = process.env.NEXT_PUBLIC_INSTAGRAM_APP_ID;
+const appId = process.env.NEXT_PUBLIC_INSTAGRAM_APP_ID as string;
 const redirectUri = process.env.NEXT_PUBLIC_INSTAGRAM_REDIRECT_URI;
 
 export default function TopInstagram() {
-
   // useEffect(() => {
   //   fetch(`https://api.instagram.com/oauth/authorize?client_id=${appId}&redirect_uri=${redirectUri}&scope=user_profile,user_media&response_type=code`)
   //     .then(response => {
@@ -16,7 +15,7 @@ export default function TopInstagram() {
   //     })
   //     .then(data => console.log(data))
   // }, [])
-  
+
   return (
     <div className='flex flex-col items-center justify-center'>
       <div className='w-full justify-between grid xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-6 lg:grid-cols-8 gap-1'>
