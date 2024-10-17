@@ -8,7 +8,18 @@ import TopGoods from '@/components/retails-list';
 import TopReviews from '@/components/reviews';
 import Contact from '@/components/contact';
 
-const ServiceCard = ({ icon, title, description }) => (
+type ServiceCardProps = {
+  icon: string;
+  title: string;
+  description: string;
+};
+
+type HeadSpaItemProps = {
+  title: string;
+  description: string;
+};
+
+const ServiceCard = ({ icon, title, description }: ServiceCardProps) => (
   <div className='flex flex-col aspect-[4/3] mt-2 bg-[#fffaeb] p-8 gap-8 transition-transform duration-300 ease-in-out hover:scale-105'>
     <Image src={`/images/icons/${icon}.png`} alt={title} className='object-contain' width={100} height={100} />
     <p className='text-green-900 text-2xl font-bold'>{title}</p>
@@ -16,7 +27,7 @@ const ServiceCard = ({ icon, title, description }) => (
   </div>
 );
 
-const HeadSpaItem = ({ title, description }) => (
+const HeadSpaItem = ({ title, description }: HeadSpaItemProps) => (
   <div className='w-full mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4' style={{ gridTemplateColumns: 'auto 1fr' }}>
     <div className='bg-gray-200'>
       <Image src='/images/services/head_spa.webp' alt='head_spa' layout='responsive' width={500} height={300} />
@@ -28,7 +39,9 @@ const HeadSpaItem = ({ title, description }) => (
   </div>
 );
 
-const SectionTitle = ({ children }) => <h1 className='text-black font-semibold text-[calc(16px+1.5vw)]'>{children}</h1>;
+const SectionTitle = ({ children }: { children: React.ReactNode }) => (
+  <h1 className='text-black font-semibold text-[calc(16px+1.5vw)]'>{children}</h1>
+);
 
 export default function Page() {
   return (
