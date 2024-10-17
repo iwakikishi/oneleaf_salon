@@ -112,6 +112,7 @@ const Booklet = (props: any) => {
             <p className='text-black text-2xl font-bold'>Stories of Kazuyo</p>
             </div>
         </div> */}
+
         <div className='flex'>
           <Image src={`/images/booklet/0.png`} alt='kazuyo' width={adjustedWidth / 2} height={adjustedHeight} />
         </div>

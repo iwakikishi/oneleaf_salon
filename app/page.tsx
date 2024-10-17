@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Booklet from '@/components/booklet';
-import TopGoods from '@/components/retails-list';
 import TopReviews from '@/components/reviews';
 import Contact from '@/components/contact';
 
@@ -32,7 +31,7 @@ const ImageGallery = ({ image, alt }: ImageGalleryProps) => (
 );
 
 const ServiceCard = ({ icon, title, description }: ServiceCardProps) => (
-  <div className='flex flex-col aspect-[4/3] mt-2 bg-[#fffaeb] p-8 gap-8 transition-transform duration-300 ease-in-out hover:scale-105'>
+  <div className='flex flex-col aspect-[4/3] mt-2 bg-[#fffaeb] p-8 gap-8'>
     <Image src={`/images/icons/${icon}.png`} alt={title} className='object-contain' width={100} height={100} />
     <p className='text-green-900 text-2xl font-bold'>{title}</p>
     <p className='text-gray-500 text-lg break-words'>{description}</p>
@@ -92,14 +91,16 @@ export default function Page() {
       </section>
 
       <section className='flex flex-col w-full mt-8 md:mt-12 lg:mt-24 justify-center items-center py-8 gap-6 md:gap-8 lg:gap-10'>
-        <div className='flex justify-center w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px]'>
-          <Image src='/images/leaf2.png' alt='leaf' layout='responsive' width={100} height={100} />
+        <div className='relative w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px]'>
+          <Image src='/images/kazuyo_shichiri.jpg' alt='Kazuyo Shichiri' fill className='rounded-full object-cover' />
         </div>
         <div className='flex flex-col justify-center items-center gap-4 md:gap-6 lg:gap-8'>
           <h1 className='text-green-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-montserrat text-center'>Hello, (Konnichiwa)</h1>
-          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl text-center font-montserrat max-w-3xl px-4'>
-            My name is Kazuyo, and I am Japanese. Until now, I have been working as a hairstylist in Pasadena, but I was able to open my own salon in
-            Sierra Madre. I look forward to meeting everyone.
+          <p
+            className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl text-center font-montserrat max-w-3xl px-4'
+            style={{ lineHeight: '1.5' }}>
+            My name is Kazuyo, and I am Japanese. Until now, I have been working as a hairstylist in Pasadena, supported by many customers, and with
+            gratitude, I was able to open my own salon in Sierra Madre. I look forward to meeting everyone.
           </p>
         </div>
       </section>
@@ -113,27 +114,26 @@ export default function Page() {
       <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
         <SectionTitle>Services</SectionTitle>
         <div className='grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2'>
-          <ServiceCard
-            icon='hair_cut'
-            title='Cut & Style'
-            description='This is the space to introduce the Project section. Take this opportunity to give visitors a brief overview of the types of projects'
-          />
-          <ServiceCard
-            icon='hair_color'
-            title='Color & Bleach'
-            description='This is the space to introduce the Project section. Take this opportunity to give visitors a brief overview of the types of projects'
-          />
-          <ServiceCard
-            icon='hair_perm'
-            title='Texture'
-            description='This is the space to introduce the Project section. Take this opportunity to give visitors a brief overview of the types of projects'
-          />
-          <ServiceCard
-            icon='head_spa'
-            title='Head Spa'
-            description='This is the space to introduce the Project section. Take this opportunity to give visitors a brief overview of the types of projects'
-          />
+          <ServiceCard icon='hair_cut' title='Cut & Style' description='Haircuts not included with color services. Shampoo and styling included' />
+          <ServiceCard icon='hair_color' title='Color & Bleach' description='カラー剤とかの説明' />
+          <ServiceCard icon='hair_perm' title='Texture' description='何か特徴' />
+          <ServiceCard icon='head_spa' title='Head Spa' description='何か特徴' />
         </div>
+      </section>
+
+      <section className='flex flex-col w-full font-poppins mt-8 md:mt-12 lg:mt-24 px-8 md:px-12 lg:px-48 gap-8'>
+        <SectionTitle>ZEN Head Spa</SectionTitle>
+        <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat px-4'>
+          Counseling with Microscope * 40, 60min course only* Scalp Cleansing with Jojoba oil with Micro Mist Treatment Head and Neck massage Scalp
+          Shampoo & Carbonated Treatment
+        </p>
+        <div className='flex flex-col aspect-video rounded-xl overflow-hidden'>
+          <video src='/videos/head_spa_section.mp4' loop autoPlay muted className='w-full h-full object-cover xs:object-contain' />
+        </div>
+      </section>
+
+      <section className='flex flex-col w-full font-poppins mt-8 md:mt-12 lg:mt-24 px-8 md:px-12 lg:px-48'>
+        <SectionTitle>Prices</SectionTitle>
       </section>
 
       <section className='flex flex-col w-full font-poppins mt-8 md:mt-12 lg:mt-24 px-8 md:px-12 lg:px-48'>
@@ -220,7 +220,7 @@ export default function Page() {
         </div>
       </section> */}
 
-      <section className='flex flex-col w-full mt-8 md:mt-12 lg:mt-24 sm:px-8 md:px-12 lg:px-48'>
+      <section className='flex flex-col w-full font-poppins mt-8 md:mt-12 lg:mt-24 px-8 md:px-12 lg:px-48'>
         <SectionTitle>Thank you for your reviews</SectionTitle>
         <p className='text-gray-500 sm:mt-2 md:mt-4 lg:mt-8'>
           This is the space to introduce the Project section. Take this opportunity to give visitors a brief overview of the types of projects
@@ -231,11 +231,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className='flex flex-col items-center justify-center sm:mt-8 md:mt-28 lg:mt-36'>
-        <SectionTitle>Prices</SectionTitle>
-      </section>
-
-      <section className='flex flex-col w-full sm:px-8 md:px-12 lg:px-24 sm:mt-8 md:mt-28 lg:mt-36'>
+      <section className='flex flex-col w-full font-poppins mt-8 md:mt-12 lg:mt-24 px-8 md:px-12 lg:px-48'>
         <SectionTitle>Access</SectionTitle>
         <p className='text-gray-500'>The parking area is located at the rear of the building. Please proceed to the back for convenient parking.</p>
         <div className='w-full relative my-10' style={{ paddingBottom: '56.25%', height: '80vh' }}>
@@ -247,7 +243,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className='flex flex-col w-full sm:my-8 md:my-28 lg:my-36 sm:px-8 md:px-12 lg:px-48'>
+      <section className='flex flex-col w-full font-poppins mt-8 md:mt-12 lg:mt-24 px-8 md:px-12 lg:px-48'>
         <SectionTitle>Contact</SectionTitle>
         <Contact />
       </section>
