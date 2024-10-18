@@ -29,19 +29,20 @@ export default function Page() {
 
           <PolicyItem title='Introduction'>
             <p>
-              This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the
-              Service and tells You about Your privacy rights and how the law protects You.
+              {/* アポストロフィを含む文字列をバッククォートで囲む */}
+              {`This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the
+              Service and tells You about Your privacy rights and how the law protects You.`}
             </p>
             <p className='mt-2'>
-              We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information
-              in accordance with this Privacy Policy.
+              {`We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information
+              in accordance with this Privacy Policy.`}
             </p>
           </PolicyItem>
 
           <PolicyItem title='Interpretation and Definitions'>
             <p>
-              The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions
-              shall have the same meaning regardless of whether they appear in singular or in plural.
+              {`The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions
+              shall have the same meaning regardless of whether they appear in singular or in plural.`}
             </p>
           </PolicyItem>
 
@@ -68,16 +69,16 @@ export default function Page() {
 
           <PolicyItem title='Retention of Your Personal Data'>
             <p>
-              The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will
+              {`The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will
               retain and use Your Personal Data to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our legal
-              agreements and policies.
+              agreements and policies.`}
             </p>
           </PolicyItem>
 
           <PolicyItem title='Transfer of Your Personal Data'>
             <p>
-              Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties
-              involved in the processing are located.
+              {`Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties
+              involved in the processing are located.`}
             </p>
           </PolicyItem>
 
@@ -94,21 +95,21 @@ export default function Page() {
 
           <PolicyItem title='Security of Your Personal Data'>
             <p>
-              The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of
-              electronic storage is 100% secure.
+              {`The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of
+              electronic storage is 100% secure.`}
             </p>
           </PolicyItem>
 
           <PolicyItem title="Children's Privacy">
             <p>
-              Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone
-              under the age of 13.
+              {`Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone
+              under the age of 13.`}
             </p>
           </PolicyItem>
 
           <PolicyItem title='Changes to this Privacy Policy'>
             <p>
-              We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.
+              {`We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.`}
             </p>
           </PolicyItem>
 

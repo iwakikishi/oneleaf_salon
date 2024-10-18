@@ -18,7 +18,7 @@ const Header = () => {
     return null; // サーバーサイドレンダリング時は何も表示しない
   }
 
-  const isMobile = useMediaQuery({ query: '(max-width: 1024px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 640px)' });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,45 +34,43 @@ const Header = () => {
     isScrolled ? 'bg-[#fffaeb]' : 'bg-lime-700/50'
   } ${isScrolled ? 'text-black' : 'text-white'}`;
 
+  if (isMobile) {
+    return <MobileHeader />;
+  }
+
   return (
-    <>
-      {!isMobile ? (
-        <header className={headerClass}>
-          <Link href='/'>
-            <Image alt='ONELEAF Hair by Kazuyo logo' className='mr-3' height='50' src='/images/header/logo.webp' width='50' />
-          </Link>
-          <div className='ml-auto md:hidden'>
-            <Button asChild onClick={() => setIsOpen(!isOpen)}>
-              <img src='/images/icons/menu.svg' alt='Menu' width='30' height='30' />
-            </Button>
-          </div>
-          <div className={`w-full bg-transparent transition-all duration-300 ease-in-out ${isOpen ? 'block' : 'hidden'} md:relative md:block`}>
-            <Button asChild variant={'ghost'}>
-              <Link href='/'>Home</Link>
-            </Button>
-            {/* <Button asChild variant={'ghost'}>
+    <header className={headerClass}>
+      <Link href='/'>
+        <Image alt='ONELEAF Hair by Kazuyo logo' className='mr-3' height='50' src='/images/header/logo.webp' width='50' />
+      </Link>
+      <div className='ml-auto md:hidden'>
+        <Button asChild onClick={() => setIsOpen(!isOpen)}>
+          <Image src='/images/icons/menu.svg' alt='Menu' width='30' height='30' />
+        </Button>
+      </div>
+      <div className={`w-full bg-transparent transition-all duration-300 ease-in-out ${isOpen ? 'block' : 'hidden'} md:relative md:block`}>
+        <Button asChild variant={'ghost'}>
+          <Link href='/'>Home</Link>
+        </Button>
+        {/* <Button asChild variant={'ghost'}>
               <Link href='/about'>About</Link>
             </Button> */}
-            <Button asChild variant={'ghost'}>
-              <Link href='/services'>Services</Link>
-            </Button>
-            <Button asChild variant={'ghost'}>
-              <Link href='/team'>Team</Link>
-            </Button>
-            <Button asChild variant={'ghost'}>
-              <Link href='/contact'>Contact</Link>
-            </Button>
-            <Button asChild variant={'ghost'}>
-              <Link href='https://booking.setmore.com/scheduleappointment/f37b5239-7295-4828-9acb-a560c84d37ef' target='_blank'>
-                Appointment
-              </Link>
-            </Button>
-          </div>
-        </header>
-      ) : (
-        <MobileHeader />
-      )}
-    </>
+        <Button asChild variant={'ghost'}>
+          <Link href='/services'>Services</Link>
+        </Button>
+        <Button asChild variant={'ghost'}>
+          <Link href='/team'>Team</Link>
+        </Button>
+        <Button asChild variant={'ghost'}>
+          <Link href='/contact'>Contact</Link>
+        </Button>
+        <Button asChild variant={'ghost'}>
+          <Link href='https://booking.setmore.com/scheduleappointment/f37b5239-7295-4828-9acb-a560c84d37ef' target='_blank'>
+            Appointment
+          </Link>
+        </Button>
+      </div>
+    </header>
   );
 };
 
