@@ -23,6 +23,8 @@ export default function ImageCarousel() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [selectedIndexModal, setSelectedIndexModal] = useState(0);
+
   const [direction, setDirection] = useState(0);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -31,6 +33,11 @@ export default function ImageCarousel() {
     slidesToScroll: 1,
     containScroll: 'trimSnaps',
     dragFree: false,
+  });
+
+  const [emblaRefModal, emblaApiModal] = useEmblaCarousel({
+    align: 'center',
+    loop: true,
   });
 
   const onSelect = useCallback(() => {
@@ -78,11 +85,42 @@ export default function ImageCarousel() {
     if (emblaApi) emblaApi.reInit();
   }, [emblaApi, slidesToShow]);
 
+  useEffect(() => {
+    if (emblaApiModal && modalOpen) {
+      emblaApiModal.scrollTo(currentImageIndex);
+    }
+  }, [emblaApiModal, modalOpen, currentImageIndex]);
+
   const onDotButtonClick = useCallback(
     (index: number) => {
       if (emblaApi) emblaApi.scrollTo(index);
     },
     [emblaApi]
+  );
+
+  const onSelectModal = useCallback(() => {
+    if (!emblaApiModal) return;
+    setSelectedIndexModal(emblaApiModal.selectedScrollSnap());
+  }, [emblaApiModal]);
+
+  useEffect(() => {
+    if (!emblaApiModal) return;
+
+    onSelectModal();
+    emblaApiModal.on('select', onSelectModal);
+    emblaApiModal.on('reInit', onSelectModal);
+
+    return () => {
+      emblaApiModal.off('select', onSelectModal);
+      emblaApiModal.off('reInit', onSelectModal);
+    };
+  }, [emblaApiModal, onSelectModal]);
+
+  const onDotButtonClickModal = useCallback(
+    (index: number) => {
+      if (emblaApiModal) emblaApiModal.scrollTo(index);
+    },
+    [emblaApiModal]
   );
 
   const openModal = (index: number) => {
@@ -142,8 +180,8 @@ export default function ImageCarousel() {
       </div>
       <Dialog open={modalOpen} onOpenChange={setModalOpen}>
         <DialogContent className='max-w-[100vw] max-h-[100vh] w-full h-full p-0 m-0 bg-black/90'>
-          <div className='relative w-full h-full flex flex-col items-center justify-center' {...handlers}>
-            <div className='relative w-full h-[80vh] overflow-hidden' ref={emblaRef}>
+          <div className='relative w-full h-full flex flex-col items-center justify-center'>
+            <div className='relative w-full h-[80vh] overflow-hidden' ref={emblaRefModal}>
               <div className='flex h-full'>
                 {images.map((image, index) => (
                   <div key={index} className='flex-[0_0_100%] h-full min-w-0'>
@@ -156,16 +194,16 @@ export default function ImageCarousel() {
             </div>
             <div className='flex justify-center mt-4'>
               {images.map((_, index) => (
-                <DotButton key={index} selected={index === selectedIndex} onClick={() => onDotButtonClick(index)} />
+                <DotButton key={index} selected={index === selectedIndexModal} onClick={() => onDotButtonClickModal(index)} />
               ))}
             </div>
             <button
-              onClick={scrollPrev}
+              onClick={() => emblaApiModal?.scrollPrev()}
               className='absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/30 p-2 rounded-full text-white hover:bg-white/40 transition-colors z-10'>
               <ChevronLeft size={24} />
             </button>
             <button
-              onClick={scrollNext}
+              onClick={() => emblaApiModal?.scrollNext()}
               className='absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/30 p-2 rounded-full text-white hover:bg-white/40 transition-colors z-10'>
               <ChevronRight size={24} />
             </button>

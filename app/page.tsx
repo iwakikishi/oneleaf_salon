@@ -33,6 +33,10 @@ const SectionTitle = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
+const getDirection = () => {
+  window.open('https://www.google.com/maps/dir/?api=1&destination=34.16161397311594,-118.05619732447848', '_blank');
+};
+
 export default function Page() {
   return (
     <main className='flex flex-col w-full overflow-x-hidden scrollbar-transparent'>
@@ -174,12 +178,23 @@ export default function Page() {
             No Show: If you do not show up for your appointment without notifying us, a no-show fee equivalent to 100% of the service fee will be
             charged.
           </p>
-          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat'>● Cancellation Policy</p>
+          <Link href='/cancellation-policy'>
+            <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat'>
+              ● <span className='underline'>Cancellation Policy</span>
+            </p>
+          </Link>
           <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat'>
             * Parking * We are located right in front of the City of Pasadena Shoppers Lane Parking Lot, which is 90-minutes free. The available
             spaces will be limited during the lunch hour however because of the surrounding restaurants. Please arrive accordingly.
           </p>
-          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat'>● Get the direction</p>
+          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat'>
+            <a
+              href='https://www.google.com/maps/dir/?api=1&destination=34.16161397311594,-118.05619732447848'
+              target='_blank'
+              rel='noopener noreferrer'>
+              ● <span className='underline'>Get the direction</span>
+            </a>
+          </p>
           <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat'>
             Thank you for your understanding and we hope to see you soon.
           </p>
