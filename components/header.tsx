@@ -11,13 +11,7 @@ import { Button } from './ui/button';
 const MobileHeader = dynamic(() => import('./mobile-header'), { ssr: false });
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
-  if (typeof window === 'undefined') {
-    return null; // サーバーサイドレンダリング時は何も表示しない
-  }
-
   const isMobile = useMediaQuery({ query: '(max-width: 640px)' });
 
   useEffect(() => {
@@ -43,18 +37,10 @@ const Header = () => {
       <Link href='/'>
         <Image alt='ONELEAF Hair by Kazuyo logo' className='mr-3' height='50' src='/images/header/logo.webp' width='50' />
       </Link>
-      <div className='ml-auto md:hidden'>
-        <Button asChild onClick={() => setIsOpen(!isOpen)}>
-          <Image src='/images/icons/menu.svg' alt='Menu' width='30' height='30' />
-        </Button>
-      </div>
-      <div className={`w-full bg-transparent transition-all duration-300 ease-in-out ${isOpen ? 'block' : 'hidden'} md:relative md:block`}>
+      <div className='flex'>
         <Button asChild variant={'ghost'}>
           <Link href='/'>Home</Link>
         </Button>
-        {/* <Button asChild variant={'ghost'}>
-              <Link href='/about'>About</Link>
-            </Button> */}
         <Button asChild variant={'ghost'}>
           <Link href='/services'>Services</Link>
         </Button>
