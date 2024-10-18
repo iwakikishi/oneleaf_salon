@@ -14,11 +14,6 @@ type ServiceCardProps = {
   description: string;
 };
 
-type HeadSpaItemProps = {
-  title: string;
-  description: string;
-};
-
 const ServiceCard = ({ icon, title, description }: ServiceCardProps) => (
   <div className='flex flex-col aspect-[4/3] mt-2 bg-[#fffaeb] p-8 gap-6'>
     <Image src={`/images/icons/${icon}.png`} alt={title} className='object-contain' width={100} height={100} />

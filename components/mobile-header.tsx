@@ -26,8 +26,8 @@ const MobileHeader = () => {
 
   const menuButtonClass = `px-2 rounded-full items-center justify-center ${isScrolled ? 'bg-white' : 'bg-lime-700/70'}`;
 
-  const bookNowButtonClass = `px-2 rounded-md text-xs font-poppins items-center justify-center ${
-    isScrolled ? 'bg-lime-700 text-white' : 'bg-lime-700/70 text-white'
+  const bookNowButtonClass = `px-2 py-0 rounded-md text-sm font-poppins items-center justify-center ${
+    isScrolled ? 'bg-white text-[#4a6741] border border-[#4a6741]' : 'bg-lime-700/70 text-white'
   }`;
 
   return (
@@ -66,7 +66,7 @@ const MobileHeader = () => {
           </PopoverContent>
         </Popover>
         <div />
-        <Button asChild className={bookNowButtonClass}>
+        <Button size={'sm'} asChild className={bookNowButtonClass}>
           <Link href='https://booking.setmore.com/scheduleappointment/f37b5239-7295-4828-9acb-a560c84d37ef' target='_blank'>
             Book Now
           </Link>
