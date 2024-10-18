@@ -6,6 +6,7 @@ import Booklet from '@/components/booklet';
 import TopReviews from '@/components/reviews';
 import Contact from '@/components/contact';
 import ImageCarousel from '@/components/ImageCarousel';
+import { PriceAccordion } from '@/components/PriceAccordion';
 
 type ImageGalleryProps = {
   image: string;
@@ -22,14 +23,6 @@ type HeadSpaItemProps = {
   title: string;
   description: string;
 };
-
-const ImageGallery = ({ image, alt }: ImageGalleryProps) => (
-  <div className='flex mt-2 bg-[#fffaeb]'>
-    <div className='relative aspect-[4/3] w-full'>
-      <Image src={image} alt={alt} fill className='object-cover' />
-    </div>
-  </div>
-);
 
 const ServiceCard = ({ icon, title, description }: ServiceCardProps) => (
   <div className='flex flex-col aspect-[4/3] mt-2 bg-[#fffaeb] p-8 gap-6'>
@@ -137,7 +130,13 @@ export default function Page() {
             <h1 className='text-green-900 text-3xl font-poppins font-bold'>ZEN Head Spa</h1>
             <p className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>Something about head spa</p>
             <div className='flex flex-col aspect-video rounded-xl overflow-hidden'>
-              <video src='/videos/head_spa_section.mp4' loop autoPlay muted className='w-full h-full object-cover xs:object-contain mt-4' />
+              <video
+                src='/videos/head_spa_section.mp4'
+                loop
+                autoPlay
+                muted
+                className='w-full h-full rounded-xl object-cover xs:object-contain mt-4'
+              />
             </div>
             <p className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>
               Counseling with Microscope * 40, 60min course only* Scalp Cleansing with Jojoba oil with Micro Mist Treatment Head and Neck massage
@@ -149,6 +148,14 @@ export default function Page() {
 
       <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
         <SectionTitle>Prices</SectionTitle>
+        <div className='flex flex-col gap-8'>
+          <PriceAccordion />
+          <Button asChild className='p-8 bg-lime-700/30 text-lime-700 text-xl font-poppins hover:bg-lime-700/50'>
+            <Link href='https://kazuyoroyaltysalon.setmore.com/' target='_blank'>
+              Book an appointment
+            </Link>
+          </Button>
+        </div>
       </section>
 
       <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
