@@ -27,18 +27,6 @@ const ServiceCard = ({ icon, title, description }: ServiceCardProps) => (
   </div>
 );
 
-const HeadSpaItem = ({ title, description }: HeadSpaItemProps) => (
-  <div className='w-full mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4' style={{ gridTemplateColumns: 'auto 1fr' }}>
-    <div className='bg-gray-200'>
-      <Image src='/images/services/head_spa.webp' alt='head_spa' layout='responsive' width={500} height={300} />
-    </div>
-    <div className='text-gray-500 items-center'>
-      <h1 className='text-black font-semibold text-[calc(16px+1.5vw)]'>{title}</h1>
-      {description}
-    </div>
-  </div>
-);
-
 const SectionTitle = ({ children }: { children: React.ReactNode }) => (
   <div className='flex items-center gap-2'>
     <div className='w-[50px] h-[50px] flex-shrink-0'>
@@ -53,7 +41,10 @@ export default function Page() {
     <main className='flex flex-col w-full overflow-x-hidden scrollbar-transparent'>
       <section className='flex w-full h-[150vw] xs:h-auto xs:aspect-video'>
         <div className='flex w-full h-full relative'>
-          <video src='/videos/head_spa_1.mp4' loop autoPlay muted className='w-full h-full object-cover xs:object-contain' />
+          <video autoPlay muted loop playsInline className='w-full h-full object-cover xs:object-contain'>
+            <source src='/videos/head_spa_1.mp4' type='video/mp4' />
+          </video>
+          {/* <video src='/videos/head_spa_1.mp4' loop autoPlay muted className='w-full h-full object-cover xs:object-contain' /> */}
           <div className='absolute inset-0 bg-black/50' />
           <div className='absolute inset-0 flex flex-col justify-center px-4 xs:pl-12 gap-3'>
             {/* <h3 className='text-white text-xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-poppins tracking-normal'>Welcome to </h3> */}
@@ -120,13 +111,16 @@ export default function Page() {
             <h1 className='text-green-900 text-3xl font-poppins font-bold'>ZEN Head Spa</h1>
             <p className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>Something about head spa</p>
             <div className='flex flex-col aspect-video rounded-xl overflow-hidden'>
-              <video
+              <video autoPlay muted loop playsInline className='w-full h-full rounded-xl object-cover xs:object-contain mt-4'>
+                <source src='/videos/head_spa_section.mp4' type='video/mp4' />
+              </video>
+              {/* <video
                 src='/videos/head_spa_section.mp4'
                 loop
                 autoPlay
                 muted
                 className='w-full h-full rounded-xl object-cover xs:object-contain mt-4'
-              />
+              /> */}
             </div>
             <p className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>
               Counseling with Microscope * 40, 60min course only* Scalp Cleansing with Jojoba oil with Micro Mist Treatment Head and Neck massage
