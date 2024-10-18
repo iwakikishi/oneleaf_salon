@@ -27,7 +27,9 @@ const SectionTitle = ({ children }: { children: React.ReactNode }) => (
     <div className='w-[50px] h-[50px] flex-shrink-0'>
       <Image src='/images/leaf2.png' alt='leaf' width={50} height={50} />
     </div>
-    <h2 className='text-green-900 font-montserrat font-semibold text-[calc(16px+1.5vw)]'>{children}</h2>
+    <h2 className='text-green-900 font-montserrat font-semibold text-[calc(16px+1.75vw)]' style={{ textShadow: '2px 2px 4px rgba(0, 128, 0, 0.5)' }}>
+      {children}
+    </h2>
   </div>
 );
 
@@ -67,8 +69,17 @@ export default function Page() {
         <ImageCarousel />
       </section>
       <section className='flex flex-col w-full mt-8 md:mt-12 lg:mt-24 justify-center items-center py-8 gap-6 md:gap-8 lg:gap-10'>
-        <div className='relative w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px]'>
-          <Image src='/images/kazuyo_shichiri.jpg' alt='Kazuyo Shichiri' fill className='rounded-full object-cover' />
+        <div className='w-[65px] h-[65px] sm:w-[85px] sm:h-[85px] md:w-[105px] md:h-[105px] lg:w-[125px] lg:h-[125px] flex items-center justify-center rounded-full bg-gradient-to-r from-orange-200 via-orange-500 to-pink-600'>
+          <div className='w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px] flex items-center justify-center rounded-full'>
+            <Image
+              src='/images/kazuyo_shichiri.jpg'
+              alt='Kazuyo Shichiri'
+              className='rounded-full object-cover'
+              width={500}
+              height={500}
+              style={{ aspectRatio: '1 / 1' }}
+            />
+          </div>
         </div>
         <div className='flex flex-col justify-center items-center gap-4 md:gap-6 lg:gap-8'>
           <h1 className='text-green-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-poppins text-center'>Hello, (Konnichiwa)</h1>
@@ -107,13 +118,6 @@ export default function Page() {
               <video autoPlay muted loop playsInline className='w-full h-full rounded-xl object-cover xs:object-contain mt-4'>
                 <source src='/videos/head_spa_section.mp4' type='video/mp4' />
               </video>
-              {/* <video
-                src='/videos/head_spa_section.mp4'
-                loop
-                autoPlay
-                muted
-                className='w-full h-full rounded-xl object-cover xs:object-contain mt-4'
-              /> */}
             </div>
             <p className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>
               Counseling with Microscope * 40, 60min course only* Scalp Cleansing with Jojoba oil with Micro Mist Treatment Head and Neck massage
