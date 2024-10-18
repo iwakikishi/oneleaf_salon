@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from './ui/button';
-import { Menu } from 'lucide-react';
+import { Instagram, Menu, CalendarClock } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 
 const MobileHeader = () => {
@@ -60,9 +60,16 @@ const MobileHeader = () => {
               <Button asChild variant={'ghost'} onClick={() => setIsOpen(false)}>
                 <Link href='/cancellation-policy'>Cancellation Policy</Link>
               </Button>
+              <Button asChild variant={'ghost'} className='mt-8' onClick={() => setIsOpen(false)}>
+                <Link href='https://www.instagram.com/kazuyohairstyle/?hl=en' target='_blank' className='flex items-center'>
+                  <Instagram size={20} color='black' className='hover:text-green-300 transition-colors mr-2' />
+                  Instagram
+                </Link>
+              </Button>
               <Button asChild variant={'ghost'} onClick={() => setIsOpen(false)}>
                 <Link href='https://booking.setmore.com/scheduleappointment/f37b5239-7295-4828-9acb-a560c84d37ef' target='_blank'>
-                  Appointment
+                  <CalendarClock size={20} color='black' className='hover:text-green-300 transition-colors mr-2' />
+                  Book Now
                 </Link>
               </Button>
             </div>

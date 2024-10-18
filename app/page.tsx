@@ -40,6 +40,7 @@ const getDirection = () => {
 export default function Page() {
   return (
     <main className='flex flex-col w-full overflow-x-hidden scrollbar-transparent'>
+      {/* Hero Section */}
       <section className='flex w-full h-[150vw] xs:h-auto xs:aspect-video'>
         <div className='flex w-full h-full relative'>
           <video autoPlay muted loop playsInline className='w-full h-full object-cover xs:object-contain'>
@@ -68,10 +69,11 @@ export default function Page() {
           </div>
         </div>
       </section>
-      {/* <section className='grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2 px-2'> */}
+      {/* Image Carousel Section */}
       <section className='flex flex-col px-2 mt-2'>
         <ImageCarousel />
       </section>
+      {/* About Section */}
       <section className='flex flex-col w-full mt-8 md:mt-12 lg:mt-24 justify-center items-center py-8 gap-6 md:gap-8 lg:gap-10'>
         <div className='w-[65px] h-[65px] sm:w-[85px] sm:h-[85px] md:w-[105px] md:h-[105px] lg:w-[125px] lg:h-[125px] flex items-center justify-center rounded-full bg-gradient-to-r from-orange-200 via-orange-500 to-pink-600'>
           <div className='w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px] flex items-center justify-center rounded-full'>
@@ -95,11 +97,13 @@ export default function Page() {
           </p>
         </div>
       </section>
+      {/* Booklet Section */}
       <section className='flex w-full mt-8 md:mt-12 lg:mt-24 justify-center py-8 px-8 md:px-12 lg:px-16 bg-[#fffaeb]'>
         <React.Suspense fallback={<div>Loading...</div>}>
           <Booklet />
         </React.Suspense>
       </section>
+      {/* Services Section */}
       <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Services</SectionTitle>
         <div className='grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2'>
@@ -108,9 +112,8 @@ export default function Page() {
           <ServiceCard icon='hair_perm' title='Texture' description='何か特徴' />
           <ServiceCard icon='makeup' title='Makeup' description='何か特徴' />
         </div>
-      </section>
-      <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
-        <div className='flex flex-col bg-[#fffaeb] p-8 pb-10 rounded-xl gap-8'>
+        {/* Head Spa */}
+        <div className='flex flex-col bg-[#fffaeb] p-8 pb-10 rounded-xl gap-8 mt-8'>
           <div className='flex flex-row items-start'>
             <Image src='/images/icons/head_spa.png' alt='leaf' width={120} height={120} />
             <Image src='/images/special.png' alt='special' width={80} height={80} className='object-contain -ml-2' />
@@ -130,6 +133,12 @@ export default function Page() {
           </div>
         </div>
       </section>
+      {/* Instagram Section */}
+      <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
+        <SectionTitle>Instagram</SectionTitle>
+        <div className='flex flex-col gap-8'>ここにインスタグラムのフィードを表示する</div>
+      </section>
+      {/* Prices Section */}
       <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Prices</SectionTitle>
         <div className='flex flex-col gap-8'>
@@ -141,6 +150,7 @@ export default function Page() {
           </Button>
         </div>
       </section>
+      {/* Business Hours Section */}
       <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Business Hours</SectionTitle>
         <div className='flex flex-col bg-[#f0f9ff] p-8 pb-10 rounded-xl gap-8'>
@@ -163,6 +173,7 @@ export default function Page() {
           </div>
         </div>
       </section>
+      {/* Appointment Policy Section */}
       <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Appointment Policy at OneLeaf Salon</SectionTitle>
         <div className='flex flex-col gap-8 px-4'>
@@ -184,8 +195,7 @@ export default function Page() {
             </p>
           </Link>
           <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat'>
-            * Parking * We are located right in front of the City of Pasadena Shoppers Lane Parking Lot, which is 90-minutes free. The available
-            spaces will be limited during the lunch hour however because of the surrounding restaurants. Please arrive accordingly.
+            * Parking * The parking area is located at the rear of the building. Please proceed to the back for convenient parking.
           </p>
           <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat'>
             <a
@@ -202,20 +212,18 @@ export default function Page() {
       </section>
       <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Thank you for your reviews</SectionTitle>
-        <p className='text-gray-500 sm:mt-2 md:mt-4 lg:mt-8 px-4'>
-          This is the space to introduce the Project section. Take this opportunity to give visitors a brief overview of the types of projects
-          they&apos;ll find featured in the showcase below. Consider adding an image or video to spark their interest.
-        </p>
+        <p className='text-gray-500 sm:mt-2 md:mt-4 lg:mt-8 px-4'>Thank you for your reviews. We are grateful for your support and feedback.</p>
         <div className='flex sm:mt-8 md:mt-12 lg:mt-18'>
           <TopReviews />
         </div>
       </section>
+      {/* Access Section */}
       <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Access</SectionTitle>
         <p className='text-gray-500 px-4'>
           The parking area is located at the rear of the building. Please proceed to the back for convenient parking.
         </p>
-        <div className='w-full relative my-10' style={{ paddingBottom: '56.25%', height: '80vh' }}>
+        <div className='w-full relative mb-10' style={{ paddingBottom: '56.25%', height: '80vh' }}>
           <iframe
             src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.402952049803!2d-118.05619732447848!3d34.16161397311594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2dc70abd9e333%3A0x8436c838e56c8dc5!2zMzggVyBTaWVycmEgTWFkcmUgQmx2ZCwgU2llcnJhIE1hZHJlLCBDQSA5MTAyNCDjgqLjg6Hjg6rjgqvlkIjooYblm70!5e0!3m2!1sja!2sjp!4v1716251840342!5m2!1sja!2sjp'
             className='absolute top-0 left-0 w-full h-full'
