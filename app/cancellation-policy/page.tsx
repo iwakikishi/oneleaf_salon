@@ -21,7 +21,7 @@ const PolicyItem = ({ title, children }: { title: string; children: React.ReactN
 
 export default function Page() {
   return (
-    <main className='flex flex-col w-full h-full bg-white'>
+    <main className='flex flex-col w-full h-full bg-white mt-8'>
       <div className='max-w-4xl mx-auto px-4 py-12 md:py-24'>
         <div className='bg-gradient-to-br from-[#fffaeb] to-[#f0f9ff] p-8 md:p-12 rounded-2xl shadow-lg'>
           <SectionTitle>Cancellation Policy</SectionTitle>

@@ -58,6 +58,9 @@ const MobileHeader = () => {
                 <Link href='/contact'>Contact</Link>
               </Button>
               <Button asChild variant={'ghost'} onClick={() => setIsOpen(false)}>
+                <Link href='/cancellation-policy'>Cancellation Policy</Link>
+              </Button>
+              <Button asChild variant={'ghost'} onClick={() => setIsOpen(false)}>
                 <Link href='https://booking.setmore.com/scheduleappointment/f37b5239-7295-4828-9acb-a560c84d37ef' target='_blank'>
                   Appointment
                 </Link>
