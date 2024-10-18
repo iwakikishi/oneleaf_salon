@@ -16,8 +16,8 @@ type ServiceCardProps = {
 
 const ServiceCard = ({ icon, title, description }: ServiceCardProps) => (
   <div className='flex flex-col aspect-[4/3] mt-2 bg-[#fffaeb] p-8 gap-6'>
-    <Image src={`/images/icons/${icon}.png`} alt={title} className='object-contain' width={100} height={100} />
-    <p className='text-green-900 text-2xl font-bold mt-4 font-poppins'>{title}</p>
+    <Image src={`/images/${icon}.png`} alt={title} className='object-contain rounded-lg' width={70} height={70} />
+    <p className='text-green-900 text-2xl font-bold font-poppins'>{title}</p>
     <p className='text-gray-500 text-lg break-words font-poppins'>{description}</p>
   </div>
 );
@@ -107,16 +107,16 @@ export default function Page() {
       <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Services</SectionTitle>
         <div className='grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2'>
-          <ServiceCard icon='hair_cut_2' title='Cut & Style' description='Haircuts not included with color services. Shampoo and styling included' />
-          <ServiceCard icon='hair_color' title='Color & Bleach' description='カラー剤とかの説明' />
-          <ServiceCard icon='hair_perm' title='Texture' description='何か特徴' />
-          <ServiceCard icon='makeup' title='Makeup' description='何か特徴' />
+          <ServiceCard icon='hair_cut' title='Cut & Style' description='Haircuts not included with color services. Shampoo and styling included' />
+          <ServiceCard icon='hair_coloring' title='Color & Bleach' description='カラー剤とかの説明' />
+          <ServiceCard icon='hair_perms' title='Texture' description='何か特徴' />
+          <ServiceCard icon='make_up' title='Makeup' description='何か特徴' />
         </div>
         {/* Head Spa */}
         <div className='flex flex-col bg-[#fffaeb] p-8 pb-10 rounded-xl gap-8 mt-8'>
           <div className='flex flex-row items-start'>
-            <Image src='/images/icons/head_spa.png' alt='leaf' width={120} height={120} />
-            <Image src='/images/special.png' alt='special' width={80} height={80} className='object-contain -ml-2' />
+            <Image src='/images/head_spa.png' alt='leaf' width={80} height={80} className='object-contain rounded-lg' />
+            <Image src='/images/special.png' alt='special' width={80} height={80} className='object-contain ml-2' />
           </div>
           <div className='flex flex-col gap-5'>
             <h1 className='text-green-900 text-3xl font-poppins font-bold'>ZEN Head Spa</h1>
@@ -182,7 +182,7 @@ export default function Page() {
             please note the following:
           </p>
           <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat'>
-            Punctuality: Please arrive on time for your appointment. If you are more than 15 minutes late, we may not be able to accommodate your
+            Punctuality: Please arrive on time for your appointment. If you are more than 10 minutes late, we may not be able to accommodate your
             service, and a cancellation fee equivalent to 50% of the service cost will apply.
           </p>
           <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat'>
@@ -225,7 +225,7 @@ export default function Page() {
         </p>
         <div className='w-full relative mb-10' style={{ paddingBottom: '56.25%', height: '80vh' }}>
           <iframe
-            src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.402952049803!2d-118.05619732447848!3d34.16161397311594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2dc70abd9e333%3A0x8436c838e56c8dc5!2zMzggVyBTaWVycmEgTWFkcmUgQmx2ZCwgU2llcnJhIE1hZHJlLCBDQSA5MTAyNCDjgqLjg6Hjg6rjgqvlkIjooYblm70!5e0!3m2!1sja!2sjp!4v1716251840342!5m2!1sja!2sjp'
+            src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.402952049803!2d-118.05619732447848!3d34.16161397311594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2dc70abd9e333%3A0x8436c838e56c8dc5!2s38%20W%20Sierra%20Madre%20Blvd%2C%20Sierra%20Madre%2C%20CA%2091024%2C%20USA!5e0!3m2!1sen!2sus!4v1716251840342!5m2!1sen!2sus'
             className='absolute top-0 left-0 w-full h-full'
             loading='lazy'
             referrerPolicy='no-referrer-when-downgrade'></iframe>

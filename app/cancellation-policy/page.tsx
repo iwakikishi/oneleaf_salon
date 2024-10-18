@@ -36,11 +36,11 @@ export default function Page() {
 
           <PolicyItem title='Late Arrivals'>
             <p>
-              If you arrive more than 15 minutes late, we may not be able to offer services and a 50% charge of your total service cost will apply.
+              If you arrive more than 10 minutes late, we may not be able to offer services and a 50% charge of your total service cost will apply.
             </p>
           </PolicyItem>
 
-          <PolicyItem title='$100 Deposits Required'>
+          {/* <PolicyItem title='$100 Deposits Required'>
             <p>The following services require a $100 deposit:</p>
             <ul className='grid grid-cols-2 gap-2 mt-2'>
               {['Highlight', 'Ombré', 'Balayage', 'Bleach and Toner', 'Japanese Straightening', 'Color Corrections', 'Digital perm'].map((item) => (
@@ -50,11 +50,11 @@ export default function Page() {
               ))}
             </ul>
             <p className='mt-4 text-sm'>Deposits are applied to your service bill. Full refund for cancellations with 24-hour notice.</p>
-          </PolicyItem>
+          </PolicyItem> */}
 
-          <PolicyItem title='Booking Information'>
+          {/* <PolicyItem title='Booking Information'>
             <p>Please book appointments one at a time. Ensure you pay the deposit fee during checkout to confirm your appointment.</p>
-          </PolicyItem>
+          </PolicyItem> */}
 
           <div className='mt-8 text-center'>
             <Button asChild className='bg-green-700 text-white hover:bg-green-600 transition-colors px-8 py-3 rounded-full text-lg'>
