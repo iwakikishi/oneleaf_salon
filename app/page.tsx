@@ -127,28 +127,31 @@ export default function Page() {
         </div>
       </section>
 
-      <section className='flex flex-col w-full font-poppins mt-24 md:mt-12 lg:mt-24 px-8 md:px-12 lg:px-48 gap-8'>
+      <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
         <div className='flex flex-col bg-[#fffaeb] p-8 pb-10 rounded-xl gap-8'>
-          <Image src='/images/icons/head_spa.png' alt='leaf' width={120} height={120} />
-          <div className='flex flex-col gap-3 '>
-            <h1 className='text-green-900 text-4xl font-poppins font-bold'>ZEN Head Spa</h1>
-            <p className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins mt-4'>
+          <div className='flex flex-row items-start'>
+            <Image src='/images/icons/head_spa.png' alt='leaf' width={120} height={120} />
+            <Image src='/images/special.png' alt='special' width={80} height={80} className='object-contain -ml-2' />
+          </div>
+          <div className='flex flex-col gap-5'>
+            <h1 className='text-green-900 text-3xl font-poppins font-bold'>ZEN Head Spa</h1>
+            <p className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>Something about head spa</p>
+            <div className='flex flex-col aspect-video rounded-xl overflow-hidden'>
+              <video src='/videos/head_spa_section.mp4' loop autoPlay muted className='w-full h-full object-cover xs:object-contain mt-4' />
+            </div>
+            <p className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>
               Counseling with Microscope * 40, 60min course only* Scalp Cleansing with Jojoba oil with Micro Mist Treatment Head and Neck massage
               Scalp Shampoo & Carbonated Treatment
             </p>
           </div>
         </div>
-
-        <div className='flex flex-col aspect-video rounded-xl overflow-hidden'>
-          <video src='/videos/head_spa_section.mp4' loop autoPlay muted className='w-full h-full object-cover xs:object-contain' />
-        </div>
       </section>
 
-      <section className='flex flex-col w-full font-poppins mt-8 md:mt-12 lg:mt-24 px-8 md:px-12 lg:px-48'>
+      <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
         <SectionTitle>Prices</SectionTitle>
       </section>
 
-      <section className='flex flex-col w-full font-poppins mt-8 md:mt-12 lg:mt-24 px-8 md:px-12 lg:px-48'>
+      <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
         <SectionTitle>Appointment Policy at OneLeaf Salon</SectionTitle>
         <div className='flex flex-col gap-8 mt-12'>
           <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat px-4'>

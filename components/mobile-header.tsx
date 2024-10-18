@@ -17,7 +17,7 @@ const MobileHeader = () => {
         <Link href='/'>{/* <Image alt='ONELEAF Hair by Kazuyo logo' width='40' height='40' src='/images/header/logo.webp' /> */}</Link>
         <Popover open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
           <PopoverTrigger asChild>
-            <Button variant='outline' className='p-2 bg-green-500/70 rounded-full'>
+            <Button variant='outline' className='p-2 bg-lime-500/80 rounded-full'>
               <Menu size={24} color='white' />
             </Button>
           </PopoverTrigger>

@@ -35,7 +35,7 @@ export default function ImageCarousel() {
     const handleResize = () => {
       const width = window.innerWidth;
       if (width < 640) {
-        setSlidesToShow(1);
+        setSlidesToShow(2);
         setIsMobile(true);
       } else if (width < 768) {
         setSlidesToShow(2);
@@ -83,11 +83,14 @@ export default function ImageCarousel() {
       <div className='overflow-hidden' ref={emblaRef}>
         <div className='flex'>
           {images.map((image, index) => (
-            <div key={index} className='flex-[0_0_100%] min-w-0 pl-4 sm:flex-[0_0_50%] md:flex-[0_0_33.333333%] lg:flex-[0_0_25%]'>
+            <div key={index} className={`flex-[0_0_50%] min-w-0 pr-2 sm:flex-[0_0_50%] md:flex-[0_0_33.333333%] lg:flex-[0_0_25%]`}>
               <Card>
                 <CardContent className='p-0'>
                   <div className='relative aspect-[4/3]'>
-                    <Image src={image.src} alt={image.alt} fill className='object-cover rounded-md' />
+                    <Image src={image.src} alt={image.alt} fill className='object-cover' />
+                    <div className='absolute bottom-2 right-1 bg-black/30 rounded-md px-3 py-1'>
+                      <p className='text-white text-sm font-poppins'>{image.alt}</p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
