@@ -8,11 +8,6 @@ import Contact from '@/components/contact';
 import ImageCarousel from '@/components/ImageCarousel';
 import { PriceAccordion } from '@/components/PriceAccordion';
 
-type ImageGalleryProps = {
-  image: string;
-  alt: string;
-};
-
 type ServiceCardProps = {
   icon: string;
   title: string;
@@ -55,7 +50,7 @@ const SectionTitle = ({ children }: { children: React.ReactNode }) => (
 
 export default function Page() {
   return (
-    <main className='flex flex-col main-scrollbar-transparent'>
+    <main className='flex flex-col w-full overflow-x-hidden scrollbar-transparent'>
       <section className='flex w-full h-[150vw] xs:h-auto xs:aspect-video'>
         <div className='flex w-full h-full relative'>
           <video src='/videos/head_spa_1.mp4' loop autoPlay muted className='w-full h-full object-cover xs:object-contain' />
@@ -63,7 +58,7 @@ export default function Page() {
           <div className='absolute inset-0 flex flex-col justify-center px-4 xs:pl-12 gap-3'>
             {/* <h3 className='text-white text-xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-poppins tracking-normal'>Welcome to </h3> */}
             <div className='flex flex-col'>
-              <h1 className='text-white text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-6xl font-bold font-poppins tracking-wider'>
+              <h1 className='text-white text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold font-poppins tracking-wider'>
                 OneLeaf Salon
               </h1>
               <p className='text-white text-lg xs:text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-poppins tracking-wider mt-1'>
@@ -83,12 +78,10 @@ export default function Page() {
           </div>
         </div>
       </section>
-
       {/* <section className='grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2 px-2'> */}
       <section className='flex flex-col px-2 mt-2'>
         <ImageCarousel />
       </section>
-
       <section className='flex flex-col w-full mt-8 md:mt-12 lg:mt-24 justify-center items-center py-8 gap-6 md:gap-8 lg:gap-10'>
         <div className='relative w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px]'>
           <Image src='/images/kazuyo_shichiri.jpg' alt='Kazuyo Shichiri' fill className='rounded-full object-cover' />
@@ -103,13 +96,11 @@ export default function Page() {
           </p>
         </div>
       </section>
-
       <section className='flex w-full mt-8 md:mt-12 lg:mt-24 justify-center py-8 bg-[#fffaeb]'>
         <React.Suspense fallback={<div>Loading...</div>}>
           <Booklet />
         </React.Suspense>
       </section>
-
       <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
         <SectionTitle>Services</SectionTitle>
         <div className='grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2'>
@@ -119,7 +110,6 @@ export default function Page() {
           <ServiceCard icon='makeup' title='Makeup' description='何か特徴' />
         </div>
       </section>
-
       <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
         <div className='flex flex-col bg-[#fffaeb] p-8 pb-10 rounded-xl gap-8'>
           <div className='flex flex-row items-start'>
@@ -145,7 +135,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-
       <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
         <SectionTitle>Prices</SectionTitle>
         <div className='flex flex-col gap-8'>
@@ -157,11 +146,33 @@ export default function Page() {
           </Button>
         </div>
       </section>
-
+      <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
+        <SectionTitle>Business Hours</SectionTitle>
+        <div className='flex flex-col bg-[#f0f9ff] p-8 pb-10 rounded-xl gap-8'>
+          <div className='flex flex-col gap-5'>
+            <h1 className='text-green-900 text-3xl font-poppins font-bold'>Our Business Hours</h1>
+            <p className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>
+              We are open to serve you during the following hours:
+            </p>
+            <ul className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>
+              <li>Monday: Closed</li>
+              <li>Tuesday: 10:00 AM - 6:00 PM</li>
+              <li>Wednesday: 10:00 AM - 6:00 PM</li>
+              <li>Thursday: 10:00 AM - 6:00 PM</li>
+              <li>Friday: 10:00 AM - 6:00 PM</li>
+              <li>Saturday: 9:00 AM - 5:00 PM</li>
+              <li>Sunday: 9:00 AM - 5:00 PM</li>
+            </ul>
+            <p className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>
+              Please note that our hours may vary on holidays. We recommend booking an appointment in advance to ensure availability.
+            </p>
+          </div>
+        </div>
+      </section>
       <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
         <SectionTitle>Appointment Policy at OneLeaf Salon</SectionTitle>
         <div className='flex flex-col gap-8 mt-12'>
-          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat px-4'>
+          <p className='text-green-900 text-base sm:text-lg md:text-lg lg:text-xl font-montserrat px-4'>
             Thank you for choosing OneLeaf Salon! We look forward to welcoming you. To ensure that all our clients receive the best possible service,
             please note the following:
           </p>
@@ -184,7 +195,6 @@ export default function Page() {
           </p>
         </div>
       </section>
-
       {/* <section className='flex flex-col w-full font-poppins mt-24 px-8 md:px-12 lg:px-48'>
         <SectionTitle>Services</SectionTitle>
         <div className='flex flex-col sm:mt-4 md:mt-8 lg:mt-12 sm:flex-row gap-4'>
@@ -196,7 +206,6 @@ export default function Page() {
           ))}
         </div>
       </section> */}
-
       {/* <section className='flex flex-col w-full font-poppins sm:mt-8 md:mt-28 lg:mt-36 sm:px-8 md:px-12 lg:px-48'>
         <SectionTitle>Sunday Appointment Only Head Spa Menus</SectionTitle>
         {['Oily Improvement', 'Dry Scalp', 'Hair loss', 'Stress relief'].map((title) => (
@@ -214,7 +223,6 @@ export default function Page() {
           </Button>
         </div>
       </section> */}
-
       {/* <section className='flex flex-col w-full font-poppins sm:mt-8 md:mt-28 lg:mt-36 sm:px-8 md:px-12 lg:px-48'>
         <SectionTitle>Personalized Hair Condition Consulting</SectionTitle>
         <p className='text-gray-500 sm:mt-2 md:mt-4 lg:mt-8'>
@@ -230,7 +238,6 @@ export default function Page() {
           </Button>
         </div>
       </section> */}
-
       {/* <section className='flex flex-col w-full sm:mt-8 md:mt-28 lg:mt-36 sm:px-8 md:px-12 lg:px-48'>
         <SectionTitle>Retail</SectionTitle>
         <p className='text-gray-500 sm:mt-2 md:mt-4 lg:mt-8'>
@@ -241,8 +248,7 @@ export default function Page() {
           <TopGoods />
         </div>
       </section> */}
-
-      <section className='flex flex-col w-full font-poppins mt-8 md:mt-12 lg:mt-24 px-8 md:px-12 lg:px-48'>
+      <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
         <SectionTitle>Thank you for your reviews</SectionTitle>
         <p className='text-gray-500 sm:mt-2 md:mt-4 lg:mt-8'>
           This is the space to introduce the Project section. Take this opportunity to give visitors a brief overview of the types of projects
@@ -252,8 +258,7 @@ export default function Page() {
           <TopReviews />
         </div>
       </section>
-
-      <section className='flex flex-col w-full font-poppins mt-8 md:mt-12 lg:mt-24 px-8 md:px-12 lg:px-48'>
+      <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
         <SectionTitle>Access</SectionTitle>
         <p className='text-gray-500'>The parking area is located at the rear of the building. Please proceed to the back for convenient parking.</p>
         <div className='w-full relative my-10' style={{ paddingBottom: '56.25%', height: '80vh' }}>
@@ -264,8 +269,7 @@ export default function Page() {
             referrerPolicy='no-referrer-when-downgrade'></iframe>
         </div>
       </section>
-
-      <section className='flex flex-col w-full font-poppins mt-8 md:mt-12 lg:mt-24 px-8 md:px-12 lg:px-48'>
+      <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
         <SectionTitle>Contact</SectionTitle>
         <Contact />
       </section>

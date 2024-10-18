@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import useEmblaCarousel from 'embla-carousel-react';
 import { DotButton } from '@/components/ui/dot-button';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const images = [
   { src: '/images/store/exterior.png', alt: 'exterior' },
@@ -17,6 +19,8 @@ export default function ImageCarousel() {
   const [slidesToShow, setSlidesToShow] = useState(4);
   const [isMobile, setIsMobile] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: 'start',
@@ -78,17 +82,30 @@ export default function ImageCarousel() {
     [emblaApi]
   );
 
+  const openModal = (index: number) => {
+    setCurrentImageIndex(index);
+    setModalOpen(true);
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   return (
     <div className='w-full'>
       <div className='overflow-hidden' ref={emblaRef}>
         <div className='flex'>
           {images.map((image, index) => (
-            <div key={index} className={`flex-[0_0_50%] min-w-0 pr-2 sm:flex-[0_0_50%] md:flex-[0_0_33.333333%] lg:flex-[0_0_25%]`}>
-              <Card>
+            <div key={index} className='flex-[0_0_50%] min-w-0 pr-2 sm:flex-[0_0_50%] md:flex-[0_0_33.333333%] lg:flex-[0_0_25%]'>
+              <Card onClick={() => openModal(index)} className='cursor-pointer hover:shadow-lg transition-shadow duration-300'>
                 <CardContent className='p-0'>
                   <div className='relative aspect-[4/3]'>
                     <Image src={image.src} alt={image.alt} fill className='object-cover' />
-                    <div className='absolute bottom-2 right-1 bg-black/30 rounded-md px-3 py-1'>
+                    <div className='absolute bottom-1 left-1 bg-black/30 rounded-md px-3 py-1'>
                       <p className='text-white text-sm font-poppins'>{image.alt}</p>
                     </div>
                   </div>
@@ -98,13 +115,38 @@ export default function ImageCarousel() {
           ))}
         </div>
       </div>
-      {isMobile && (
-        <div className='flex justify-center mt-4'>
-          {images.map((_, index) => (
-            <DotButton key={index} selected={index === selectedIndex} onClick={() => onDotButtonClick(index)} />
-          ))}
-        </div>
-      )}
+      <div className='flex justify-center mt-4'>
+        {images.map((_, index) => (
+          <DotButton key={index} selected={index === selectedIndex} onClick={() => onDotButtonClick(index)} />
+        ))}
+      </div>
+      <Dialog open={modalOpen} onOpenChange={setModalOpen}>
+        <DialogContent className='max-w-[100vw] max-h-[100vh] w-full h-full p-0 m-0 bg-black/90'>
+          <div className='relative w-full h-full flex items-center justify-center'>
+            <div className='relative w-full h-full max-w-4xl max-h-[80vh]'>
+              <Image src={images[currentImageIndex].src} alt={images[currentImageIndex].alt} fill style={{ objectFit: 'contain' }} className='p-4' />
+            </div>
+            <button
+              onClick={prevImage}
+              className='absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/20 p-2 rounded-full text-white hover:bg-white/40 transition-colors z-10'>
+              <ChevronLeft size={24} />
+            </button>
+            <button
+              onClick={nextImage}
+              className='absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/20 p-2 rounded-full text-white hover:bg-white/40 transition-colors z-10'>
+              <ChevronRight size={24} />
+            </button>
+            <button
+              onClick={() => setModalOpen(false)}
+              className='absolute top-4 right-4 bg-white/20 p-2 rounded-full text-white hover:bg-white/40 transition-colors z-10'>
+              <X size={24} />
+            </button>
+            <div className='absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 px-4 py-2 rounded-md z-10'>
+              <p className='text-white text-sm'>{images[currentImageIndex].alt}</p>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

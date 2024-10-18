@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
 import { Inter, Montserrat, Poppins } from 'next/font/google';
-import Header from '@/components/header';
-import Footer from '@/components/footer';
 import { cn } from '@/lib/utils';
+import dynamic from 'next/dynamic';
 
 import './globals.css';
+
+const Header = dynamic(() => import('@/components/header'), { ssr: false });
+const Footer = dynamic(() => import('@/components/footer'), { ssr: false });
 
 const inter = Inter({
   subsets: ['latin'],
