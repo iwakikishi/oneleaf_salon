@@ -43,9 +43,14 @@ const Footer = () => {
               <a href='#' className='text-white hover:text-green-300 transition-colors'>
                 <Facebook size={20} />
               </a>
-              <a href='#' className='text-white hover:text-green-300 transition-colors'>
-                <Instagram size={20} />
-              </a>
+              <Link
+                href='https://www.instagram.com/kazuyohairstyle/?hl=en'
+                target='_blank'
+                className='text-white hover:text-green-300 transition-colors'>
+                <span className='text-white hover:text-green-300 transition-colors'>
+                  <Instagram size={20} />
+                </span>
+              </Link>
             </div>
           </div>
         </div>

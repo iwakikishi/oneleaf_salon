@@ -20,12 +20,23 @@ const teamMembers = [
   },
 ];
 
+const SectionTitle = ({ children }: { children: React.ReactNode }) => (
+  <div className='flex items-center gap-2'>
+    <div className='w-[50px] h-[50px] flex-shrink-0'>
+      <Image src='/images/leaf2.png' alt='leaf' width={50} height={50} />
+    </div>
+    <h2 className='text-green-900 font-montserrat font-semibold text-[calc(16px+1.75vw)]' style={{ textShadow: '2px 2px 4px rgba(0, 128, 0, 0.5)' }}>
+      {children}
+    </h2>
+  </div>
+);
+
 export default function TeamPage() {
   return (
-    <main className='min-h-screen bg-gradient-to-b from-[#fffaeb] to-white py-16 px-4 sm:px-6 lg:px-8'>
-      <div className='max-w-7xl mx-auto'>
-        <h1 className='text-4xl font-bold text-center text-green-900 mb-12 font-montserrat'>Meet Our Team</h1>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-12'>
+    <main className='min-h-screen bg-gradient-to-b from-[#fffaeb] to-white py-16 px-4 sm:px-6 md:px-24 lg:px-36 mt-8'>
+      <div className='max-w-7xl mx-auto '>
+        <SectionTitle>Meet Our Team</SectionTitle>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-12 mt-8'>
           {teamMembers.map((member) => (
             <Card key={member.name} className='overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300'>
               <CardContent className='p-0'>

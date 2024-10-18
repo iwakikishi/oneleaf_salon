@@ -15,7 +15,9 @@ const SectionTitle = ({ children }: { children: React.ReactNode }) => (
     <div className='w-[50px] h-[50px] flex-shrink-0'>
       <Image src='/images/leaf2.png' alt='leaf' width={50} height={50} />
     </div>
-    <h2 className='text-green-900 font-montserrat font-semibold text-[calc(16px+1.5vw)]'>{children}</h2>
+    <h2 className='text-green-900 font-montserrat font-semibold text-[calc(16px+1.75vw)]' style={{ textShadow: '2px 2px 4px rgba(0, 128, 0, 0.5)' }}>
+      {children}
+    </h2>
   </div>
 );
 
@@ -49,13 +51,9 @@ export default function page() {
             <h1 className='text-green-900 text-3xl font-poppins font-bold'>ZEN Head Spa</h1>
             <p className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>Something about head spa</p>
             <div className='flex flex-col aspect-video rounded-xl overflow-hidden'>
-              <video
-                src='/videos/head_spa_section.mp4'
-                loop
-                autoPlay
-                muted
-                className='w-full h-full rounded-xl object-cover xs:object-contain mt-4'
-              />
+              <video autoPlay muted loop playsInline className='w-full h-full rounded-xl object-cover xs:object-contain mt-4'>
+                <source src='/videos/head_spa_section.mp4' type='video/mp4' />
+              </video>
             </div>
             <p className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>
               Counseling with Microscope * 40, 60min course only* Scalp Cleansing with Jojoba oil with Micro Mist Treatment Head and Neck massage
