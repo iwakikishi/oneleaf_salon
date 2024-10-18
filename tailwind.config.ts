@@ -20,6 +20,7 @@ const config = {
     fontFamily: {
       montserrat: ["var(--font-montserrat)", 'Montserrat', 'sans-serif'],
       poppins: ["var(--font-poppins)", 'Poppins', 'sans-serif'],
+      poppins_light: ["var(--font-poppins-light)", 'Poppins', 'sans-serif'],
       },
     extend: {
       screens: {

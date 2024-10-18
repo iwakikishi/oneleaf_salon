@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Booklet from '@/components/booklet';
 import TopReviews from '@/components/reviews';
 import Contact from '@/components/contact';
+import ImageCarousel from '@/components/ImageCarousel';
 
 type ImageGalleryProps = {
   image: string;
@@ -31,10 +32,10 @@ const ImageGallery = ({ image, alt }: ImageGalleryProps) => (
 );
 
 const ServiceCard = ({ icon, title, description }: ServiceCardProps) => (
-  <div className='flex flex-col aspect-[4/3] mt-2 bg-[#fffaeb] p-8 gap-8'>
+  <div className='flex flex-col aspect-[4/3] mt-2 bg-[#fffaeb] p-8 gap-6'>
     <Image src={`/images/icons/${icon}.png`} alt={title} className='object-contain' width={100} height={100} />
-    <p className='text-green-900 text-2xl font-bold'>{title}</p>
-    <p className='text-gray-500 text-lg break-words'>{description}</p>
+    <p className='text-green-900 text-2xl font-bold mt-4 font-poppins'>{title}</p>
+    <p className='text-gray-500 text-lg break-words font-poppins'>{description}</p>
   </div>
 );
 
@@ -66,13 +67,20 @@ export default function Page() {
         <div className='flex w-full h-full relative'>
           <video src='/videos/head_spa_1.mp4' loop autoPlay muted className='w-full h-full object-cover xs:object-contain' />
           <div className='absolute inset-0 bg-black/50' />
-          <div className='absolute inset-0 flex flex-col justify-center px-4 xs:pl-8 gap-3'>
-            <h1 className='text-white text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-6xl font-bold'>
-              Welcome to <br />
-              OneLeaf Salon
-            </h1>
-            <p className='text-white text-lg xs:text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl'>Hair by Kazuyo</p>
-            <div className='flex flex-row gap-2 mt-6'>
+          <div className='absolute inset-0 flex flex-col justify-center px-4 xs:pl-12 gap-3'>
+            {/* <h3 className='text-white text-xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-poppins tracking-normal'>Welcome to </h3> */}
+            <div className='flex flex-col'>
+              <h1 className='text-white text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-6xl font-bold font-poppins tracking-wider'>
+                OneLeaf Salon
+              </h1>
+              <p className='text-white text-lg xs:text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold font-poppins tracking-wider mt-1'>
+                Hair by Kazuyo
+              </p>
+            </div>
+            <p className='text-gray-300 text-sm xs:text-base sm:text-xl md:text-xl lg:text-2xl font-poppins'>
+              Luxury hair salon. Managed by professional Japanese hair stylist
+            </p>
+            <div className='flex flex-row gap-2 mt-4'>
               <Button
                 asChild
                 className='bg-white/70 text-black p-3 xs:p-2 sm:p-4 md:p-6 lg:p-8 text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl'>
@@ -83,11 +91,9 @@ export default function Page() {
         </div>
       </section>
 
-      <section className='grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2 px-2'>
-        <ImageGallery image='/images/store/exterior.png' alt='exterior' />
-        <ImageGallery image='/images/store/chair.png' alt='chair' />
-        <ImageGallery image='/images/store/display.png' alt='display' />
-        <ImageGallery image='/images/store/mirror.png' alt='mirror' />
+      {/* <section className='grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2 px-2'> */}
+      <section className='flex flex-col px-2 mt-2'>
+        <ImageCarousel />
       </section>
 
       <section className='flex flex-col w-full mt-8 md:mt-12 lg:mt-24 justify-center items-center py-8 gap-6 md:gap-8 lg:gap-10'>
@@ -95,9 +101,9 @@ export default function Page() {
           <Image src='/images/kazuyo_shichiri.jpg' alt='Kazuyo Shichiri' fill className='rounded-full object-cover' />
         </div>
         <div className='flex flex-col justify-center items-center gap-4 md:gap-6 lg:gap-8'>
-          <h1 className='text-green-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-montserrat text-center'>Hello, (Konnichiwa)</h1>
+          <h1 className='text-green-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-poppins text-center'>Hello, (Konnichiwa)</h1>
           <p
-            className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl text-center font-montserrat max-w-3xl px-4'
+            className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl text-center font-poppins font-light max-w-3xl px-4'
             style={{ lineHeight: '1.5' }}>
             My name is Kazuyo, and I am Japanese. Until now, I have been working as a hairstylist in Pasadena, supported by many customers, and with
             gratitude, I was able to open my own salon in Sierra Madre. I look forward to meeting everyone.
@@ -114,19 +120,25 @@ export default function Page() {
       <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
         <SectionTitle>Services</SectionTitle>
         <div className='grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2'>
-          <ServiceCard icon='hair_cut' title='Cut & Style' description='Haircuts not included with color services. Shampoo and styling included' />
+          <ServiceCard icon='hair_cut_2' title='Cut & Style' description='Haircuts not included with color services. Shampoo and styling included' />
           <ServiceCard icon='hair_color' title='Color & Bleach' description='カラー剤とかの説明' />
           <ServiceCard icon='hair_perm' title='Texture' description='何か特徴' />
-          <ServiceCard icon='head_spa' title='Head Spa' description='何か特徴' />
+          <ServiceCard icon='makeup' title='Makeup' description='何か特徴' />
         </div>
       </section>
 
-      <section className='flex flex-col w-full font-poppins mt-8 md:mt-12 lg:mt-24 px-8 md:px-12 lg:px-48 gap-8'>
-        <SectionTitle>ZEN Head Spa</SectionTitle>
-        <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat px-4'>
-          Counseling with Microscope * 40, 60min course only* Scalp Cleansing with Jojoba oil with Micro Mist Treatment Head and Neck massage Scalp
-          Shampoo & Carbonated Treatment
-        </p>
+      <section className='flex flex-col w-full font-poppins mt-24 md:mt-12 lg:mt-24 px-8 md:px-12 lg:px-48 gap-8'>
+        <div className='flex flex-col bg-[#fffaeb] p-8 pb-10 rounded-xl gap-8'>
+          <Image src='/images/icons/head_spa.png' alt='leaf' width={120} height={120} />
+          <div className='flex flex-col gap-3 '>
+            <h1 className='text-green-900 text-4xl font-poppins font-bold'>ZEN Head Spa</h1>
+            <p className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins mt-4'>
+              Counseling with Microscope * 40, 60min course only* Scalp Cleansing with Jojoba oil with Micro Mist Treatment Head and Neck massage
+              Scalp Shampoo & Carbonated Treatment
+            </p>
+          </div>
+        </div>
+
         <div className='flex flex-col aspect-video rounded-xl overflow-hidden'>
           <video src='/videos/head_spa_section.mp4' loop autoPlay muted className='w-full h-full object-cover xs:object-contain' />
         </div>
