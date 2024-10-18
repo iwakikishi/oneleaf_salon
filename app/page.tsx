@@ -16,9 +16,11 @@ type ServiceCardProps = {
 
 const ServiceCard = ({ icon, title, description }: ServiceCardProps) => (
   <div className='flex flex-col aspect-[4/3] mt-2 bg-[#fffaeb] p-8 gap-6'>
-    <Image src={`/images/${icon}.png`} alt={title} className='object-contain rounded-lg' width={70} height={70} />
-    <p className='text-green-900 text-2xl font-bold font-poppins'>{title}</p>
-    <p className='text-gray-500 text-lg break-words font-poppins'>{description}</p>
+    <div className='flex flex-row items-center gap-4'>
+      <Image src={`/images/${icon}.png`} alt={title} className='object-contain rounded-lg' width={70} height={70} />
+      <p className='text-green-900 text-xl font-bold font-poppins'>{title}</p>
+    </div>
+    <p className='text-gray-500 text-md break-words font-poppins'>{description}</p>
   </div>
 );
 
@@ -114,9 +116,9 @@ export default function Page() {
         </div>
         {/* Head Spa */}
         <div className='flex flex-col bg-[#fffaeb] p-8 pb-10 rounded-xl gap-8 mt-8'>
-          <div className='flex flex-row items-start'>
+          <div className='flex flex-row items-start gap-3'>
             <Image src='/images/head_spa.png' alt='leaf' width={80} height={80} className='object-contain rounded-lg' />
-            <Image src='/images/special.png' alt='special' width={80} height={80} className='object-contain ml-2' />
+            <Image src='/images/special.png' alt='special' width={80} height={80} className='object-contain' />
           </div>
           <div className='flex flex-col gap-5'>
             <h1 className='text-green-900 text-3xl font-poppins font-bold'>ZEN Head Spa</h1>
@@ -177,27 +179,27 @@ export default function Page() {
       <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Appointment Policy at OneLeaf Salon</SectionTitle>
         <div className='flex flex-col gap-8 px-4'>
-          <p className='text-green-900 text-base sm:text-lg md:text-lg lg:text-xl font-montserrat'>
+          <p className='text-green-900 text-base sm:text-lg md:text-lg lg:text-xl font-poppins'>
             Thank you for choosing OneLeaf Salon! We look forward to welcoming you. To ensure that all our clients receive the best possible service,
             please note the following:
           </p>
-          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat'>
+          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
             Punctuality: Please arrive on time for your appointment. If you are more than 10 minutes late, we may not be able to accommodate your
             service, and a cancellation fee equivalent to 50% of the service cost will apply.
           </p>
-          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat'>
+          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
             No Show: If you do not show up for your appointment without notifying us, a no-show fee equivalent to 100% of the service fee will be
             charged.
           </p>
           <Link href='/cancellation-policy'>
-            <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat'>
+            <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
               ● <span className='underline'>Cancellation Policy</span>
             </p>
           </Link>
-          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat'>
+          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
             * Parking * The parking area is located at the rear of the building. Please proceed to the back for convenient parking.
           </p>
-          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat'>
+          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
             <a
               href='https://www.google.com/maps/dir/?api=1&destination=34.16161397311594,-118.05619732447848'
               target='_blank'
@@ -205,7 +207,7 @@ export default function Page() {
               ● <span className='underline'>Get the direction</span>
             </a>
           </p>
-          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-montserrat'>
+          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
             Thank you for your understanding and we hope to see you soon.
           </p>
         </div>
@@ -220,7 +222,7 @@ export default function Page() {
       {/* Access Section */}
       <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Access</SectionTitle>
-        <p className='text-gray-500 px-4'>
+        <p className='text-gray-500 px-4 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
           The parking area is located at the rear of the building. Please proceed to the back for convenient parking.
         </p>
         <div className='w-full relative mb-10' style={{ paddingBottom: '56.25%', height: '80vh' }}>
