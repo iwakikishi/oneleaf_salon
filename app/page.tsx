@@ -44,10 +44,8 @@ export default function Page() {
           <video autoPlay muted loop playsInline className='w-full h-full object-cover xs:object-contain'>
             <source src='/videos/head_spa_1.mp4' type='video/mp4' />
           </video>
-          {/* <video src='/videos/head_spa_1.mp4' loop autoPlay muted className='w-full h-full object-cover xs:object-contain' /> */}
           <div className='absolute inset-0 bg-black/50' />
           <div className='absolute inset-0 flex flex-col justify-center px-4 xs:pl-12 gap-3'>
-            {/* <h3 className='text-white text-xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-4xl font-poppins tracking-normal'>Welcome to </h3> */}
             <div className='flex flex-col'>
               <h1 className='text-white text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold font-poppins tracking-wider'>
                 OneLeaf Salon
