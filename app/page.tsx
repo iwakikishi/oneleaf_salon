@@ -16,10 +16,10 @@ type ServiceCardProps = {
 
 const ServiceCard = ({ icon, title, description }: ServiceCardProps) => (
   <div className='flex flex-col aspect-[4/3] mt-2 bg-[#fffaeb] p-8 gap-6'>
-    <div className='flex flex-row items-center gap-4'>
-      <Image src={`/images/${icon}.png`} alt={title} className='object-contain rounded-lg' width={70} height={70} />
-      <p className='text-green-900 text-xl font-bold font-poppins'>{title}</p>
-    </div>
+    {/* <div className='flex flex-row items-center gap-4'> */}
+    <Image src={`/images/${icon}.webp`} alt={title} className='object-cover rounded-lg' width={500} height={120} />
+    <p className='text-green-900 text-xl font-bold font-poppins'>{title}</p>
+    {/* </div> */}
     <p className='text-gray-500 text-md break-words font-poppins'>{description}</p>
   </div>
 );
@@ -109,10 +109,14 @@ export default function Page() {
       <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Services</SectionTitle>
         <div className='grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2'>
-          <ServiceCard icon='hair_cut' title='Cut & Style' description='Haircuts not included with color services. Shampoo and styling included' />
-          <ServiceCard icon='hair_coloring' title='Color & Bleach' description='カラー剤とかの説明' />
-          <ServiceCard icon='hair_perms' title='Texture' description='何か特徴' />
-          <ServiceCard icon='make_up' title='Makeup' description='何か特徴' />
+          <ServiceCard
+            icon='hair_cut_retro'
+            title='Cut & Style'
+            description='Haircuts not included with color services. Shampoo and styling included'
+          />
+          <ServiceCard icon='hair_color_retro' title='Color & Bleach' description='カラー剤とかの説明' />
+          <ServiceCard icon='hair_perm_retro' title='Texture' description='何か特徴' />
+          <ServiceCard icon='make_up_retro' title='Makeup' description='何か特徴' />
         </div>
         {/* Head Spa */}
         <div className='flex flex-col bg-[#fffaeb] p-8 pb-10 rounded-xl gap-8 mt-8'>

@@ -42,6 +42,9 @@ const Header = () => {
           <Link href='/'>Home</Link>
         </Button>
         <Button asChild variant={'ghost'}>
+          <Link href='/about'>About</Link>
+        </Button>
+        <Button asChild variant={'ghost'}>
           <Link href='/services'>Services</Link>
         </Button>
         <Button asChild variant={'ghost'}>

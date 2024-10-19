@@ -1,16 +1,92 @@
 import React from 'react';
 import Image from 'next/image';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
-export default function page() {
+const SectionTitle = ({ children }: { children: React.ReactNode }) => (
+  <div className='flex items-center gap-2'>
+    <div className='w-[50px] h-[50px] flex-shrink-0'>
+      <Image src='/images/leaf2.png' alt='leaf' width={50} height={50} />
+    </div>
+    <h2 className='text-green-900 font-poppins font-semibold text-[calc(16px+1.75vw)]' style={{ textShadow: '2px 2px 4px rgba(0, 128, 0, 0.5)' }}>
+      {children}
+    </h2>
+  </div>
+);
+
+export default function AboutPage() {
   return (
-    <main className='flex flex-col h-full pt-16 bg-white'>
-      <section className='flex justify-center items-center mt-8 md:mt-36 lg:mt-36'>
-        <div className='grid grid-cols-2 gap-0 space-y-5'>
-          {Array.from({ length: 10 }).map((_, index) => (
-            <div key={index} className='w-full h-auto'>
-              <Image src={`/images/booklet/${index + 1}.png`} alt='Booklet' layout='responsive' width={1000} height={1000} />
-            </div>
-          ))}
+    <main className='flex flex-col w-full h-full bg-white pb-24'>
+      <section className='flex flex-col gap-8 px-4 mt-24 md:px-12 lg:px-48'>
+        <SectionTitle>About OneLeaf Salon</SectionTitle>
+        <div className='flex flex-col md:flex-row gap-8 items-center'>
+          <div className='w-full md:w-2/3'>
+            <Image
+              src='/images/store/exterior.png'
+              alt='exterior'
+              width={500}
+              height={500}
+              className='rounded-lg md:rounded-none object-cover aspect-3/4'
+            />
+          </div>
+          <div className='w-full'>
+            <p className='text-green-900 text-lg font-poppins mb-4'>
+              Welcome to OneLeaf Salon, where the art of Japanese hospitality meets expert hairstyling. I'm Kazuyo, the owner and lead stylist,
+              bringing over 20 years of experience from Tokyo's leading salons to Sierra Madre.
+            </p>
+            <p className='text-green-900 text-lg font-poppins mb-4'>
+              At OneLeaf, we don't just style hair; we create experiences. Our salon is a blend of technical expertise and the warm, attentive service
+              that is the hallmark of Japanese omotenashi (hospitality).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className='flex flex-col gap-8 px-4 mt-24 md:px-12 lg:px-48'>
+        <SectionTitle>The Spirit of Omotenashi</SectionTitle>
+        <div className='flex flex-col md:flex-row gap-8 rounded-lg'>
+          <div className='w-full md:w-2/3'>
+            <Image src='/images/omotenashi.jpg' alt='Omotenashi' width={500} height={500} className='rounded-lg md:rounded-none object-cover' />
+          </div>
+          <div className='w-full'>
+            <p className='text-green-900 text-lg font-poppins mb-4'>
+              Omotenashi is more than just service; it's a heartfelt approach to hospitality that anticipates and fulfills needs before they're
+              expressed. At OneLeaf Salon, this philosophy is at the core of everything we do:
+            </p>
+            <ul className='list-disc list-inside text-green-900 text-lg font-poppins mb-4'>
+              <li>Personalized consultations to understand your unique style and needs</li>
+              <li>Meticulous attention to detail in every cut, color, and treatment</li>
+              <li>A serene, welcoming environment where you can relax and rejuvenate</li>
+              <li>Continuous education to bring you the latest techniques and trends</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className='flex flex-col gap-8 px-4 mt-16 md:px-12 lg:px-48'>
+        <SectionTitle>Our Commitment to You</SectionTitle>
+        <p className='text-green-900 text-lg font-poppins mb-4'>
+          At OneLeaf Salon, we believe that true beauty comes from within. Our goal is not just to style your hair, but to enhance your natural beauty
+          and boost your confidence. We take the time to listen, understand, and create a look that's uniquely you.
+        </p>
+        <p className='text-green-900 text-lg font-poppins mb-4'>
+          Whether you're here for a simple trim or a complete transformation, you'll experience the same level of dedicated, personalized care that
+          defines Japanese hospitality.
+        </p>
+      </section>
+
+      <section className='flex flex-col gap-8 px-4 mt-16 md:px-12 lg:px-48'>
+        <SectionTitle>Experience OneLeaf</SectionTitle>
+        <p className='text-green-900 text-lg font-poppins mb-4'>
+          We invite you to experience the OneLeaf difference. From the moment you step through our doors, you'll be embraced by the warmth of
+          omotenashi and the expertise of our skilled stylists.
+        </p>
+        <div className='flex justify-center'>
+          <Button asChild className='p-6 bg-lime-700/30 text-lime-700 text-xl font-poppins hover:bg-lime-700/50'>
+            <Link href='https://kazuyoroyaltysalon.setmore.com/' target='_blank'>
+              Book Your Experience
+            </Link>
+          </Button>
         </div>
       </section>
     </main>

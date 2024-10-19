@@ -45,9 +45,9 @@ const MobileHeader = () => {
               <Button asChild variant={'ghost'} onClick={() => setIsOpen(false)}>
                 <Link href='/'>Home</Link>
               </Button>
-              {/* <Button asChild variant={'ghost'} onClick={() => setIsOpen(false)}>
+              <Button asChild variant={'ghost'} onClick={() => setIsOpen(false)}>
                 <Link href='/about'>About</Link>
-              </Button> */}
+              </Button>
               <Button asChild variant={'ghost'} onClick={() => setIsOpen(false)}>
                 <Link href='/services'>Services</Link>
               </Button>
