@@ -5,39 +5,10 @@ import { Button } from '@/components/ui/button';
 import Booklet from '@/components/booklet';
 import TopReviews from '@/components/reviews';
 import Contact from '@/components/contact';
-import ImageCarousel from '@/components/ImageCarousel';
+import ImageCarousel from '@/components/image-carousel';
+import { SectionTitle } from '@/components/section-title';
 import { PriceAccordion } from '@/components/PriceAccordion';
-
-type ServiceCardProps = {
-  icon: string;
-  title: string;
-  description: string;
-};
-
-const ServiceCard = ({ icon, title, description }: ServiceCardProps) => (
-  <div className='flex flex-col aspect-[4/3] mt-2 bg-[#fffaeb] p-8 gap-6'>
-    {/* <div className='flex flex-row items-center gap-4'> */}
-    <Image src={`/images/${icon}.webp`} alt={title} className='object-cover rounded-lg' width={500} height={120} />
-    <p className='text-green-900 text-xl font-bold font-poppins'>{title}</p>
-    {/* </div> */}
-    <p className='text-gray-500 text-md break-words font-poppins'>{description}</p>
-  </div>
-);
-
-const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-  <div className='flex items-center gap-2'>
-    <div className='w-[50px] h-[50px] flex-shrink-0'>
-      <Image src='/images/leaf2.png' alt='leaf' width={50} height={50} />
-    </div>
-    <h2 className='text-green-900 font-montserrat font-semibold text-[calc(16px+1.75vw)]' style={{ textShadow: '2px 2px 4px rgba(0, 128, 0, 0.5)' }}>
-      {children}
-    </h2>
-  </div>
-);
-
-const getDirection = () => {
-  window.open('https://www.google.com/maps/dir/?api=1&destination=34.16161397311594,-118.05619732447848', '_blank');
-};
+import { ServicesCardComponent } from '@/components/services-card';
 
 export default function Page() {
   return (
@@ -77,8 +48,8 @@ export default function Page() {
       </section>
       {/* About Section */}
       <section className='flex flex-col w-full mt-8 md:mt-12 lg:mt-24 justify-center items-center py-8 gap-6 md:gap-8 lg:gap-10'>
-        <div className='w-[65px] h-[65px] sm:w-[85px] sm:h-[85px] md:w-[105px] md:h-[105px] lg:w-[125px] lg:h-[125px] flex items-center justify-center rounded-full bg-gradient-to-r from-orange-200 via-orange-500 to-pink-600'>
-          <div className='w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px] flex items-center justify-center rounded-full'>
+        <div className='w-[75px] h-[75px] sm:w-[85px] sm:h-[85px] md:w-[105px] md:h-[105px] lg:w-[125px] lg:h-[125px] flex items-center justify-center rounded-full bg-gradient-to-r from-orange-200 via-orange-500 to-pink-600'>
+          <div className='w-[70px] h-[70px] sm:w-[80px] sm:h-[80px] md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px] flex items-center justify-center rounded-full'>
             <Image
               src='/images/kazuyo_shichiri.jpg'
               alt='Kazuyo Shichiri'
@@ -90,9 +61,9 @@ export default function Page() {
           </div>
         </div>
         <div className='flex flex-col justify-center items-center gap-4 md:gap-6 lg:gap-8'>
-          <h1 className='text-green-900 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-poppins text-center'>Hello, (Konnichiwa)</h1>
+          <h1 className='text-green-900 text-2xl md:text-3xl lg:text-4xl font-bold font-poppins text-center'>Hello, (Konnichiwa)</h1>
           <p
-            className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl text-center font-poppins font-light max-w-3xl px-4'
+            className='text-green-900 text-base sm:text-lg md:text-lg lg:text-xl text-center font-poppins font-light max-w-3xl px-4'
             style={{ lineHeight: '1.5' }}>
             My name is Kazuyo, and I am Japanese. Until now, I have been working as a hairstylist in Pasadena, supported by many customers, and with
             gratitude, I was able to open my own salon in Sierra Madre. I look forward to meeting everyone.
@@ -109,14 +80,7 @@ export default function Page() {
       <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Services</SectionTitle>
         <div className='grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2'>
-          <ServiceCard
-            icon='hair_cut_retro'
-            title='Cut & Style'
-            description='Haircuts not included with color services. Shampoo and styling included'
-          />
-          <ServiceCard icon='hair_color_retro' title='Color & Bleach' description='カラー剤とかの説明' />
-          <ServiceCard icon='hair_perm_retro' title='Texture' description='何か特徴' />
-          <ServiceCard icon='make_up_retro' title='Makeup' description='何か特徴' />
+          <ServicesCardComponent />
         </div>
         {/* Head Spa */}
         <div className='flex flex-col bg-[#fffaeb] p-8 pb-10 rounded-xl gap-8 mt-8'>

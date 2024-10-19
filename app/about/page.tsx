@@ -2,24 +2,14 @@ import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-
-const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-  <div className='flex items-center gap-2'>
-    <div className='w-[50px] h-[50px] flex-shrink-0'>
-      <Image src='/images/leaf2.png' alt='leaf' width={50} height={50} />
-    </div>
-    <h2 className='text-green-900 font-poppins font-semibold text-[calc(16px+1.75vw)]' style={{ textShadow: '2px 2px 4px rgba(0, 128, 0, 0.5)' }}>
-      {children}
-    </h2>
-  </div>
-);
+import { SectionTitle } from '@/components/section-title';
 
 export default function AboutPage() {
   return (
     <main className='flex flex-col w-full h-full bg-white pb-24'>
       <section className='flex flex-col gap-8 px-4 mt-24 md:px-12 lg:px-48'>
         <SectionTitle>About OneLeaf Salon</SectionTitle>
-        <div className='flex flex-col md:flex-row gap-8 items-center'>
+        <div className='flex flex-col md:flex-row gap-8 items-center md:bg-[#fffaeb]'>
           <div className='w-full md:w-2/3'>
             <Image
               src='/images/store/exterior.png'
@@ -29,7 +19,7 @@ export default function AboutPage() {
               className='rounded-lg md:rounded-none object-cover aspect-3/4'
             />
           </div>
-          <div className='w-full'>
+          <div className='w-full p-2'>
             <p className='text-green-900 text-md font-poppins mb-4'>
               Welcome to OneLeaf Salon, where the art of Japanese hospitality meets expert hairstyling. I&apos;m Kazuyo, the owner and lead stylist,
               bringing over 20 years of experience from Tokyo&apos;s leading salons to Sierra Madre.
@@ -44,11 +34,11 @@ export default function AboutPage() {
 
       <section className='flex flex-col gap-8 px-4 mt-24 md:px-12 lg:px-48'>
         <SectionTitle>The Spirit of Omotenashi</SectionTitle>
-        <div className='flex flex-col md:flex-row gap-8 rounded-lg'>
+        <div className='flex flex-col md:flex-row gap-8 items-center md:bg-[#fffaeb]'>
           <div className='w-full md:w-2/3'>
             <Image src='/images/omotenashi.jpg' alt='Omotenashi' width={500} height={500} className='rounded-lg md:rounded-none object-cover' />
           </div>
-          <div className='w-full'>
+          <div className='w-full p-2'>
             <p className='text-green-900 text-md font-poppins mb-4'>
               Omotenashi is more than just service; it&apos;s a heartfelt approach to hospitality that anticipates and fulfills needs before
               they&apos;re expressed. At OneLeaf Salon, this philosophy is at the core of everything we do:

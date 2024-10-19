@@ -8,7 +8,6 @@ import { DotButton } from '@/components/ui/dot-button';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useSwipeable } from 'react-swipeable';
-import { motion, AnimatePresence, VariantLabels } from 'framer-motion';
 
 const images = [
   { src: '/images/store/exterior.png', alt: 'exterior' },

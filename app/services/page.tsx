@@ -2,32 +2,9 @@ import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { SectionTitle } from '@/components/section-title';
 import { PriceAccordion } from '@/components/PriceAccordion';
-
-type ServiceCardProps = {
-  icon: string;
-  title: string;
-  description: string;
-};
-
-const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-  <div className='flex items-center gap-2'>
-    <div className='w-[50px] h-[50px] flex-shrink-0'>
-      <Image src='/images/leaf2.png' alt='leaf' width={50} height={50} />
-    </div>
-    <h2 className='text-green-900 font-montserrat font-semibold text-[calc(16px+1.75vw)]' style={{ textShadow: '2px 2px 4px rgba(0, 128, 0, 0.5)' }}>
-      {children}
-    </h2>
-  </div>
-);
-
-const ServiceCard = ({ icon, title, description }: ServiceCardProps) => (
-  <div className='flex flex-col aspect-[4/3] mt-2 bg-[#fffaeb] p-8 gap-6'>
-    <Image src={`/images/${icon}.png`} alt={title} className='object-contain rounded-lg' width={70} height={70} />
-    <p className='text-green-900 text-2xl font-bold font-poppins'>{title}</p>
-    <p className='text-gray-500 text-lg break-words font-poppins'>{description}</p>
-  </div>
-);
+import { ServicesCardComponent } from '@/components/services-card';
 
 export default function page() {
   return (
@@ -35,10 +12,7 @@ export default function page() {
       <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
         <SectionTitle>Services</SectionTitle>
         <div className='grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2'>
-          <ServiceCard icon='hair_cut' title='Cut & Style' description='Haircuts not included with color services. Shampoo and styling included' />
-          <ServiceCard icon='hair_coloring' title='Color & Bleach' description='カラー剤とかの説明' />
-          <ServiceCard icon='hair_perms' title='Texture' description='何か特徴' />
-          <ServiceCard icon='make_up' title='Makeup' description='何か特徴' />
+          <ServicesCardComponent />
         </div>
       </section>
       <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
