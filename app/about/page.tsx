@@ -31,12 +31,12 @@ export default function AboutPage() {
           </div>
           <div className='w-full'>
             <p className='text-green-900 text-lg font-poppins mb-4'>
-              Welcome to OneLeaf Salon, where the art of Japanese hospitality meets expert hairstyling. I'm Kazuyo, the owner and lead stylist,
-              bringing over 20 years of experience from Tokyo's leading salons to Sierra Madre.
+              Welcome to OneLeaf Salon, where the art of Japanese hospitality meets expert hairstyling. I&apos;m Kazuyo, the owner and lead stylist,
+              bringing over 20 years of experience from Tokyo&apos;s leading salons to Sierra Madre.
             </p>
             <p className='text-green-900 text-lg font-poppins mb-4'>
-              At OneLeaf, we don't just style hair; we create experiences. Our salon is a blend of technical expertise and the warm, attentive service
-              that is the hallmark of Japanese omotenashi (hospitality).
+              At OneLeaf, we don&apos;t just style hair; we create experiences. Our salon is a blend of technical expertise and the warm, attentive
+              service that is the hallmark of Japanese omotenashi (hospitality).
             </p>
           </div>
         </div>
@@ -50,8 +50,8 @@ export default function AboutPage() {
           </div>
           <div className='w-full'>
             <p className='text-green-900 text-lg font-poppins mb-4'>
-              Omotenashi is more than just service; it's a heartfelt approach to hospitality that anticipates and fulfills needs before they're
-              expressed. At OneLeaf Salon, this philosophy is at the core of everything we do:
+              Omotenashi is more than just service; it&apos;s a heartfelt approach to hospitality that anticipates and fulfills needs before
+              they&apos;re expressed. At OneLeaf Salon, this philosophy is at the core of everything we do:
             </p>
             <ul className='list-disc list-inside text-green-900 text-lg font-poppins mb-4'>
               <li>Personalized consultations to understand your unique style and needs</li>
@@ -67,18 +67,18 @@ export default function AboutPage() {
         <SectionTitle>Our Commitment to You</SectionTitle>
         <p className='text-green-900 text-lg font-poppins mb-4'>
           At OneLeaf Salon, we believe that true beauty comes from within. Our goal is not just to style your hair, but to enhance your natural beauty
-          and boost your confidence. We take the time to listen, understand, and create a look that's uniquely you.
+          and boost your confidence. We take the time to listen, understand, and create a look that&apos;s uniquely you.
         </p>
         <p className='text-green-900 text-lg font-poppins mb-4'>
-          Whether you're here for a simple trim or a complete transformation, you'll experience the same level of dedicated, personalized care that
-          defines Japanese hospitality.
+          Whether you&apos;re here for a simple trim or a complete transformation, you&apos;ll experience the same level of dedicated, personalized
+          care that defines Japanese hospitality.
         </p>
       </section>
 
       <section className='flex flex-col gap-8 px-4 mt-16 md:px-12 lg:px-48'>
         <SectionTitle>Experience OneLeaf</SectionTitle>
         <p className='text-green-900 text-lg font-poppins mb-4'>
-          We invite you to experience the OneLeaf difference. From the moment you step through our doors, you'll be embraced by the warmth of
+          We invite you to experience the OneLeaf difference. From the moment you step through our doors, you&apos;ll be embraced by the warmth of
           omotenashi and the expertise of our skilled stylists.
         </p>
         <div className='flex justify-center'>
