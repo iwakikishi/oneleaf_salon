@@ -113,7 +113,7 @@ const Booklet = (props: any) => {
   const prevButtonClick = () => {
     if (flipBook.current && coverImageRef.current) {
       if (currentPage === 1) {
-        // 最初のページに戻る時のアニメーション
+        // 最初のペ���に戻る時のアニメーション
         (flipBook.current as any).pageFlip().flipPrev();
 
         setTimeout(() => {
@@ -255,13 +255,14 @@ const Booklet = (props: any) => {
           }}>
           <div className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-center`} style={{ height: `${adjustedHeight}px` }}>
             <p className='text-gray-500 overflow-hidden' style={{ fontSize: isMobile ? '2.25vw' : '3vh' }}>
-              Kazuyo has been a Master Hairstylist in Japan with more than 20 years of experience working in Tokyo's leading hair salons. She bases
-              each style on drawing out a person’s inner beauty, creating balance with their structural features, and listening to the customers’
-              vision on who they want to become as their best selves. The experience will be relaxed and fun as we work together to find the beautiful
-              energy you want to project into the world.
+              Kazuyo has been a Master Hairstylist in Japan with more than 20 years of experience working in Tokyo&apos;s leading hair salons. She
+              bases each style on drawing out a person&apos;s inner beauty, creating balance with their structural features, and listening to the
+              customers&apos; vision on who they want to become as their best selves. The experience will be relaxed and fun as we work together to
+              find the beautiful energy you want to project into the world.
             </p>
           </div>
         </div>
+
         {/* ページ3-1 */}
         <div
           className="flex bg-[url('/images/booklet/bg-paper-white.png')] bg-cover bg-no-repeat shadow-md shadow-gray-600"
@@ -367,7 +368,7 @@ const Booklet = (props: any) => {
             height: `${adjustedHeight}px`,
           }}>
           <div className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-center font-poppins`} style={{ height: `${adjustedHeight}px` }}>
-            <p className='text-gray-500 overflow-hidden' style={{ fontSize: isMobile ? '2.25vw' : '3vh' }}>
+            <p className='text-gray-500 overflow-hidden' style={{ fontSize: isMobile ? '2.25vw' : '12px' }}>
               Waterfall Japanese Headspa In Zen practice, there is a form of training called takigyo, or waterfall meditation, which involves
               purifying the mind under a waterfall. Inspired by her roots and Japanese culture, Kazuyo developed a unique relaxation treatment called
               the Waterfall Head Spa. This method aims to clear away worldly desires, foster mindfulness, and bring deep tranquility to the mind.
@@ -398,7 +399,7 @@ const Booklet = (props: any) => {
             height: `${adjustedHeight}px`,
           }}>
           <div className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-center font-poppins`} style={{ height: `${adjustedHeight}px` }}>
-            <p className='text-gray-500 overflow-hidden' style={{ fontSize: isMobile ? '1.75vw' : '2.5vh' }}>
+            <p className='text-gray-500 overflow-hidden' style={{ fontSize: isMobile ? '1.75vw' : '12px' }}>
               MONK MODE is inspired by the lifestyle of monks, focusing on detaching from material desires and pursuing spiritual growth through
               introspection and meditation. Kazuyo&apos;s original Zen Spa is truly special, using primarily organic products. The combination of
               exceptional organic facial and head massage treatments will leave you feeling completely rejuvenated, as if you have been reborn :About
