@@ -26,6 +26,7 @@ const Booklet = (props: any) => {
 
   const flipBook = useRef(null);
   const coverImageRef = useRef<HTMLImageElement>(null);
+  const coverVideoRef = useRef<HTMLVideoElement>(null);
 
   const PageCover = React.forwardRef<HTMLDivElement, { children: React.ReactNode }>((props, ref) => {
     return (
@@ -94,11 +95,27 @@ const Booklet = (props: any) => {
     return () => window.removeEventListener('resize', adjustFontSize);
   }, [adjustedHeight]);
 
+  // const nextButtonClick = () => {
+  //   if (flipBook.current && coverImageRef.current) {
+  //     if (currentPage === 0) {
+  //       coverImageRef.current.style.transform = `translateX(${adjustedWidth / 4}px)`;
+  //       coverImageRef.current.style.transition = 'transform 0.6s ease-in-out';
+  //       setTimeout(() => {
+  //         (flipBook.current as any).pageFlip().flipNext();
+  //         setCurrentPage(1);
+  //       }, 600);
+  //     } else {
+  //       (flipBook.current as any).pageFlip().flipNext();
+  //       setCurrentPage((flipBook.current as any).pageFlip().getCurrentPageIndex());
+  //     }
+  //   }
+  // };
+
   const nextButtonClick = () => {
-    if (flipBook.current && coverImageRef.current) {
+    if (flipBook.current && coverVideoRef.current) {
       if (currentPage === 0) {
-        coverImageRef.current.style.transform = `translateX(${adjustedWidth / 4}px)`;
-        coverImageRef.current.style.transition = 'transform 0.6s ease-in-out';
+        coverVideoRef.current.style.transform = `translateX(${adjustedWidth / 4}px)`;
+        coverVideoRef.current.style.transition = 'transform 0.6s ease-in-out';
         setTimeout(() => {
           (flipBook.current as any).pageFlip().flipNext();
           setCurrentPage(1);
@@ -111,27 +128,52 @@ const Booklet = (props: any) => {
   };
 
   const prevButtonClick = () => {
-    if (flipBook.current && coverImageRef.current) {
+    if (flipBook.current && coverVideoRef.current) {
       if (currentPage === 1) {
-        // 最初のペ���に戻る時のアニメーション
         (flipBook.current as any).pageFlip().flipPrev();
 
         setTimeout(() => {
           setCurrentPage(0);
           setShowPrevButton(false);
-          if (coverImageRef.current) {
-            coverImageRef.current.style.transform = 'translateX(0)';
-            coverImageRef.current.style.transition = 'transform 0.6s ease-in-out';
+          if (coverVideoRef.current) {
+            coverVideoRef.current.style.transform = 'translateX(0)';
+            coverVideoRef.current.style.transition = 'transform 0.6s ease-in-out';
           }
         }, 600);
+        setTimeout(() => {
+          if (coverVideoRef.current) {
+            coverVideoRef.current.currentTime = 0;
+          }
+        }, 1200);
       } else {
-        // 通常のページめくり
         (flipBook.current as any).pageFlip().flipPrev();
         setCurrentPage((flipBook.current as any).pageFlip().getCurrentPageIndex());
       }
       setShowNextButton(true);
     }
   };
+
+  // const prevButtonClick = () => {
+  //   if (flipBook.current && coverImageRef.current) {
+  //     if (currentPage === 1) {
+  //       (flipBook.current as any).pageFlip().flipPrev();
+
+  //       setTimeout(() => {
+  //         setCurrentPage(0);
+  //         setShowPrevButton(false);
+  //         if (coverImageRef.current) {
+  //           coverImageRef.current.style.transform = 'translateX(0)';
+  //           coverImageRef.current.style.transition = 'transform 0.6s ease-in-out';
+  //         }
+  //       }, 600);
+  //     } else {
+  //       // 通常のページめくり
+  //       (flipBook.current as any).pageFlip().flipPrev();
+  //       setCurrentPage((flipBook.current as any).pageFlip().getCurrentPageIndex());
+  //     }
+  //     setShowNextButton(true);
+  //   }
+  // };
 
   return adjustedWidth && adjustedHeight ? (
     <div className='flex flex-col w-full items-center justify-center py-8'>
@@ -149,14 +191,14 @@ const Booklet = (props: any) => {
         maxHeight={adjustedHeight}
         maxShadowOpacity={0.5}
         showCover={true}
-        flippingTime={600}
+        flippingTime={isMobile ? 900 : 600}
         mobileScrollSupport={true}
         onFlip={(e) => onFlip(e)}
         className={`h-[${adjustedHeight}]`}
         style={{ height: `${adjustedHeight}` }}
         startPage={0}
         drawShadow={true}
-        useMouseEvents={true}
+        useMouseEvents={false}
         swipeDistance={30}
         clickEventForward={true}
         usePortrait={false}
@@ -168,14 +210,30 @@ const Booklet = (props: any) => {
         </div> */}
         {/* Cover */}
         <div className={`flex`}>
-          <Image
+          <video
+            ref={coverVideoRef}
+            autoPlay
+            muted
+            playsInline
+            style={{
+              width: adjustedWidth / 2,
+              height: adjustedHeight,
+              marginLeft: coverMargin,
+              transform: 'translateX(0)',
+              transition: 'none',
+              borderTopRightRadius: 24,
+              borderBottomRightRadius: 12,
+              boxShadow: '0 0 24px 0 rgba(0, 0, 0, 1)',
+            }}>
+            <source src='/images/booklet/booklet-cover.mp4' type='video/mp4' />
+          </video>
+          {/* <Image
             ref={coverImageRef}
             src={`/images/booklet/booklet-cover.png`}
             alt='kazuyo'
             width={adjustedWidth / 2}
             height={adjustedHeight}
             style={{
-              // backgroundColor: '#fffaeb',
               marginLeft: coverMargin,
               transform: 'translateX(0)',
               transition: 'none',
@@ -183,7 +241,7 @@ const Booklet = (props: any) => {
               borderBottomRightRadius: 12,
               boxShadow: '0 0 24px 0 rgba(0, 0, 0, 1)',
             }}
-          />
+          /> */}
         </div>
         {/* ページ1-1 */}
         <div
@@ -414,7 +472,7 @@ const Booklet = (props: any) => {
       <div className='flex mt-6 justify-center'>
         <div className='flex gap-4'>
           <Button variant='secondary' className='text-black font-poppins' disabled={!showPrevButton} onClick={prevButtonClick}>
-            Previous
+            Prev
           </Button>
           <Button variant='secondary' className='text-black font-poppins' disabled={!showNextButton} onClick={nextButtonClick}>
             Next

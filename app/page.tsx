@@ -9,13 +9,12 @@ import ImageCarousel from '@/components/image-carousel';
 import { SectionTitle } from '@/components/section-title';
 import { PriceAccordion } from '@/components/PriceAccordion';
 import { ServicesCardComponent } from '@/components/services-card';
-import PageFlip from '@/components/flip-book';
 
 export default function Page() {
   return (
     <main className='flex flex-col w-full overflow-x-hidden scrollbar-transparent'>
       {/* Booklet Section */}
-      <section className='flex mt-8 md:mt-12 lg:mt-24 justify-center py-8 bg-[url(/images/booklet/bg-booklet-1.png)] bg-cover bg-no-repeat bg-black/10 bg-blend-overlay'>
+      <section className='flex justify-center pt-24 py-8 bg-[url(/images/booklet/bg-booklet-2.png)] bg-cover bg-no-repeat bg-black/10 bg-blend-overlay'>
         <React.Suspense fallback={<div>Loading...</div>}>
           <Booklet />
         </React.Suspense>
