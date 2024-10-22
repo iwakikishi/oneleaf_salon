@@ -9,10 +9,17 @@ import ImageCarousel from '@/components/image-carousel';
 import { SectionTitle } from '@/components/section-title';
 import { PriceAccordion } from '@/components/PriceAccordion';
 import { ServicesCardComponent } from '@/components/services-card';
+import PageFlip from '@/components/flip-book';
 
 export default function Page() {
   return (
     <main className='flex flex-col w-full overflow-x-hidden scrollbar-transparent'>
+      {/* Booklet Section */}
+      <section className='flex mt-8 md:mt-12 lg:mt-24 justify-center py-8 bg-[url(/images/booklet/bg-booklet-1.png)] bg-cover bg-no-repeat bg-black/10 bg-blend-overlay'>
+        <React.Suspense fallback={<div>Loading...</div>}>
+          <Booklet />
+        </React.Suspense>
+      </section>
       {/* Hero Section */}
       <section className='flex w-full h-[150vw] xs:h-auto xs:aspect-video'>
         <div className='flex w-full h-full relative'>
@@ -65,17 +72,19 @@ export default function Page() {
           <p
             className='text-green-900 text-base sm:text-lg md:text-lg lg:text-xl text-center font-poppins font-light max-w-3xl px-4'
             style={{ lineHeight: '1.5' }}>
-            My name is Kazuyo, and I am Japanese. Until now, I have been working as a hairstylist in Pasadena, supported by many customers, and with
-            gratitude, I was able to open my own salon in Sierra Madre. I look forward to meeting everyone.
+            Hello, my name is Kazuyo. I am originally from Japan, with over 25 years of experience as a hairstylist, including time spent working in
+            Tokyo. After many wonderful years serving clients in Pasadena, I’m excited to bring my passion and expertise to my own salon here in
+            Sierra Madre. With deep gratitude, I look forward to welcoming you to a space where beauty and relaxation meet.
           </p>
         </div>
       </section>
       {/* Booklet Section */}
-      <section className='flex w-full mt-8 md:mt-12 lg:mt-24 justify-center py-8 px-8 md:px-12 lg:px-16 bg-[#fffaeb]'>
+      {/* <section className='flex w-full mt-8 md:mt-12 lg:mt-24 justify-center py-8 px-8 md:px-12 lg:px-16 bg-[#fffaeb]'>
         <React.Suspense fallback={<div>Loading...</div>}>
           <Booklet />
         </React.Suspense>
-      </section>
+      </section> */}
+
       {/* Services Section */}
       <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Services</SectionTitle>
