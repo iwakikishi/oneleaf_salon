@@ -26,7 +26,7 @@ export default function Page() {
             <source src='/videos/head_spa_1.mp4' type='video/mp4' />
           </video>
           <div className='absolute inset-0 bg-black/50' />
-          <div className='absolute top-1/2 inset-0 flex flex-col px-4 xs:pl-12 gap-3'>
+          <div className={`absolute top-1/2 xs:top-1/3 md:top-1/2 inset-0 flex flex-col px-4 xs:pl-12 gap-3`}>
             <div className='flex flex-col'>
               <h1 className='text-white text-2xl xs:text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-bold font-poppins tracking-wider'>
                 OneLeaf Salon

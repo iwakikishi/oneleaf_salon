@@ -190,7 +190,7 @@ const Booklet = (props: any) => {
         startZIndex={-1}
         autoSize={true}
         disableFlipByClick={false}
-        size='stretch'
+        size='fixed'
         minWidth={adjustedWidth / 2}
         maxWidth={adjustedWidth / 2}
         minHeight={adjustedHeight}
@@ -273,7 +273,7 @@ const Booklet = (props: any) => {
             height: `${adjustedHeight}px`,
           }}>
           <div className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-center font-poppins`} style={{ height: `${adjustedHeight}px` }}>
-            <p className={`text-gray-500 overflow-hidden`} style={{ fontSize: isMobile ? '2.25vw' : '3vh' }}>
+            <p className={`text-black overflow-hidden`} style={{ fontSize: isMobile ? '2.25vw' : '12px' }}>
               Hello, my name is Kazuyo. I am originally from Japan, with over 25 years of experience as a hairstylist, including time spent working in
               Tokyo. After many wonderful years serving clients in Pasadena, I&apos;m excited to bring my passion and expertise to my own salon here
               in Sierra Madre. With deep gratitude, I look forward to welcoming you to a space where beauty and relaxation meet.
@@ -299,7 +299,7 @@ const Booklet = (props: any) => {
             height: `${adjustedHeight}px`,
           }}>
           <div className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-center`} style={{ height: `${adjustedHeight}px` }}>
-            <p className='text-gray-500 overflow-hidden' style={{ fontSize: isMobile ? '2.25vw' : '3vh' }}>
+            <p className='text-black overflow-hidden' style={{ fontSize: isMobile ? '2.25vw' : '12px' }}>
               Kazuyo has been a Master Hairstylist in Japan with more than 20 years of experience working in Tokyo&apos;s leading hair salons. She
               bases each style on drawing out a person&apos;s inner beauty, creating balance with their structural features, and listening to the
               customers&apos; vision on who they want to become as their best selves. The experience will be relaxed and fun as we work together to
@@ -341,7 +341,7 @@ const Booklet = (props: any) => {
             height: `${adjustedHeight}px`,
           }}>
           <div className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-center font-poppins`} style={{ height: `${adjustedHeight}px` }}>
-            <p className='text-gray-500 overflow-hidden' style={{ fontSize: isMobile ? '1.75vw' : '2.5vh' }}>
+            <p className='text-black overflow-hidden' style={{ fontSize: isMobile ? '1.7vw' : '12px' }}>
               Kazuyo, a Japanese hairstylist with a vibrant spirit and an extraordinary eye, embarked on an adventure far from her origins. Both of
               her grandfathers were monks at a traditional Japanese temple, where from an early age, she was taught by them about simplicity,
               gratitude for nature, and mindfulness. Touch your Hair , touch your Hart Through her work as a hairstylist, Kazuyo has always valued the
@@ -413,7 +413,7 @@ const Booklet = (props: any) => {
             height: `${adjustedHeight}px`,
           }}>
           <div className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-center font-poppins`} style={{ height: `${adjustedHeight}px` }}>
-            <p className='text-gray-500 overflow-hidden' style={{ fontSize: isMobile ? '2.25vw' : '12px' }}>
+            <p className='text-black overflow-hidden' style={{ fontSize: isMobile ? '2.25vw' : '12px' }}>
               Waterfall Japanese Headspa In Zen practice, there is a form of training called takigyo, or waterfall meditation, which involves
               purifying the mind under a waterfall. Inspired by her roots and Japanese culture, Kazuyo developed a unique relaxation treatment called
               the Waterfall Head Spa. This method aims to clear away worldly desires, foster mindfulness, and bring deep tranquility to the mind.
@@ -444,7 +444,7 @@ const Booklet = (props: any) => {
             height: `${adjustedHeight}px`,
           }}>
           <div className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-center font-poppins`} style={{ height: `${adjustedHeight}px` }}>
-            <p className='text-gray-500 overflow-hidden' style={{ fontSize: isMobile ? '1.75vw' : '12px' }}>
+            <p className='text-black overflow-hidden' style={{ fontSize: isMobile ? '1.75vw' : '12px' }}>
               MONK MODE is inspired by the lifestyle of monks, focusing on detaching from material desires and pursuing spiritual growth through
               introspection and meditation. Kazuyo&apos;s original Zen Spa is truly special, using primarily organic products. The combination of
               exceptional organic facial and head massage treatments will leave you feeling completely rejuvenated, as if you have been reborn :About
