@@ -143,6 +143,7 @@ const Booklet = (props: any) => {
         setTimeout(() => {
           if (coverVideoRef.current) {
             coverVideoRef.current.currentTime = 0;
+            coverVideoRef.current.play();
           }
         }, 1200);
       } else {
@@ -221,7 +222,7 @@ const Booklet = (props: any) => {
               marginLeft: coverMargin,
               transform: 'translateX(0)',
               transition: 'none',
-              borderTopRightRadius: 24,
+              borderTopRightRadius: 18,
               borderBottomRightRadius: 12,
               boxShadow: '0 0 24px 0 rgba(0, 0, 0, 1)',
             }}>
