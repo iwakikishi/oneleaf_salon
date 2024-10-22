@@ -30,34 +30,6 @@ const Booklet = (props: any) => {
   const coverImageRef = useRef<HTMLImageElement>(null);
   const coverVideoRef = useRef<HTMLVideoElement>(null);
 
-  const PageCover = React.forwardRef<HTMLDivElement, { children: React.ReactNode }>((props, ref) => {
-    return (
-      <div className='page page-cover' ref={ref} data-density='hard'>
-        <div className='page-content'>
-          <h2>{props.children}</h2>
-        </div>
-      </div>
-    );
-  });
-
-  PageCover.displayName = 'PageCover';
-
-  const Page = React.forwardRef<HTMLDivElement, { image: string; children: React.ReactNode; number: number }>((props, ref) => {
-    return (
-      <div className='page' ref={ref as React.Ref<HTMLDivElement>}>
-        <div className='page-content'>
-          <div className='page-image'>
-            <Image src={props.image} alt='kazuyo' width={adjustedWidth / 2} height={adjustedHeight} />
-          </div>
-          <div className='page-text'>{props.children}</div>
-          <div className='page-footer'>{props.number + 1}</div>
-        </div>
-      </div>
-    );
-  });
-
-  Page.displayName = 'Page';
-
   const onFlip = useCallback(
     (e: any) => {
       const newPage = e.data;
@@ -98,25 +70,25 @@ const Booklet = (props: any) => {
     setCoverMargin(`-${adjustedWidth / 4}px`);
   }, [adjustedWidth]);
 
-  useEffect(() => {
-    const adjustFontSize = () => {
-      if (textRef.current) {
-        let size = 12;
-        textRef.current.style.fontSize = `${size}px`;
+  // useEffect(() => {
+  //   const adjustFontSize = () => {
+  //     if (textRef.current) {
+  //       let size = 12;
+  //       textRef.current.style.fontSize = `${size}px`;
 
-        while (textRef.current.scrollHeight > textRef.current.clientHeight && size > 8) {
-          size--;
-          textRef.current.style.fontSize = `${size}px`;
-        }
+  //       while (textRef.current.scrollHeight > textRef.current.clientHeight && size > 8) {
+  //         size--;
+  //         textRef.current.style.fontSize = `${size}px`;
+  //       }
 
-        setFontSize(size);
-      }
-    };
+  //       setFontSize(size);
+  //     }
+  //   };
 
-    adjustFontSize();
-    window.addEventListener('resize', adjustFontSize);
-    return () => window.removeEventListener('resize', adjustFontSize);
-  }, [adjustedHeight]);
+  //   adjustFontSize();
+  //   window.addEventListener('resize', adjustFontSize);
+  //   return () => window.removeEventListener('resize', adjustFontSize);
+  // }, [adjustedHeight]);
 
   // const nextButtonClick = () => {
   //   if (flipBook.current && coverImageRef.current) {
@@ -220,12 +192,13 @@ const Booklet = (props: any) => {
             style={{
               width: adjustedWidth / 2,
               height: adjustedHeight,
+              // marginTop: '-12px',
               marginLeft: coverMargin,
               transform: 'translateX(0)',
               transition: 'none',
               borderTopRightRadius: 18,
               borderBottomRightRadius: 12,
-              boxShadow: '0 0 24px 0 rgba(0, 0, 0, 1)',
+              boxShadow: '0 0 12px 0 rgba(0, 0, 0, 1)',
             }}>
             <source src='/images/booklet/booklet-cover.mp4' type='video/mp4' />
           </video>

@@ -21,7 +21,7 @@ const MobileHeader = () => {
   }, []);
 
   const headerClass = `flex w-full h-16 p-4 z-10 fixed top-0 left-0 right-0 transition-colors duration-300 ${
-    isScrolled ? 'bg-white' : 'bg-transparent'
+    isScrolled ? 'bg-white' : 'bg-white/50'
   }`;
 
   const menuButtonClass = `px-2 rounded-full items-center justify-center ${isScrolled ? 'bg-white' : 'bg-lime-700/70'}`;
@@ -75,7 +75,10 @@ const MobileHeader = () => {
             </div>
           </PopoverContent>
         </Popover>
-        <div />
+        <div className='text-[10px] text-black font-poppins self-start pl-4'>
+          OneLeaf Salon
+          <br /> Hair by Kazuyo
+        </div>
         <Button size={'sm'} asChild className={bookNowButtonClass}>
           <Link href='https://booking.setmore.com/scheduleappointment/f37b5239-7295-4828-9acb-a560c84d37ef' target='_blank'>
             Book Now

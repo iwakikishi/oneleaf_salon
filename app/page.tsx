@@ -137,13 +137,13 @@ export default function Page() {
               We are open to serve you during the following hours:
             </p>
             <ul className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>
-              <li>Monday: Closed</li>
-              <li>Tuesday: 10:00 AM - 6:00 PM</li>
-              <li>Wednesday: 10:00 AM - 6:00 PM</li>
-              <li>Thursday: 10:00 AM - 6:00 PM</li>
-              <li>Friday: 10:00 AM - 6:00 PM</li>
-              <li>Saturday: 9:00 AM - 5:00 PM</li>
-              <li>Sunday: 9:00 AM - 5:00 PM</li>
+              <li>Monday: 9:00 AM - 6:00 PM</li>
+              <li>Tuesday: Closed</li>
+              <li>Wednesday: 9:00 AM - 6:00 PM</li>
+              <li>Thursday: 9:00 AM - 6:00 PM</li>
+              <li>Friday: 9:00 AM - 6:00 PM</li>
+              <li>Saturday: 9:00 AM - 6:00 PM</li>
+              <li>Sunday: 9:00 AM - 6:00 PM</li>
             </ul>
             <p className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>
               Please note that our hours may vary on holidays. We recommend booking an appointment in advance to ensure availability.
@@ -156,20 +156,24 @@ export default function Page() {
         <SectionTitle>Appointment Policy at OneLeaf Salon</SectionTitle>
         <div className='flex flex-col gap-8 px-4'>
           <p className='text-green-900 text-base sm:text-lg md:text-lg lg:text-xl font-poppins'>
-            Thank you for choosing OneLeaf Salon! We look forward to welcoming you. To ensure that all our clients receive the best possible service,
-            please note the following:
+            We are grateful that you have chosen OneLeaf Salon and look forward to your visit. To provide the best experience for all our clients, we
+            kindly request that you review the following policies:
           </p>
           <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
-            Punctuality: Please arrive on time for your appointment. If you are more than 10 minutes late, we may not be able to accommodate your
-            service, and a cancellation fee equivalent to 50% of the service cost will apply.
+            Punctuality: Please be aware that if you are more than 10 minutes late, we may not be able to provide your scheduled service.
+            Additionally, in such cases, a cancellation fee of 50% of the service cost may apply.
           </p>
           <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
             No Show: If you do not show up for your appointment without notifying us, a no-show fee equivalent to 100% of the service fee will be
-            charged.
+            charged. Additionally, we regret to inform you that we may not be able to accept any future appointments.
           </p>
           <Link href='/cancellation-policy'>
             <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
               ● <span className='underline'>Cancellation Policy</span>
+            </p>
+            <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
+              We kindly request that you strictly cancel your appointment at least 24 hours in advance. Unfortunately, we are unable to accommodate
+              cancellations made after 24 hours. In such cases, a fee equivalent to 100% of the service cost will be charged.
             </p>
           </Link>
           <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
@@ -184,7 +188,7 @@ export default function Page() {
             </a>
           </p>
           <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
-            Thank you for your understanding and we hope to see you soon.
+            Thank you for your understanding and cooperation! We are excitedly looking forward to your visit and can&apos;t wait to see you soon!{' '}
           </p>
         </div>
       </section>
@@ -201,7 +205,7 @@ export default function Page() {
         <p className='text-gray-500 px-4 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
           The parking area is located at the rear of the building. Please proceed to the back for convenient parking.
         </p>
-        <div className='w-full relative mb-10' style={{ paddingBottom: '56.25%', height: '80vh' }}>
+        <div className='w-full aspect-square relative mb-10'>
           <iframe
             src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.402952049803!2d-118.05619732447848!3d34.16161397311594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2dc70abd9e333%3A0x8436c838e56c8dc5!2s38%20W%20Sierra%20Madre%20Blvd%2C%20Sierra%20Madre%2C%20CA%2091024%2C%20USA!5e0!3m2!1sen!2sus!4v1716251840342!5m2!1sen!2sus'
             className='absolute top-0 left-0 w-full h-full'
