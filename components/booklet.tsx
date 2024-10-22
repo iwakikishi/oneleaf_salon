@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -26,6 +26,7 @@ const Booklet = (props: any) => {
 
   const textRef = useRef<HTMLParagraphElement>(null);
   const flipBook = useRef(null);
+  const divRef = useRef<HTMLDivElement>(null);
   const coverImageRef = useRef<HTMLImageElement>(null);
   const coverVideoRef = useRef<HTMLVideoElement>(null);
 
@@ -57,20 +58,41 @@ const Booklet = (props: any) => {
 
   Page.displayName = 'Page';
 
-  const onFlip = (e: any) => {
-    const newPage = e.data;
-    setCurrentPage(newPage);
-    if (newPage === 6) {
-      setShowNextButton(false);
-    } else {
-      setShowNextButton(true);
-    }
-    if (newPage !== 0) {
-      setShowPrevButton(true);
-    } else {
-      setShowPrevButton(false);
-    }
-  };
+  const onFlip = useCallback(
+    (e: any) => {
+      const newPage = e.data;
+      setCurrentPage(newPage);
+      if (newPage === 0) {
+        setShowPrevButton(false);
+        setTimeout(() => {
+          if (divRef.current) {
+            divRef.current.style.transform = 'translateX(0)';
+            divRef.current.style.transition = 'transform 0.6s ease-in-out';
+          }
+          if (coverVideoRef.current) {
+            coverVideoRef.current.style.transform = 'translateX(0)';
+            coverVideoRef.current.style.transition = 'transform 0.6s ease-in-out';
+          }
+          if (coverVideoRef.current) {
+            coverVideoRef.current.currentTime = 0;
+            coverVideoRef.current.play();
+          }
+        }, 600);
+        setTimeout(() => {
+          if (coverVideoRef.current) {
+            coverVideoRef.current.currentTime = 0;
+            coverVideoRef.current.play();
+          }
+        }, 1200);
+      } else if (newPage === 6) {
+        setShowNextButton(false);
+      } else {
+        setShowNextButton(true);
+        setShowPrevButton(true);
+      }
+    },
+    [currentPage]
+  );
 
   useEffect(() => {
     setCoverMargin(`-${adjustedWidth / 4}px`);
@@ -124,39 +146,16 @@ const Booklet = (props: any) => {
         coverVideoRef.current.style.transition = 'transform 0.6s ease-in-out';
         setTimeout(() => {
           (flipBook.current as any).pageFlip().flipNext();
-          setCurrentPage(1);
         }, 600);
       } else {
         (flipBook.current as any).pageFlip().flipNext();
-        setCurrentPage((flipBook.current as any).pageFlip().getCurrentPageIndex());
       }
     }
   };
 
   const prevButtonClick = () => {
     if (flipBook.current && coverVideoRef.current) {
-      if (currentPage === 1) {
-        (flipBook.current as any).pageFlip().flipPrev();
-
-        setTimeout(() => {
-          setCurrentPage(0);
-          setShowPrevButton(false);
-          if (coverVideoRef.current) {
-            coverVideoRef.current.style.transform = 'translateX(0)';
-            coverVideoRef.current.style.transition = 'transform 0.6s ease-in-out';
-          }
-        }, 600);
-        setTimeout(() => {
-          if (coverVideoRef.current) {
-            coverVideoRef.current.currentTime = 0;
-            coverVideoRef.current.play();
-          }
-        }, 1200);
-      } else {
-        (flipBook.current as any).pageFlip().flipPrev();
-        setCurrentPage((flipBook.current as any).pageFlip().getCurrentPageIndex());
-      }
-      setShowNextButton(true);
+      (flipBook.current as any).pageFlip().flipPrev();
     }
   };
 
@@ -191,7 +190,7 @@ const Booklet = (props: any) => {
         startZIndex={-1}
         autoSize={true}
         disableFlipByClick={false}
-        size='fixed'
+        size='stretch'
         minWidth={adjustedWidth / 2}
         maxWidth={adjustedWidth / 2}
         minHeight={adjustedHeight}
@@ -205,13 +204,13 @@ const Booklet = (props: any) => {
         style={{ height: `${adjustedHeight}` }}
         startPage={0}
         drawShadow={true}
-        useMouseEvents={currentPage === 0 ? false : true}
+        useMouseEvents={true}
         swipeDistance={30}
         clickEventForward={true}
         usePortrait={false}
-        showPageCorners={true}>
+        showPageCorners={false}>
         {/* Cover */}
-        <div className={`flex`}>
+        <div ref={divRef} className='flex' style={{ marginLeft: coverMargin, transform: 'translateX(0)', transition: 'none' }}>
           <video
             ref={coverVideoRef}
             autoPlay
@@ -227,7 +226,6 @@ const Booklet = (props: any) => {
               borderTopRightRadius: 18,
               borderBottomRightRadius: 12,
               boxShadow: '0 0 24px 0 rgba(0, 0, 0, 1)',
-              display: isVideoLoaded ? 'block' : 'none',
             }}>
             <source src='/images/booklet/booklet-cover.mp4' type='video/mp4' />
           </video>
