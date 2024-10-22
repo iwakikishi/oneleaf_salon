@@ -22,8 +22,9 @@ const Booklet = (props: any) => {
   const [currentPage, setCurrentPage] = useState(0);
   const [coverMargin, setCoverMargin] = useState(`-${adjustedWidth / 4}px`);
   const [fontSize, setFontSize] = useState(12);
-  const textRef = useRef<HTMLParagraphElement>(null);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
+  const textRef = useRef<HTMLParagraphElement>(null);
   const flipBook = useRef(null);
   const coverImageRef = useRef<HTMLImageElement>(null);
   const coverVideoRef = useRef<HTMLVideoElement>(null);
@@ -111,6 +112,11 @@ const Booklet = (props: any) => {
   //   }
   // };
 
+  const handleVideoLoaded = () => {
+    console.log('video loaded');
+    setIsVideoLoaded(true);
+  };
+
   const nextButtonClick = () => {
     if (flipBook.current && coverVideoRef.current) {
       if (currentPage === 0) {
@@ -177,13 +183,13 @@ const Booklet = (props: any) => {
   // };
 
   return adjustedWidth && adjustedHeight ? (
-    <div className='flex flex-col w-full items-center justify-center py-8'>
+    <div className={`flex flex-col w-full h-[${adjustedHeight}px] items-center justify-center py-8`}>
       <HTMLFlipBook
         ref={(el) => (flipBook.current = el || null)}
         width={adjustedWidth / 2}
         height={adjustedHeight}
         startZIndex={-1}
-        autoSize={false}
+        autoSize={true}
         disableFlipByClick={false}
         size='fixed'
         minWidth={adjustedWidth / 2}
@@ -193,22 +199,17 @@ const Booklet = (props: any) => {
         maxShadowOpacity={0.5}
         showCover={true}
         flippingTime={isMobile ? 900 : 600}
-        mobileScrollSupport={true}
+        mobileScrollSupport={false}
         onFlip={(e) => onFlip(e)}
         className={`h-[${adjustedHeight}]`}
         style={{ height: `${adjustedHeight}` }}
         startPage={0}
         drawShadow={true}
-        useMouseEvents={false}
+        useMouseEvents={currentPage === 0 ? false : true}
         swipeDistance={30}
         clickEventForward={true}
         usePortrait={false}
         showPageCorners={true}>
-        {/* <div className='flex flex-col p-10' style={{ width: adjustedWidth / 2, height: adjustedHeight }}>
-            <div className='flex flex-col items-center justify-center' style={{ width: adjustedWidth / 2, height: adjustedHeight }}>
-            <p className='text-black text-2xl font-bold'>Stories of Kazuyo</p>
-            </div>
-        </div> */}
         {/* Cover */}
         <div className={`flex`}>
           <video
@@ -216,6 +217,7 @@ const Booklet = (props: any) => {
             autoPlay
             muted
             playsInline
+            onLoadedData={handleVideoLoaded}
             style={{
               width: adjustedWidth / 2,
               height: adjustedHeight,
@@ -225,24 +227,10 @@ const Booklet = (props: any) => {
               borderTopRightRadius: 18,
               borderBottomRightRadius: 12,
               boxShadow: '0 0 24px 0 rgba(0, 0, 0, 1)',
+              display: isVideoLoaded ? 'block' : 'none',
             }}>
             <source src='/images/booklet/booklet-cover.mp4' type='video/mp4' />
           </video>
-          {/* <Image
-            ref={coverImageRef}
-            src={`/images/booklet/booklet-cover.png`}
-            alt='kazuyo'
-            width={adjustedWidth / 2}
-            height={adjustedHeight}
-            style={{
-              marginLeft: coverMargin,
-              transform: 'translateX(0)',
-              transition: 'none',
-              borderTopRightRadius: 24,
-              borderBottomRightRadius: 12,
-              boxShadow: '0 0 24px 0 rgba(0, 0, 0, 1)',
-            }}
-          /> */}
         </div>
         {/* ページ1-1 */}
         <div
