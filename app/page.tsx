@@ -117,9 +117,9 @@ export default function Page() {
         <div className='flex flex-col gap-8'>
           <iframe
             src='https://snapwidget.com/embed/1082314'
-            class='snapwidget-widget'
-            allowtransparency='true'
-            frameborder='0'
+            className='snapwidget-widget'
+            // allowtransparency='true'
+            // frameborder='0'
             scrolling='no'
             style={{ border: 'none', overflow: 'hidden', width: '765px', height: '765px' }}
             title='Posts from Instagram'></iframe>
