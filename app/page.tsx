@@ -9,6 +9,8 @@ import ImageCarousel from '@/components/image-carousel';
 import { SectionTitle } from '@/components/section-title';
 import { PriceAccordion } from '@/components/PriceAccordion';
 import { ServicesCardComponent } from '@/components/services-card';
+import { InstagramFeed } from '@/components/instagram-feed';
+import { Instagram } from 'lucide-react';
 
 export default function Page() {
   return (
@@ -112,22 +114,27 @@ export default function Page() {
         </div>
       </section>
       {/* Instagram Section */}
-      <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
+      <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Instagram</SectionTitle>
-        <div className='flex flex-col gap-8'>
-          <iframe
-            src='https://snapwidget.com/embed/1082314'
-            className='snapwidget-widget'
-            // allowtransparency='true'
-            // frameborder='0'
-            scrolling='no'
-            style={{ border: 'none', overflow: 'hidden', width: '765px', height: '765px' }}
-            title='Posts from Instagram'></iframe>
+        <div className=' flex flex-row gap-2 bg-[#f0f9ff] p-4 rounded-xl'>
+          <Instagram size={24} className='text-green-900' />
+          <Link href='https://www.instagram.com/kazuyohairstyle/?hl=en' target='_blank'>
+            <p className='text-green-900 text-sm sm:text-sm md:text-md lg:text-lg font-poppins underline'>
+              Click here to take a look at our Instagram to discover the style that suits you best!
+            </p>
+          </Link>
         </div>
+        <InstagramFeed />
       </section>
       {/* Prices Section */}
-      <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
+      <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Prices</SectionTitle>
+        <div className='flex flex-col bg-[#f0f9ff] p-4 text-sm rounded-xl'>
+          Dear Valued Client, We are grateful for your continued patronage and support. Due to the recent increase in the cost of raw materials, we
+          regret to inform you that we will be implementing a price adjustment across some of our services effective January 1st 2025. This change is
+          necessary to maintain the premium quality and exceptional care you have come to expect from us. We appreciate your understanding and thank
+          you for your ongoing support. Sincerely, OneLeaf Salon Hair by Kazuyo
+        </div>
         <div className='flex flex-col gap-8'>
           <PriceAccordion />
           <Button asChild className='p-8 bg-lime-700/30 text-lime-700 text-xl font-poppins hover:bg-lime-700/50'>
@@ -138,7 +145,7 @@ export default function Page() {
         </div>
       </section>
       {/* Business Hours Section */}
-      <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
+      <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Business Hours</SectionTitle>
         <div className='flex flex-col bg-[#f0f9ff] p-8 pb-10 rounded-xl gap-8'>
           <div className='flex flex-col gap-5'>
@@ -161,7 +168,7 @@ export default function Page() {
         </div>
       </section>
       {/* Appointment Policy Section */}
-      <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
+      <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Appointment Policy at OneLeaf Salon</SectionTitle>
         <div className='flex flex-col gap-8 px-4'>
           <p className='text-green-900 text-base sm:text-lg md:text-lg lg:text-xl font-poppins'>
@@ -192,7 +199,7 @@ export default function Page() {
           </p>
         </div>
       </section>
-      <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
+      <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Thank you for your reviews</SectionTitle>
         <p className='text-gray-500 sm:mt-2 md:mt-4 lg:mt-8 px-4'>Thank you for your reviews. We are grateful for your support and feedback.</p>
         <div className='flex sm:mt-8 md:mt-12 lg:mt-18'>
@@ -200,7 +207,7 @@ export default function Page() {
         </div>
       </section>
       {/* Access Section */}
-      <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
+      <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Access</SectionTitle>
         <div className='flex flex-col gap-8 px-4'>
           <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
@@ -223,7 +230,7 @@ export default function Page() {
             referrerPolicy='no-referrer-when-downgrade'></iframe>
         </div>
       </section>
-      <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
+      <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Contact</SectionTitle>
         <div className='flex flex-col gap-8 px-4'>
           <Contact />

@@ -245,13 +245,13 @@ const Booklet = (props: any) => {
           style={{
             height: `${adjustedHeight}px`,
           }}>
-          <div className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-center font-poppins`} style={{ height: `${adjustedHeight}px` }}>
+          <article className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-center font-poppins`} style={{ height: `${adjustedHeight}px` }}>
             <p className={`text-black overflow-hidden`} style={{ fontSize: isMobile ? '2.25vw' : '12px' }}>
               Hello, my name is Kazuyo. I am originally from Japan, with over 25 years of experience as a hairstylist, including time spent working in
               Tokyo. After many wonderful years serving clients in Pasadena, I&apos;m excited to bring my passion and expertise to my own salon here
               in Sierra Madre. With deep gratitude, I look forward to welcoming you to a space where beauty and relaxation meet.
             </p>
-          </div>
+          </article>
         </div>
         {/* ページ2-1 */}
         <div
@@ -313,7 +313,7 @@ const Booklet = (props: any) => {
           style={{
             height: `${adjustedHeight}px`,
           }}>
-          <div className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-center font-poppins`} style={{ height: `${adjustedHeight}px` }}>
+          <article className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-center font-poppins`} style={{ height: `${adjustedHeight}px` }}>
             <p className='text-black overflow-hidden' style={{ fontSize: isMobile ? '1.7vw' : '12px' }}>
               Kazuyo, a Japanese hairstylist with a vibrant spirit and an extraordinary eye, embarked on an adventure far from her origins. Both of
               her grandfathers were monks at a traditional Japanese temple, where from an early age, she was taught by them about simplicity,
@@ -323,7 +323,7 @@ const Booklet = (props: any) => {
               experience in Hollywood entertainment. Now, with the successful opening of her own salon, Kazuyo is dedicated to developing special
               techniques and unique services, all with the goal of bringing happiness to all her clients
             </p>
-          </div>
+          </article>
         </div>
 
         {/* <div
@@ -385,13 +385,13 @@ const Booklet = (props: any) => {
           style={{
             height: `${adjustedHeight}px`,
           }}>
-          <div className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-center font-poppins`} style={{ height: `${adjustedHeight}px` }}>
+          <article className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-center font-poppins`} style={{ height: `${adjustedHeight}px` }}>
             <p className='text-black overflow-hidden' style={{ fontSize: isMobile ? '2.25vw' : '12px' }}>
               Waterfall Japanese Headspa In Zen practice, there is a form of training called takigyo, or waterfall meditation, which involves
               purifying the mind under a waterfall. Inspired by her roots and Japanese culture, Kazuyo developed a unique relaxation treatment called
               the Waterfall Head Spa. This method aims to clear away worldly desires, foster mindfulness, and bring deep tranquility to the mind.
             </p>
-          </div>
+          </article>
         </div>
 
         {/* ページ5-1 */}
@@ -416,7 +416,7 @@ const Booklet = (props: any) => {
           style={{
             height: `${adjustedHeight}px`,
           }}>
-          <div className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-center font-poppins`} style={{ height: `${adjustedHeight}px` }}>
+          <article className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-center font-poppins`} style={{ height: `${adjustedHeight}px` }}>
             <p className='text-black overflow-hidden' style={{ fontSize: isMobile ? '1.75vw' : '12px' }}>
               MONK MODE is inspired by the lifestyle of monks, focusing on detaching from material desires and pursuing spiritual growth through
               introspection and meditation. Kazuyo&apos;s original Zen Spa is truly special, using primarily organic products. The combination of
@@ -426,7 +426,7 @@ const Booklet = (props: any) => {
               prepared to respect the natural flavors and nutritional value of each ingredient. This cuisine reflects the Zen principles of
               harmlessness and mindful appreciation for all forms of life
             </p>
-          </div>
+          </article>
         </div>
       </HTMLFlipBook>
       <div className='flex mt-6 justify-center'>

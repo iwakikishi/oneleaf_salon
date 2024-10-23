@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Facebook, Instagram, Phone, MapPin } from 'lucide-react';
+import { Instagram, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const links = [
