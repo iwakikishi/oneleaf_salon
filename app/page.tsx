@@ -101,7 +101,7 @@ export default function Page() {
             <p className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>Something about head spa</p>
             <div className='flex flex-col aspect-video rounded-xl overflow-hidden'>
               <video autoPlay muted loop playsInline className='w-full h-full rounded-xl object-cover xs:object-contain mt-4'>
-                <source src='/videos/head_spa_section.mp4' type='video/mp4' />
+                <source src='/images/booklet/waterfall.mp4' type='video/mp4' />
               </video>
             </div>
             <p className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>
