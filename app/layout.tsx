@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: 'cgQ28Oau24Xjix4LZKuA-WrvaTRcrnC2cJGsTw0pmgM',
     // bing: 'your-bing-verification-code',
   },
   category: 'Beauty & Personal Care',
