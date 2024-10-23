@@ -73,7 +73,7 @@ export default function AboutPage() {
         </p>
         <div className='flex justify-center'>
           <Button asChild className='p-6 bg-lime-700/30 text-lime-700 text-lg font-poppins hover:bg-lime-700/50'>
-            <Link href='https://kazuyoroyaltysalon.setmore.com/' target='_blank'>
+            <Link href='https://oneleafsalon.setmore.com/' target='_blank'>
               Book Your Experience
             </Link>
           </Button>

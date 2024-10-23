@@ -24,7 +24,7 @@ const Footer = () => {
             </p>
             <p className='text-sm flex items-center mt-2'>
               <Phone size={16} className='mr-2' />
-              (626) 355-0000
+              (626) 394-3601
             </p>
           </div>
           <div className='flex flex-col'>
@@ -40,9 +40,9 @@ const Footer = () => {
           <div className='flex flex-col'>
             <h3 className='text-xl font-semibold mb-4'>Follow Us</h3>
             <div className='flex space-x-4'>
-              <a href='#' className='text-white hover:text-green-300 transition-colors'>
+              {/* <a href='#' className='text-white hover:text-green-300 transition-colors'>
                 <Facebook size={20} />
-              </a>
+              </a> */}
               <Link
                 href='https://www.instagram.com/kazuyohairstyle/?hl=en'
                 target='_blank'

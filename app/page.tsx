@@ -114,7 +114,16 @@ export default function Page() {
       {/* Instagram Section */}
       <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Instagram</SectionTitle>
-        <div className='flex flex-col gap-8'>ここにインスタグラムのフィードを表示する</div>
+        <div className='flex flex-col gap-8'>
+          <iframe
+            src='https://snapwidget.com/embed/1082314'
+            class='snapwidget-widget'
+            allowtransparency='true'
+            frameborder='0'
+            scrolling='no'
+            style={{ border: 'none', overflow: 'hidden', width: '765px', height: '765px' }}
+            title='Posts from Instagram'></iframe>
+        </div>
       </section>
       {/* Prices Section */}
       <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
@@ -122,7 +131,7 @@ export default function Page() {
         <div className='flex flex-col gap-8'>
           <PriceAccordion />
           <Button asChild className='p-8 bg-lime-700/30 text-lime-700 text-xl font-poppins hover:bg-lime-700/50'>
-            <Link href='https://kazuyoroyaltysalon.setmore.com/' target='_blank'>
+            <Link href='https://oneleafsalon.setmore.com/' target='_blank'>
               Book an appointment
             </Link>
           </Button>
