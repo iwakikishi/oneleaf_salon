@@ -126,15 +126,10 @@ export default function Page() {
         </div>
         <InstagramFeed />
       </section>
-      {/* Prices Section */}
+      {/* Price Section */}
       <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Prices</SectionTitle>
-        <div className='flex flex-col bg-[#f0f9ff] p-4 text-sm rounded-xl'>
-          Dear Valued Client, We are grateful for your continued patronage and support. Due to the recent increase in the cost of raw materials, we
-          regret to inform you that we will be implementing a price adjustment across some of our services effective January 1st 2025. This change is
-          necessary to maintain the premium quality and exceptional care you have come to expect from us. We appreciate your understanding and thank
-          you for your ongoing support. Sincerely, OneLeaf Salon Hair by Kazuyo
-        </div>
+
         <div className='flex flex-col gap-8'>
           <PriceAccordion />
           <Button asChild className='p-8 bg-lime-700/30 text-lime-700 text-xl font-poppins hover:bg-lime-700/50'>

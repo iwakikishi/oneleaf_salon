@@ -9,13 +9,13 @@ import { ServicesCardComponent } from '@/components/services-card';
 export default function page() {
   return (
     <main className='flex flex-col w-full h-full bg-white pb-24'>
-      <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
+      <section className='flex flex-col gap-5 px-2 mt-24 md:px-12 lg:px-48'>
         <SectionTitle>Services</SectionTitle>
         <div className='grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2'>
           <ServicesCardComponent />
         </div>
       </section>
-      <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
+      <section className='flex flex-col gap-5 px-2 mt-24 md:px-12 lg:px-48'>
         <div className='flex flex-col bg-[#fffaeb] p-8 pb-10 rounded-xl gap-8'>
           <div className='flex flex-row items-start'>
             <Image src='/images/head_spa.png' alt='leaf' width={80} height={80} className='object-contain rounded-lg' />
@@ -36,7 +36,7 @@ export default function page() {
           </div>
         </div>
       </section>
-      <section className='flex flex-col gap-8 px-2 mt-24 md:px-12 lg:px-48'>
+      <section className='flex flex-col gap-5 px-2 mt-24 md:px-12 lg:px-48'>
         <SectionTitle>Prices</SectionTitle>
         <div className='flex flex-col gap-8'>
           <PriceAccordion />

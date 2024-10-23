@@ -25,96 +25,97 @@ export default function Page() {
       <div className='max-w-4xl mx-auto px-4 py-12 md:py-24'>
         <div className='bg-gradient-to-br from-[#fffaeb] to-[#f0f9ff] p-8 md:p-12 rounded-2xl shadow-lg'>
           <SectionTitle>Privacy Policy</SectionTitle>
-          <p className='text-green-700 mb-6'>Last updated: March 03, 2021</p>
+          <p className='text-green-700 mb-6'>Last updated: October 20, 2024</p>
 
-          <PolicyItem title='Introduction'>
-            <p>
-              {`This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the
-              Service and tells You about Your privacy rights and how the law protects You.`}
-            </p>
-            <p className='mt-2'>
-              {`We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information
-              in accordance with this Privacy Policy.`}
-            </p>
-          </PolicyItem>
-
-          <PolicyItem title='Interpretation and Definitions'>
-            <p>
-              {`The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions
-              shall have the same meaning regardless of whether they appear in singular or in plural.`}
-            </p>
-          </PolicyItem>
-
-          <PolicyItem title='Collecting and Using Your Personal Data'>
-            <h4 className='font-semibold mt-2'>Types of Data Collected</h4>
+          <PolicyItem title='1. Information We Collect'>
+            <p>{`We may collect the following personal information:`}</p>
             <ul className='list-disc list-inside mt-2 space-y-1'>
-              <li>Personal Data</li>
-              <li>Usage Data</li>
-              <li>Tracking Technologies and Cookies</li>
+              <li>Name</li>
+              <li>Email address</li>
+              <li>Phone number</li>
+              <li>Address</li>
+              <li>Payment information</li>
             </ul>
           </PolicyItem>
 
-          <PolicyItem title='Use of Your Personal Data'>
-            <p>The Company may use Personal Data for the following purposes:</p>
+          <PolicyItem title='2. How We Use Your Information'>
+            <p>{`The information we collect may be used for:`}</p>
             <ul className='list-disc list-inside mt-2 space-y-1'>
-              <li>To provide and maintain our Service</li>
-              <li>To manage Your Account</li>
-              <li>For the performance of a contract</li>
-              <li>To contact You</li>
-              <li>To provide You with news, special offers and general information</li>
-              <li>To manage Your requests</li>
+              <li>Providing and confirming your appointment or services</li>
+              <li>Processing payments and billing</li>
+              <li>Sending promotional materials or updates</li>
+              <li>Improving customer service</li>
             </ul>
           </PolicyItem>
 
-          <PolicyItem title='Retention of Your Personal Data'>
-            <p>
-              {`The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will
-              retain and use Your Personal Data to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our legal
-              agreements and policies.`}
-            </p>
-          </PolicyItem>
-
-          <PolicyItem title='Transfer of Your Personal Data'>
-            <p>
-              {`Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties
-              involved in the processing are located.`}
-            </p>
-          </PolicyItem>
-
-          <PolicyItem title='Disclosure of Your Personal Data'>
-            <p>The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:</p>
+          <PolicyItem title='3. Information Sharing'>
+            <p>We may share your personal information with third parties only in the following situations:</p>
             <ul className='list-disc list-inside mt-2 space-y-1'>
-              <li>Comply with a legal obligation</li>
-              <li>Protect and defend the rights or property of the Company</li>
-              <li>Prevent or investigate possible wrongdoing in connection with the Service</li>
-              <li>Protect the personal safety of Users of the Service or the public</li>
-              <li>Protect against legal liability</li>
+              <li>To comply with legal obligations</li>
+              <li>To work with external service providers (e.g., payment processors)</li>
             </ul>
           </PolicyItem>
 
-          <PolicyItem title='Security of Your Personal Data'>
+          <PolicyItem title='4. Security'>
+            <p>We take precautions to protect your personal information using SSL encryption and other security measures.</p>
+          </PolicyItem>
+
+          <PolicyItem title='5. Use of Cookies'>
             <p>
-              {`The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of
-              electronic storage is 100% secure.`}
+              {`Our website uses cookies to enhance the user experience. By using our website, you agree to the use of cookies to provide a more personalized experience.`}
             </p>
           </PolicyItem>
 
-          <PolicyItem title="Children's Privacy">
+          <PolicyItem title='6. Your Rights'>
+            <p>{`You have the right to access, modify, or request the deletion of your personal data at any time.`}</p>
+          </PolicyItem>
+
+          <div className='mt-12' />
+          <SectionTitle>Privacy Policy</SectionTitle>
+
+          <PolicyItem title='1. Use of Services'>
             <p>
-              {`Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone
-              under the age of 13.`}
+              {`By using our website, you agree to the terms outlined here. We provide hairdressing services such as haircuts, coloring, and styling.`}
             </p>
           </PolicyItem>
 
-          <PolicyItem title='Changes to this Privacy Policy'>
+          <PolicyItem title='2. Appointments and Cancellations'>
             <p>
-              {`We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.`}
+              {`Cancellations must be made at least 24 hours before your appointment. Cancellations within 24 hours or no-shows may incur a cancellation fee.`}
+            </p>
+            <p className='text-green-900 text-base font-poppins mt-4'>
+              ●
+              <Link href='/cancellation-policy'>
+                <span className='underline'>Cancellation Policy</span>
+              </Link>
+            </p>
+          </PolicyItem>
+
+          <PolicyItem title='3. Payment'>
+            <p>
+              {`Service prices will be confirmed at the time of booking. Payments can be made via cash, credit card, or through online payment methods accepted by the salon.`}
+            </p>
+          </PolicyItem>
+          <PolicyItem title='4. Limitation of Liability'>
+            <p>
+              {`We are not liable for any damages or losses arising from the use of our services. We strive to meet your satisfaction but are not responsible for issues beyond our control.`}
+            </p>
+          </PolicyItem>
+          <PolicyItem title='5. Intellectual Property'>
+            <p>
+              {`All content on this website, including text, images, and logos, is the property of our salon or its licensors. Unauthorized use is prohibited.`}
+            </p>
+          </PolicyItem>
+          <PolicyItem title='6. Governing Law'>
+            <p>
+              {`These Terms of Service are governed by the laws of the United States. Any disputes will be resolved in the courts of the United States.
+`}
             </p>
           </PolicyItem>
 
           <PolicyItem title='Contact Us'>
             <p>If you have any questions about this Privacy Policy, You can contact us:</p>
-            <p className='mt-2'>By email: info@oneleafsalon.com</p>
+            <p className='mt-2'>By email: oneleaf.inc23@gmail.com</p>
           </PolicyItem>
 
           <div className='mt-8 text-center'>
