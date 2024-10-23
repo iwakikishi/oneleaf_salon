@@ -14,7 +14,7 @@ export default function Page() {
   return (
     <main className='flex flex-col w-full overflow-x-hidden scrollbar-transparent'>
       {/* Booklet Section */}
-      <section className='justify-center pt-24 py-8 bg-[url(/images/booklet/bg-booklet-2.png)] bg-cover bg-no-repeat bg-black/10 bg-blend-overlay'>
+      <section className='justify-center pt-24 py-8 bg-[url(/images/booklet/bg-booklet-2.png)] bg-cover bg-no-repeat bg-white/10 bg-blend-overlay'>
         <React.Suspense fallback={<div>Loading...</div>}>
           <Booklet />
         </React.Suspense>
@@ -176,26 +176,17 @@ export default function Page() {
             No Show: If you do not show up for your appointment without notifying us, a no-show fee equivalent to 100% of the service fee will be
             charged. Additionally, we regret to inform you that we may not be able to accept any future appointments.
           </p>
-          <Link href='/cancellation-policy'>
-            <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
-              ● <span className='underline'>Cancellation Policy</span>
-            </p>
-            <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
-              We kindly request that you strictly cancel your appointment at least 24 hours in advance. Unfortunately, we are unable to accommodate
-              cancellations made after 24 hours. In such cases, a fee equivalent to 100% of the service cost will be charged.
-            </p>
-          </Link>
           <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
-            * Parking * The parking area is located at the rear of the building. Please proceed to the back for convenient parking.
+            ●
+            <Link href='/cancellation-policy'>
+              <span className='underline'>Cancellation Policy</span>
+            </Link>
           </p>
           <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
-            <a
-              href='https://www.google.com/maps/dir/?api=1&destination=34.16161397311594,-118.05619732447848'
-              target='_blank'
-              rel='noopener noreferrer'>
-              ● <span className='underline'>Get the direction</span>
-            </a>
+            We kindly request that you strictly cancel your appointment at least 24 hours in advance. Unfortunately, we are unable to accommodate
+            cancellations made after 24 hours. In such cases, a fee equivalent to 100% of the service cost will be charged.
           </p>
+
           <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
             Thank you for your understanding and cooperation! We are excitedly looking forward to your visit and can&apos;t wait to see you soon!{' '}
           </p>
@@ -211,9 +202,19 @@ export default function Page() {
       {/* Access Section */}
       <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Access</SectionTitle>
-        <p className='text-gray-500 px-4 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
-          The parking area is located at the rear of the building. Please proceed to the back for convenient parking.
-        </p>
+        <div className='flex flex-col gap-8 px-4'>
+          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
+            * Parking * The parking area is located at the rear of the building. Please proceed to the back for convenient parking.
+          </p>
+          <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
+            <a
+              href='https://www.google.com/maps/dir/?api=1&destination=34.16161397311594,-118.05619732447848'
+              target='_blank'
+              rel='noopener noreferrer'>
+              ● <span className='underline'>Get the direction</span>
+            </a>
+          </p>
+        </div>
         <div className='w-full aspect-square relative mb-10'>
           <iframe
             src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.402952049803!2d-118.05619732447848!3d34.16161397311594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2dc70abd9e333%3A0x8436c838e56c8dc5!2s38%20W%20Sierra%20Madre%20Blvd%2C%20Sierra%20Madre%2C%20CA%2091024%2C%20USA!5e0!3m2!1sen!2sus!4v1716251840342!5m2!1sen!2sus'

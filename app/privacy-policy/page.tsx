@@ -29,7 +29,6 @@ export default function Page() {
 
           <PolicyItem title='Introduction'>
             <p>
-              {/* アポストロフィを含む文字列をバッククォートで囲む */}
               {`This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the
               Service and tells You about Your privacy rights and how the law protects You.`}
             </p>

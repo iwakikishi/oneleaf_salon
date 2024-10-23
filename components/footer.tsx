@@ -7,7 +7,7 @@ const Footer = () => {
     { href: '/cancellation-policy', label: 'Cancellation Policy' },
     { href: '/privacy-policy', label: 'Privacy Policy' },
     { href: '/privacy-policy', label: 'Terms of Service' },
-    { href: '/faq', label: 'FAQ' },
+    { href: '/faq', label: 'FAQ (Coming Soon)' },
     { href: '/contact', label: 'Contact Us' },
   ];
 
@@ -30,11 +30,20 @@ const Footer = () => {
           <div className='flex flex-col'>
             <h3 className='text-xl font-semibold mb-4'>Quick Links</h3>
             <nav className='flex flex-col space-y-2'>
-              {links.map((link) => (
-                <Link key={link.href} href={link.href} className='text-sm hover:text-green-300 transition-colors'>
-                  {link.label}
-                </Link>
-              ))}
+              {links.map((link) => {
+                if (link.href === '/faq') {
+                  return (
+                    <span key={link.href} className='text-sm hover:text-green-300 transition-colors'>
+                      FAQ (Coming Soon)
+                    </span>
+                  );
+                }
+                return (
+                  <Link key={link.href} href={link.href} className='text-sm hover:text-green-300 transition-colors'>
+                    {link.label}
+                  </Link>
+                );
+              })}
             </nav>
           </div>
           <div className='flex flex-col'>
@@ -55,7 +64,10 @@ const Footer = () => {
           </div>
         </div>
         <div className='mt-8 pt-8 border-t border-green-700 text-center text-sm'>
-          <p>&copy; {new Date().getFullYear()} OneLeaf Salon Hair by Kazuyo. All rights reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} OneLeaf Salon Hair by Kazuyo. <br />
+            All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
