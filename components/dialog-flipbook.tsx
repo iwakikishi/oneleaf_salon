@@ -10,8 +10,15 @@ interface DialogFlipbookProps {
   isMobile: boolean;
 }
 
+interface PageFlip {
+  pageFlip: () => {
+    flipNext: () => void;
+    flipPrev: () => void;
+  };
+}
+
 export const DialogFlipbook: React.FC<DialogFlipbookProps> = ({ width, height, pages, isMobile }) => {
-  const dialogFlipBook = useRef(null);
+  const dialogFlipBook = useRef<PageFlip>(null);
   const [currentPage, setCurrentPage] = useState(0);
 
   const pageWidth = width;
