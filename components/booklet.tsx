@@ -82,7 +82,7 @@ const Booklet = (props: any) => {
       <div className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-around relative overflow-hidden `} style={{ height: `${adjustedHeight}px` }}>
         <div className='flex flex-col justify-center gap-2'>
           <div className={`w-[${adjustedWidth / 3}px] h-[${adjustedHeight / 3}px]`}>
-            <Image src={`/images/booklet/2.png`} alt='kazuyo' width={adjustedWidth / 3} height={adjustedHeight} />
+            <Image src={`/images/kazuyo_photo.png`} alt='kazuyo' width={adjustedWidth / 3} height={adjustedHeight} />
           </div>
           <div className='flex flex-col items-start text-gray-900 font-poppins font-bold'>
             <div className='text-xs sm:text-md text-gray-700' style={{ fontSize: isMobile ? '8px' : '12px' }}>
