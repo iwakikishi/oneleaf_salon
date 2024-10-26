@@ -350,19 +350,19 @@ const Booklet = (props: any) => {
     }
   };
 
-  const dialogNextPage = () => {
-    if (dialogFlipBook.current && dialogCurrentPage < pages.length - 1) {
-      dialogFlipBook.current.pageFlip().flipNext();
-      setDialogCurrentPage((prev) => prev + 1);
-    }
-  };
+  // const dialogNextPage = () => {
+  //   if (dialogFlipBook.current && dialogCurrentPage < pages.length - 1) {
+  //     dialogFlipBook.current.pageFlip().flipNext();
+  //     setDialogCurrentPage((prev) => prev + 1);
+  //   }
+  // };
 
-  const dialogPrevPage = () => {
-    if (dialogFlipBook.current && dialogCurrentPage > 0) {
-      dialogFlipBook.current.pageFlip().flipPrev();
-      setDialogCurrentPage((prev) => prev - 1);
-    }
-  };
+  // const dialogPrevPage = () => {
+  //   if (dialogFlipBook.current && dialogCurrentPage > 0) {
+  //     dialogFlipBook.current.pageFlip().flipPrev();
+  //     setDialogCurrentPage((prev) => prev - 1);
+  //   }
+  // };
 
   const PageCover = React.forwardRef((props: any, ref) => {
     return (
