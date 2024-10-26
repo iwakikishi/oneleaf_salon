@@ -26,7 +26,7 @@ module.exports = {
     if (path === '/about') {
       return {
         loc: path,
-        changefreq: 'weekly',
+        changefreq: 'daily',
         priority: 0.8,
         lastmod: new Date().toISOString(),
       };
@@ -34,7 +34,7 @@ module.exports = {
     if (path === '/services') {
       return {
         loc: path,
-        changefreq: 'weekly',
+        changefreq: 'daily',
         priority: 0.8,
         lastmod: new Date().toISOString(),
       };
@@ -42,7 +42,7 @@ module.exports = {
     if (path === '/team') {
       return {
         loc: path,
-        changefreq: 'weekly',
+        changefreq: 'daily',
         priority: 0.7,
         lastmod: new Date().toISOString(),
       };
@@ -58,7 +58,7 @@ module.exports = {
     if (path === '/privacy-policy') {
       return {
         loc: path,
-        changefreq: 'weekly',
+        changefreq: 'daily',
         priority: 0.5,
         lastmod: new Date().toISOString(),
       };
@@ -67,7 +67,7 @@ module.exports = {
     // Default transformation for other pages
     return {
       loc: path,
-      changefreq: 'weekly',
+      changefreq: 'daily',
       priority: 0.7,
       lastmod: new Date().toISOString(),
     };

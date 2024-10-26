@@ -74,7 +74,6 @@ export const metadata: Metadata = {
     // bing: 'your-bing-verification-code',
   },
   category: 'Beauty & Personal Care',
-  themeColor: '#ffffff',
   other: {
     classification: 'Hair Salon',
     referrer: 'no-referrer-when-downgrade',

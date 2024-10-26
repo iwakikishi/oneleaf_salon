@@ -17,7 +17,7 @@ export default function Page() {
     <main className='flex flex-col w-full overflow-x-hidden scrollbar-transparent'>
       {/* Booklet Section */}
       <section className='justify-center pt-24 py-8 bg-[url(/images/booklet/bg-booklet-2.png)] bg-cover bg-no-repeat bg-white/10 bg-blend-overlay'>
-        <React.Suspense fallback={<div>Loading...</div>}>
+        <React.Suspense fallback={<div className='flex justify-center items-center font-poppins text-black text-2xl'>Loading...</div>}>
           <Booklet />
         </React.Suspense>
       </section>

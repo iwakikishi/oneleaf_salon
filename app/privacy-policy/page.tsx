@@ -71,7 +71,7 @@ export default function Page() {
           </PolicyItem>
 
           <div className='mt-12' />
-          <SectionTitle>Privacy Policy</SectionTitle>
+          <SectionTitle>Terms of Service</SectionTitle>
 
           <PolicyItem title='1. Use of Services'>
             <p>
@@ -108,8 +108,7 @@ export default function Page() {
           </PolicyItem>
           <PolicyItem title='6. Governing Law'>
             <p>
-              {`These Terms of Service are governed by the laws of the United States. Any disputes will be resolved in the courts of the United States.
-`}
+              {`These Terms of Service are governed by the laws of the United States. Any disputes will be resolved in the courts of the United States.`}
             </p>
           </PolicyItem>
 

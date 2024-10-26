@@ -70,10 +70,10 @@ const services = [
     description: '',
     icon: 'makeup',
     items: [
-      { name: 'Head Spa 20 min no brow dry', time: '25 min', description: [''], price: '$50' },
-      { name: 'Head Spa 20 min with brow dry', time: '1 hr', description: [''], price: '$100' },
-      { name: 'Head Spa 40 min no brow dry', time: '45 min', description: [''], price: '$95' },
-      { name: 'Head Spa 40 min with brow dry', time: '1 hr', description: [''], price: '$145' },
+      { name: 'Head Spa 20 min no blow dry', time: '25 min', description: [''], price: '$50' },
+      { name: 'Head Spa 20 min with blow dry', time: '1 hr', description: [''], price: '$100' },
+      { name: 'Head Spa 40 min no blow dry', time: '45 min', description: [''], price: '$95' },
+      { name: 'Head Spa 40 min with blow dry', time: '1 hr', description: [''], price: '$145' },
       {
         name: 'Deep treatment Milbon',
         time: '20 min',
