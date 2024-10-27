@@ -129,9 +129,9 @@ const Booklet = (props: any) => {
         height: `${adjustedHeight}px`,
       }}>
       <div className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-center gap-3`} style={{ height: `${adjustedHeight}px` }}>
-        <div className='text-lime-700/70 text-xl sm:text-5xl font-poppins font-bold'>more</div>
+        <div className='text-lime-700/70 text-xl sm:text-5xl font-poppins font-bold'>More</div>
         <div className='text-lime-700/70 text-xl sm:text-5xl font-poppins font-bold'>than</div>
-        <div className='text-lime-700/70 text-xl sm:text-5xl font-poppins font-bold'>20 years</div>
+        <div className='text-lime-700/70 text-xl sm:text-5xl font-poppins font-bold'>20 Years</div>
       </div>
     </div>,
 
@@ -146,7 +146,7 @@ const Booklet = (props: any) => {
         <p className='text-black overflow-hidden' style={{ fontSize: isMobile ? '2.25vw' : '12px' }}>
           Kazuyo has been a Master Hairstylist in Japan with more than 20 years of experience working in Tokyo&apos;s leading hair salons. She bases
           each style on drawing out a person&apos;s inner beauty, creating balance with their structural features, and listening to the
-          customers&apos; vision on who they want to become as their best selves. The experience will be relaxed and fun as we work together to find
+          customers&apos; vision on who they want to become as their best selves. The experience will be relaxed and fun as you work together to find
           the beautiful energy you want to project into the world.
         </p>
       </div>
@@ -182,14 +182,16 @@ const Booklet = (props: any) => {
         height: `${adjustedHeight}px`,
       }}>
       <article className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-center font-poppins`} style={{ height: `${adjustedHeight}px` }}>
-        <p className='text-black overflow-hidden' style={{ fontSize: isMobile ? '1.7vw' : '12px' }}>
+        <p className='text-black overflow-hidden' style={{ fontSize: isMobile ? '1.5vw' : '12px' }}>
           Kazuyo, a Japanese hairstylist with a vibrant spirit and an extraordinary eye, embarked on an adventure far from her origins. Both of her
           grandfathers were monks at a traditional Japanese temple, where from an early age, she was taught by them about simplicity, gratitude for
-          nature, and mindfulness. Touch your Hair , touch your Hart Through her work as a hairstylist, Kazuyo has always valued the connection she
-          makes not only with her clients&apos; hair but also with their hearts. In Tokyo, she thrived as a manager and top stylist at a renowned
-          salon and worked as a hair and makeup artist for Japanese films. After relocating to Los Angeles, she gained valuable experience in
-          Hollywood entertainment. Now, with the successful opening of her own salon, Kazuyo is dedicated to developing special techniques and unique
-          services, all with the goal of bringing happiness to all her clients
+          nature, and mindfulness. <br />
+          <br />
+          Touch Your Hair , Touch Your Heart Through her work as a hairstylist, Kazuyo has always valued the connection she makes not only with her
+          clients&apos; hair but also with their hearts. In Tokyo, she thrived as a manager and top stylist at a renowned salon and worked as a hair
+          and makeup artist for Japanese films. After relocating to Los Angeles, she gained valuable experience in Hollywood entertainment. Now, with
+          the successful opening of her own salon, Kazuyo is dedicated to developing special techniques and unique services, all with the goal of
+          bringing happiness to all her clients.
         </p>
       </article>
     </div>,
@@ -229,9 +231,11 @@ const Booklet = (props: any) => {
       }}>
       <article className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-center font-poppins`} style={{ height: `${adjustedHeight}px` }}>
         <p className='text-black overflow-hidden' style={{ fontSize: isMobile ? '2.25vw' : '12px' }}>
-          Waterfall Japanese Headspa In Zen practice, there is a form of training called takigyo, or waterfall meditation, which involves purifying
-          the mind under a waterfall. Inspired by her roots and Japanese culture, Kazuyo developed a unique relaxation treatment called the Waterfall
-          Head Spa. This method aims to clear away worldly desires, foster mindfulness, and bring deep tranquility to the mind.
+          <span className='font-poppins font-bold'>Waterfall Japanese Headspa In Zen practice,</span>
+          <br />
+          <br /> there is a form of training called takigyo, or waterfall meditation, which involves purifying the mind under a waterfall. Inspired by
+          her roots and Japanese culture, Kazuyo developed a unique relaxation treatment called the Waterfall Head Spa. This method aims to clear away
+          worldly desires, foster mindfulness, and bring deep tranquility to the mind.
         </p>
       </article>
     </div>,
@@ -244,11 +248,7 @@ const Booklet = (props: any) => {
         height: `${adjustedHeight}px`,
       }}>
       <div className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-around gap-2`} style={{ height: `${adjustedHeight}px` }}>
-        <h2 className='text-lime-700/70 text-sm sm:text-3xl font-poppins font-bold'>
-          Zen spa
-          <br />
-          (Shojin MONK MODE)
-        </h2>
+        <h2 className='text-lime-700/70 text-sm sm:text-3xl font-poppins font-bold'>Zen spa & Shojin Monk Mode</h2>
         <Image src={'/images/booklet/shoujin-1.jpg'} alt='kazuyo' width={adjustedWidth / 2} height={adjustedHeight} />
       </div>
     </div>,
@@ -261,11 +261,14 @@ const Booklet = (props: any) => {
         height: `${adjustedHeight}px`,
       }}>
       <article className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-center font-poppins`} style={{ height: `${adjustedHeight}px` }}>
-        <p className='text-black overflow-hidden' style={{ fontSize: isMobile ? '1.75vw' : '12px' }}>
+        <p className='text-black overflow-hidden' style={{ fontSize: isMobile ? '1.5vw' : '12px' }}>
           MONK MODE is inspired by the lifestyle of monks, focusing on detaching from material desires and pursuing spiritual growth through
           introspection and meditation. Kazuyo&apos;s original Zen Spa is truly special, using primarily organic products. The combination of
-          exceptional organic facial and head massage treatments will leave you feeling completely rejuvenated, as if you have been reborn :About
-          Sojin Kazuyo also studied shojin ryori, a type of vegetarian cuisine deeply rooted in Zen Buddhism. Shojin ryori, or &apos;devotional
+          exceptional organic facial and head massage treatments will leave you feeling completely rejuvenated, as if you have been reborn
+          <br />
+          <br />
+          <span className='font-poppins font-bold'>About Shojin</span>
+          <br /> Kazuyo also studied shojin ryori, a type of vegetarian cuisine deeply rooted in Zen Buddhism. Shojin ryori, or &apos;devotional
           cooking,&apos; abstains from the use of meat or fish, focusing instead on seasonal vegetables, tofu, and grains, which are carefully
           prepared to respect the natural flavors and nutritional value of each ingredient. This cuisine reflects the Zen principles of harmlessness
           and mindful appreciation for all forms of life
@@ -463,13 +466,13 @@ const Booklet = (props: any) => {
       </HTMLFlipBook>
       <div className='flex mt-6 justify-center'>
         <div className='flex gap-4'>
-          <Button className='text-black font-poppins bg-white' disabled={!showPrevButton} onClick={prevButtonClick}>
+          <Button className='text-black font-poppins bg-white hover:bg-white' disabled={!showPrevButton} onClick={prevButtonClick}>
             Prev
           </Button>
           <Button variant='ghost' className='text-black' onClick={() => setIsDialogOpen(true)}>
             <Fullscreen size={24} />
           </Button>
-          <Button className='text-black font-poppins bg-white' disabled={!showNextButton} onClick={nextButtonClick}>
+          <Button className='text-black font-poppins bg-white hover:bg-white' disabled={!showNextButton} onClick={nextButtonClick}>
             Next
           </Button>
         </div>
