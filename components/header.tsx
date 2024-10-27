@@ -35,7 +35,7 @@ const Header = () => {
   return (
     <header className={headerClass}>
       <Link href='/'>
-        <Image alt='ONELEAF Hair by Kazuyo logo' className='mr-3' height='50' src='/images/header/logo.webp' width='50' />
+        <Image alt='ONELEAF Hair by Kazuyo logo' className='mr-3' height='50' src='/images/icons/oneleaf-logo-2-square.jpg' width='50' />
       </Link>
       <div className='flex'>
         <Button asChild variant={'ghost'}>

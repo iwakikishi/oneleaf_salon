@@ -315,7 +315,7 @@ const Booklet = (props: any) => {
             coverVideoRef.current.play();
           }
         }, 1200);
-      } else if (newPage === 6) {
+      } else if (newPage === 9) {
         setShowNextButton(false);
       } else {
         setShowNextButton(true);
@@ -414,7 +414,7 @@ const Booklet = (props: any) => {
   ];
 
   return adjustedWidth && adjustedHeight ? (
-    <div className='flex flex-col w-full items-center justify-center py-8' style={{ height: `${adjustedHeight}px` }}>
+    <div className='flex flex-col w-full items-center justify-center' style={{ minHeight: `${adjustedHeight + 64}px` }}>
       <HTMLFlipBook
         ref={(el) => (flipBook.current = el || null)}
         width={adjustedWidth / 2}
@@ -466,7 +466,7 @@ const Booklet = (props: any) => {
         {pages}
       </HTMLFlipBook>
       <div className='flex mt-6 justify-center'>
-        <div className='flex gap-4'>
+        <div className='flex gap-2'>
           <Button className='text-black font-poppins bg-white hover:bg-white' disabled={!showPrevButton} onClick={prevButtonClick}>
             Prev
           </Button>
