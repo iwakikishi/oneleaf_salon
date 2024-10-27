@@ -25,7 +25,7 @@ const MobileHeader = () => {
     isScrolled ? 'bg-white' : 'bg-white/50'
   }`;
 
-  const menuButtonClass = `px-2 py-0 rounded-md flex items-center justify-center bg-white border-0 hover:bg-gray-100 transition-colors duration-200 ease-in-out hover:px-2`;
+  const menuButtonClass = `px-2 py-0 rounded-md items-center justify-center bg-white border-0 hover:bg-white hover:border-0 hover:px-2`;
 
   const bookNowButtonClass = `px-2 py-0 rounded-md text-sm font-poppins items-center justify-center ${
     isScrolled ? 'bg-white hover:bg-white text-[#4a6741] border border-[#4a6741]' : 'bg-lime-700/70 text-white hover:bg-lime-700'
@@ -35,13 +35,6 @@ const MobileHeader = () => {
     <header className={headerClass}>
       <div className='flex w-full justify-between items-center'>
         <div className='flex gap-2'>
-          {/* <Image
-            alt='logo'
-            width='40'
-            height='40'
-            src='/icons/oneleaf-logo-2-square.jpg'
-            style={{ width: '40px', height: '40px', borderRadius: '10px' }}
-          /> */}
           <Popover open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
             <PopoverTrigger asChild>
               <Button className={menuButtonClass}>
@@ -52,7 +45,6 @@ const MobileHeader = () => {
                   src='/icons/oneleaf-logo-2-square.jpg'
                   style={{ width: '36px', height: '36px', borderRadius: '10px' }}
                 />
-                {/* <Menu size={24} color={isOpen || isScrolled ? 'black' : 'black'} /> */}
               </Button>
             </PopoverTrigger>
 
