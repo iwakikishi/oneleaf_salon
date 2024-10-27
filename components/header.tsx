@@ -35,7 +35,13 @@ const Header = () => {
   return (
     <header className={headerClass}>
       <Link href='/'>
-        <Image alt='ONELEAF Hair by Kazuyo logo' className='mr-3' height='50' src='/images/icons/oneleaf-logo-2-square.jpg' width='50' />
+        <Image
+          alt='logo'
+          width='45'
+          height='45'
+          src='/icons/oneleaf-logo-2-square.jpg'
+          style={{ width: '45px', height: '45px', marginRight: '10px', borderRadius: '5px' }}
+        />{' '}
       </Link>
       <div className='flex'>
         <Button asChild variant={'ghost'}>

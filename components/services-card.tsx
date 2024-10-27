@@ -7,10 +7,10 @@ type ServiceCardProps = {
 };
 
 const services: ServiceCardProps[] = [
-  { image: 'hair_cut_retro', title: 'Cut & Style', description: 'Haircuts not included with color services. Shampoo and styling included' },
-  { image: 'hair_color_retro', title: 'Color & Bleach', description: 'カラー剤とかの説明' },
-  { image: 'hair_perm_retro', title: 'Texture', description: '何か特徴' },
-  { image: 'make_up_retro', title: 'Makeup', description: '何か特徴' },
+  { image: 'hair_cut_retro', title: 'Cut & Style', description: '' },
+  { image: 'hair_color_retro', title: 'Color & Bleach', description: '' },
+  { image: 'hair_perm_retro', title: 'Texture', description: '' },
+  { image: 'make_up_retro', title: 'Makeup', description: '' },
 ];
 
 export function ServicesCardComponent() {

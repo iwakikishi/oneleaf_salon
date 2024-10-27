@@ -11,9 +11,10 @@ import { useSwipeable } from 'react-swipeable';
 
 const images = [
   { src: '/images/store/exterior.png', alt: 'exterior' },
+  { src: '/images/store/interior.png', alt: 'interior' },
   { src: '/images/store/chair.png', alt: 'chair' },
-  { src: '/images/store/display.png', alt: 'display' },
-  { src: '/images/store/mirror.png', alt: 'mirror' },
+  // { src: '/images/store/display.png', alt: 'display' },
+  // { src: '/images/store/mirror.png', alt: 'mirror' },
 ];
 
 export default function ImageCarousel() {
