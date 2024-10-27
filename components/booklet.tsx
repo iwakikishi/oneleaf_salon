@@ -187,11 +187,12 @@ const Booklet = (props: any) => {
           grandfathers were monks at a traditional Japanese temple, where from an early age, she was taught by them about simplicity, gratitude for
           nature, and mindfulness. <br />
           <br />
-          Touch Your Hair , Touch Your Heart Through her work as a hairstylist, Kazuyo has always valued the connection she makes not only with her
-          clients&apos; hair but also with their hearts. In Tokyo, she thrived as a manager and top stylist at a renowned salon and worked as a hair
-          and makeup artist for Japanese films. After relocating to Los Angeles, she gained valuable experience in Hollywood entertainment. Now, with
-          the successful opening of her own salon, Kazuyo is dedicated to developing special techniques and unique services, all with the goal of
-          bringing happiness to all her clients.
+          <span className='font-poppins font-bold'>Touch Your Hair , Touch Your Heart</span>
+          <br /> Through her work as a hairstylist, Kazuyo has always valued the connection she makes not only with her clients&apos; hair but also
+          with their hearts. In Tokyo, she thrived as a manager and top stylist at a renowned salon and worked as a hair and makeup artist for
+          Japanese films. After relocating to Los Angeles, she gained valuable experience in Hollywood entertainment. Now, with the successful opening
+          of her own salon, Kazuyo is dedicated to developing special techniques and unique services, all with the goal of bringing happiness to all
+          her clients.
         </p>
       </article>
     </div>,
