@@ -28,7 +28,7 @@ const MobileHeader = () => {
   const menuButtonClass = `px-2 py-0 rounded-md items-center justify-center bg-white`;
 
   const bookNowButtonClass = `px-2 py-0 rounded-md text-sm font-poppins items-center justify-center ${
-    isScrolled ? 'bg-white text-[#4a6741] border border-[#4a6741]' : 'bg-lime-700/70 text-white'
+    isScrolled ? 'bg-white hover:bg-white text-[#4a6741] border border-[#4a6741]' : 'bg-lime-700/70 text-white hover:bg-lime-700'
   }`;
 
   return (

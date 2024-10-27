@@ -31,7 +31,7 @@ export function CheckboxForm() {
           control={form.control}
           name='accepted'
           render={({ field }) => (
-            <FormItem className='flex flex-row items-start space-x-3 space-y-0 rounded-md p-4'>
+            <FormItem className='flex flex-row items-start space-x-3 space-y-0 rounded-md'>
               <FormControl>
                 <Checkbox checked={field.value} onCheckedChange={field.onChange} />
               </FormControl>

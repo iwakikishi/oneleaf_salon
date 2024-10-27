@@ -43,8 +43,10 @@ export default function Page() {
             <div className='flex flex-row gap-2 mt-4'>
               <Button
                 asChild
-                className='bg-white/70 text-black p-3 xs:p-2 sm:p-4 md:p-6 lg:p-8 text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl'>
-                <Link href='/agreement'>Book an appointment</Link>
+                className='bg-white/70 hover:bg-white text-black p-3 xs:p-2 sm:p-4 md:p-6 lg:p-8 text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl'>
+                <Link href='https://oneleafsalon.setmore.com/' target='_blank'>
+                  Book an appointment
+                </Link>
               </Button>
             </div>
           </div>
@@ -79,12 +81,6 @@ export default function Page() {
           </p>
         </div>
       </section>
-      {/* Booklet Section */}
-      {/* <section className='flex w-full mt-8 md:mt-12 lg:mt-24 justify-center py-8 px-8 md:px-12 lg:px-16 bg-[#fffaeb]'>
-        <React.Suspense fallback={<div>Loading...</div>}>
-          <Booklet />
-        </React.Suspense>
-      </section> */}
 
       {/* Services Section */}
       <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
@@ -107,8 +103,11 @@ export default function Page() {
               </video>
             </div>
             <p className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>
-              Counseling with Microscope * 40, 60min course only* Scalp Cleansing with Jojoba oil with Micro Mist Treatment Head and Neck massage
-              Scalp Shampoo & Carbonated Treatment
+              <span className='font-poppins font-bold'>Waterfall Japanese Headspa In Zen practice,</span>
+              <br />
+              <br /> there is a form of training called takigyo, or waterfall meditation, which involves purifying the mind under a waterfall.
+              Inspired by her roots and Japanese culture, Kazuyo developed a unique relaxation treatment called the Waterfall Head Spa. This method
+              aims to clear away worldly desires, foster mindfulness, and bring deep tranquility to the mind.
             </p>
           </div>
         </div>

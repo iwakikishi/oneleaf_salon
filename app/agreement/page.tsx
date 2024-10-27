@@ -11,12 +11,9 @@ export default function page() {
   });
 
   return (
-    <main className='flex flex-col font-poppins bg-scroll xs:px-2 sm:px-4 md:px-8 lg:px-16 xl:px-32'>
-      <section className='flex flex-col w-full sm:mt-8 md:mt-36 lg:mt-36'>
+    <main className='flex flex-col font-poppins bg-scroll xs:px-2 sm:px-4 md:px-8 lg:px-16 xl:px-32 p-4'>
+      <section className='flex flex-col w-full mt-24 sm:mt-8 md:mt-36 lg:mt-36'>
         <div className='flex flex-row items-center h-[50px]'>
-          <div className='bg-gray-200 w-[50px] h-[50px] mr-7'>
-            <Image src='/images/header/logo.webp' alt='head_spa' width={50} height={50} />
-          </div>
           <div className='flex flex-col items-center'>
             <div className='text-black text-3xl font-bold'>Head Spa Agreement Form</div>
           </div>
@@ -44,7 +41,7 @@ export default function page() {
             Today&apos;s date is <span className='text-black text-lg mb-4'>{date}</span>
           </p>
         </div>
-        <div className='flex items-center space-x-2 my-8'>
+        <div className='flex items-center space-x-2 my-4'>
           <CheckboxForm />
         </div>
       </section>
