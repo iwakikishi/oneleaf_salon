@@ -25,7 +25,7 @@ const MobileHeader = () => {
     isScrolled ? 'bg-white' : 'bg-white/50'
   }`;
 
-  const menuButtonClass = `px-2 py-0 rounded-md items-center justify-center bg-white`;
+  const menuButtonClass = `px-2 py-0 rounded-md flex items-center justify-center bg-white border-0 hover:bg-gray-100 transition-colors duration-200 ease-in-out hover:px-2`;
 
   const bookNowButtonClass = `px-2 py-0 rounded-md text-sm font-poppins items-center justify-center ${
     isScrolled ? 'bg-white hover:bg-white text-[#4a6741] border border-[#4a6741]' : 'bg-lime-700/70 text-white hover:bg-lime-700'
@@ -44,7 +44,7 @@ const MobileHeader = () => {
           /> */}
           <Popover open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
             <PopoverTrigger asChild>
-              <Button variant={'ghost'} className={menuButtonClass}>
+              <Button className={menuButtonClass}>
                 <Image
                   alt='logo'
                   width='36'
