@@ -100,7 +100,7 @@ const services = [
     icon: 'makeup',
     items: [
       { name: 'Make up', time: '1 hr 30 mins', description: ['$200 - $250+', 'wedding $250+'], price: '' },
-      // { name: 'Wedding Makeup', time: '1 hr 30 mins', description: [''], price: '$250+' },
+      { name: 'Make up teaching lesson', time: '1 hr', description: [''], price: '$150' },
       // { name: 'Party Makeup', time: '1 hr 30 mins', description: [''], price: '$150+' },
       // { name: 'Bridal Makeup', time: '1 hr 30 mins', description: [''], price: '$200+' },
     ],
