@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   description:
     'Experience top-quality hair care at OneLeaf Salon Hair by Kazuyo, located at 38 W Sierra Madre Blvd, Sierra Madre, CA 91024. Our expert stylists offer the latest trends, cuts, colors, and personalized styles. Book your appointment online today.',
   keywords:
-    'oneleaf, oneleaf salon, oneleafsalon, hair salon, hairstyling, haircut, hair color, perm, Pasadena, Sierra Madre, OneLeaf, Kazuyo, California, 38 W Sierra Madre Blvd',
+    'oneleaf, oneleaf salon, oneleafsalon, hair salon, hairstyling, haircut, hair color, perm, headspa, head spa, Pasadena, Sierra Madre, OneLeaf, Kazuyo, California, 38 W Sierra Madre Blvd',
   authors: [{ name: 'Kazuyo Shichiri' }],
   openGraph: {
     title: 'OneLeaf Salon Hair by Kazuyo | Premium Hair Salon in Sierra Madre, CA',
