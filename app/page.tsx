@@ -75,9 +75,10 @@ export default function Page() {
           <p
             className='text-green-900 text-base sm:text-lg md:text-lg lg:text-xl text-center font-poppins font-light max-w-3xl px-4'
             style={{ lineHeight: '1.5' }}>
-            Hello, my name is Kazuyo. I am originally from Japan, with over 25 years of experience as a hairstylist, including time spent working in
-            Tokyo. After many wonderful years serving clients in Pasadena, I’m excited to bring my passion and expertise to my own salon here in
-            Sierra Madre. With deep gratitude, I look forward to welcoming you to a space where beauty and relaxation meet.
+            Kazuyo has been a Master Hairstylist in Japan with more than 20 years of experience working in Tokyo&apos;s leading hair salons. She bases
+            each style on drawing out a person&apos;s inner beauty, creating balance with their structural features, and listening to the
+            customers&apos; vision on who they want to become as their best selves. The experience will be relaxed and fun as we work together to find
+            the beautiful energy you want to project into the world.
           </p>
         </div>
       </section>
