@@ -44,7 +44,7 @@ export default function Page() {
               <Button
                 asChild
                 className='bg-white/70 hover:bg-white text-black p-3 xs:p-2 sm:p-4 md:p-6 lg:p-8 text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl'>
-                <Link href='https://oneleafsalon.setmore.com/' target='_blank'>
+                <Link href='https://oneleafsalon.setmore.com/#our-team' target='_blank'>
                   Book an appointment
                 </Link>
               </Button>

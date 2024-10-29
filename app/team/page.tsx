@@ -18,8 +18,8 @@ const teamMembers = [
     role: 'Stylist',
     image: '/images/daisy.webp',
     description:
-      'Meet Daisy, our emerging artist who strives to bring her client&apos;s vision to life. Whether it&apos;s a balayage, highlights, vivid color, or haircut, she will undoubtedly work her magic behind the chair!',
-    specialties: ['Balayage', 'Head spa', 'Women&apos;s cut'],
+      "Meet Daisy, our emerging artist who strives to bring her client's vision to life. Whether it's a balayage, highlights, vivid color, or haircut, she will undoubtedly work her magic behind the chair!",
+    specialties: [`Balayage`, `Head spa`, `Women's cut`],
     link: 'https://oneleafsalon.setmore.com/daisy',
   },
 ];

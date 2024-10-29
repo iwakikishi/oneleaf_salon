@@ -37,14 +37,15 @@ const MobileHeader = () => {
         <div className='flex gap-2'>
           <Popover open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
             <PopoverTrigger asChild>
-              <Button className={menuButtonClass}>
-                <Image
+              <Button size={'sm'} className={menuButtonClass}>
+                {/* <Image
                   alt='logo'
                   width='36'
                   height='36'
                   src='/icons/oneleaf-logo-2-square.jpg'
                   style={{ width: '36px', height: '36px', borderRadius: '10px' }}
-                />
+                /> */}
+                <Menu size={24} color='black' />
               </Button>
             </PopoverTrigger>
 
@@ -75,7 +76,7 @@ const MobileHeader = () => {
                   </Link>
                 </Button>
                 <Button asChild variant={'ghost'} onClick={() => setIsOpen(false)}>
-                  <Link href='https://booking.setmore.com/scheduleappointment/f37b5239-7295-4828-9acb-a560c84d37ef' target='_blank'>
+                  <Link href='https://oneleafsalon.setmore.com/#our-team' target='_blank'>
                     <CalendarClock size={20} color='black' className='hover:text-green-300 transition-colors mr-2' />
                     Book Now
                   </Link>
@@ -86,7 +87,7 @@ const MobileHeader = () => {
         </div>
 
         <Button size={'sm'} asChild className={bookNowButtonClass}>
-          <Link href='https://booking.setmore.com/scheduleappointment/f37b5239-7295-4828-9acb-a560c84d37ef' target='_blank'>
+          <Link href='https://oneleafsalon.setmore.com/#our-team' target='_blank'>
             Book Now
           </Link>
         </Button>
