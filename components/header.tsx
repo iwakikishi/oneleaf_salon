@@ -60,7 +60,7 @@ const Header = () => {
           <Link href='/contact'>Contact</Link>
         </Button>
         <Button asChild variant={'ghost'}>
-          <Link href='https://booking.setmore.com/scheduleappointment/f37b5239-7295-4828-9acb-a560c84d37ef' target='_blank'>
+          <Link href='https://oneleafsalon.setmore.com/#our-team' target='_blank'>
             Appointment
           </Link>
         </Button>

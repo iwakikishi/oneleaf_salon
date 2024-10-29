@@ -133,7 +133,7 @@ export default function Page() {
         <div className='flex flex-col gap-8'>
           <PriceAccordion />
           <Button asChild className='p-8 bg-lime-700/30 text-lime-700 text-xl font-poppins hover:bg-lime-700/50'>
-            <Link href='https://oneleafsalon.setmore.com/' target='_blank'>
+            <Link href='https://oneleafsalon.setmore.com/#our-team' target='_blank'>
               Book an appointment
             </Link>
           </Button>
