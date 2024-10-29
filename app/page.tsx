@@ -97,7 +97,7 @@ export default function Page() {
           </div>
           <div className='flex flex-col gap-5'>
             <h1 className='text-green-900 text-3xl font-poppins font-bold'>ZEN Head Spa</h1>
-            <p className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>Something about head spa</p>
+            {/* <p className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>Something about head spa</p> */}
             <div className='flex flex-col aspect-video rounded-xl overflow-hidden'>
               <video autoPlay muted loop playsInline className='w-full h-full rounded-xl object-cover xs:object-contain mt-4'>
                 <source src='/images/booklet/waterfall.mp4' type='video/mp4' />
