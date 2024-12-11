@@ -150,7 +150,7 @@ export default function Page() {
             <ul className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>
               <li>Monday: 9:00 AM - 6:00 PM</li>
               <li>Tuesday: Closed</li>
-              <li>Wednesday: 9:00 AM - 6:00 PM</li>
+              <li>Wednesday: Closed</li>
               <li>Thursday: 9:00 AM - 6:00 PM</li>
               <li>Friday: 9:00 AM - 6:00 PM</li>
               <li>Saturday: 9:00 AM - 6:00 PM</li>
