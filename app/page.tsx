@@ -210,7 +210,7 @@ export default function Page() {
           </p>
           <p className='text-green-900 text-base sm:text-lg md:text-xl lg:text-2xl font-poppins'>
             <a
-              href='https://www.google.com/maps/dir/?api=1&destination=34.16161397311594,-118.05619732447848'
+              href='https://www.google.com/maps/search/?api=1&query=38 W Sierra Madre Blvd, Sierra Madre, CA 91024'
               target='_blank'
               rel='noopener noreferrer'>
               ● <span className='underline'>Get the direction</span>
