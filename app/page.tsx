@@ -194,11 +194,41 @@ export default function Page() {
           </p>
         </div>
       </section>
+      {/* Reviews Section */}
       <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Thank you for your reviews</SectionTitle>
         <p className='text-gray-500 sm:mt-2 md:mt-4 lg:mt-8 px-4'>Thank you for your reviews. We are grateful for your support and feedback.</p>
         <div className='flex sm:mt-8 md:mt-12 lg:mt-18'>
           <TopReviews />
+        </div>
+      </section>
+      {/* Giftcard Section */}
+      <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
+        <SectionTitle>Giftcard</SectionTitle>
+        <p className='text-gray-500 sm:mt-2 md:mt-4 lg:mt-8 px-4'>
+          We are now offering gift cards for our services. Please click the link below or scan the QR code to purchase a gift card.
+        </p>
+
+        <div className='flex flex-col md:flex-row items-center justify-center gap-10 sm:mt-8 md:mt-12 lg:mt-18'>
+          <div className='w-full md:w-96 h-auto'>
+            <Image
+              src='/images/giftcard_image.png'
+              alt='Gift Card Image'
+              width={500}
+              height={300}
+              className='w-full h-auto object-cover rounded-lg shadow-lg'
+            />
+          </div>
+          <div className='flex flex-col items-center gap-8'>
+            <div className='w-48 h-48'>
+              <Image src='/images/giftcard_qrcode.jpg' alt='Gift Card QR Code' width={192} height={192} className='w-full h-full' />
+            </div>
+            <Button asChild className='p-8 bg-lime-700/30 text-lime-700 text-xl font-poppins hover:bg-lime-700/50'>
+              <Link href='https://www.clover.com/online-ordering/oneleaf-inc-pasadena/giftcard' target='_blank'>
+                Purchase a gift card
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
       {/* Access Section */}
