@@ -46,12 +46,9 @@ const Footer = () => {
               })}
             </nav>
           </div>
-          <div className='flex flex-col'>
+          {/* <div className='flex flex-col'>
             <h3 className='text-xl font-semibold mb-4'>Follow Us</h3>
             <div className='flex space-x-4'>
-              {/* <a href='#' className='text-white hover:text-green-300 transition-colors'>
-                <Facebook size={20} />
-              </a> */}
               <Link
                 href='https://www.instagram.com/kazuyohairstyle/?hl=en'
                 target='_blank'
@@ -61,7 +58,7 @@ const Footer = () => {
                 </span>
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className='mt-8 pt-8 border-t border-green-700 text-center text-sm'>
           <p>
