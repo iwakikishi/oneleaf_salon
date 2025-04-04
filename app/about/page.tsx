@@ -21,9 +21,13 @@ export default function AboutPage() {
           </div>
           <div className='w-full p-2'>
             <p className='text-green-900 text-md font-poppins mb-4'>
+              Welcome to OneLeaf Salon, where the art of Japanese hospitality meets expert hairstyling. I&apos;m Kazuyo, the owner, bringing over 20
+              years of experience from Tokyo&apos;s leading salons to Sierra Madre.
+            </p>
+            {/* <p className='text-green-900 text-md font-poppins mb-4'>
               Welcome to OneLeaf Salon, where the art of Japanese hospitality meets expert hairstyling. I&apos;m Kazuyo, the owner and lead stylist,
               bringing over 20 years of experience from Tokyo&apos;s leading salons to Sierra Madre.
-            </p>
+            </p> */}
             <p className='text-green-900 text-lg font-poppins mb-4'>
               At OneLeaf, we don&apos;t just style hair; we create experiences. Our salon is a blend of technical expertise and the warm, attentive
               service that is the hallmark of Japanese omotenashi (hospitality).

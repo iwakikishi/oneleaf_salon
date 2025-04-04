@@ -41,12 +41,17 @@ export default function Page() {
               Luxury hair salon. Managed by professional Japanese hair stylist
             </p>
             <div className='flex flex-row gap-2 mt-4'>
-              <Button
+              {/* <Button
                 asChild
                 className='bg-white/70 hover:bg-white text-black p-3 xs:p-2 sm:p-4 md:p-6 lg:p-8 text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl'>
                 <Link href='https://oneleafsalon.setmore.com/#our-team' target='_blank'>
                   Book an appointment
                 </Link>
+              </Button> */}
+              <Button
+                asChild
+                className='bg-white/70 hover:bg-white text-black p-3 xs:p-2 sm:p-4 md:p-6 lg:p-8 text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl'>
+                <Link href='tel:+16263943601'>Appointment</Link>
               </Button>
             </div>
           </div>
@@ -133,9 +138,10 @@ export default function Page() {
         <div className='flex flex-col gap-8'>
           <PriceAccordion />
           <Button asChild className='p-8 bg-lime-700/30 text-lime-700 text-xl font-poppins hover:bg-lime-700/50'>
-            <Link href='https://oneleafsalon.setmore.com/#our-team' target='_blank'>
+            <Link href='tel:+16263943601'>Appointment</Link>
+            {/* <Link href='https://oneleafsalon.setmore.com/#our-team' target='_blank'>
               Book an appointment
-            </Link>
+            </Link> */}
           </Button>
         </div>
       </section>

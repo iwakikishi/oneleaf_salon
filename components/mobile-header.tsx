@@ -78,16 +78,16 @@ const MobileHeader = () => {
                 <Button asChild variant={'ghost'} onClick={() => setIsOpen(false)}>
                   <Link href='/cancellation-policy'>Cancellation Policy</Link>
                 </Button>
-                <Button asChild variant={'ghost'} className='mt-8' onClick={() => setIsOpen(false)}>
+                {/* <Button asChild variant={'ghost'} className='mt-8' onClick={() => setIsOpen(false)}>
                   <Link href='https://www.instagram.com/kazuyohairstyle/?hl=en' target='_blank' className='flex items-center'>
                     <Instagram size={20} color='black' className='hover:text-green-300 transition-colors mr-2' />
                     Instagram
                   </Link>
-                </Button>
+                </Button> */}
                 <Button asChild variant={'ghost'} onClick={() => setIsOpen(false)}>
                   <Link href='https://oneleafsalon.setmore.com/#our-team' target='_blank'>
                     <CalendarClock size={20} color='black' className='hover:text-green-300 transition-colors mr-2' />
-                    Book Now
+                    Call
                   </Link>
                 </Button>
               </div>

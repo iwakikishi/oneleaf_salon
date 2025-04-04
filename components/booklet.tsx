@@ -86,7 +86,7 @@ const Booklet = (props: any) => {
           </div>
           <div className='flex flex-col items-start text-gray-900 font-poppins font-bold'>
             <div className='text-xs sm:text-md text-gray-700' style={{ fontSize: isMobile ? '8px' : '12px' }}>
-              Owner & Hairstylist
+              Owner
             </div>
             <div className='text-sm sm:text-md md:text-xl'>Kazuyo Shichiri</div>
           </div>
@@ -95,12 +95,12 @@ const Booklet = (props: any) => {
           <div className='text-xs sm:text-md text-gray-700' style={{ fontSize: isMobile ? '8px' : '12px' }}>
             OneLeaf Salon Hair by Kazuyo
           </div>
-          <div className='flex items-center text-xs sm:text-md text-gray-700' style={{ fontSize: isMobile ? '8px' : '12px' }}>
+          {/* <div className='flex items-center text-xs sm:text-md text-gray-700' style={{ fontSize: isMobile ? '8px' : '12px' }}>
             <Instagram color='gray' size={isMobile ? 12 : 16} />
             <Link href='https://www.instagram.com/kazuyohairstyle/' target='_blank'>
               <span className='ml-1'>kazuyohairstyle</span>
             </Link>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>,

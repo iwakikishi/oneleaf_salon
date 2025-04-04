@@ -5,7 +5,7 @@
       "layout": "spread",
       "metadata": {
         "title": "Profile Page",
-        "description": "Owner and hairstylist profile information"
+        "description": "Owner profile information"
       },
       "pageTransition": {
         "animation": "fade",
@@ -42,7 +42,7 @@
           },
           {
             "type": "text",
-            "content": "Owner & Hairstylist",
+            "content": "Owner",
             "spans": [
               {
                 "text": "Owner & Hairstylist",
