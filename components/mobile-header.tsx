@@ -47,7 +47,7 @@ const MobileHeader = () => {
         </Link>
         <div className='flex gap-2'>
           <Button size={'sm'} asChild className={bookNowButtonClass}>
-            <Link href='tel:+16263943601'>Call</Link>
+            <Link href='tel:+16263943601'>Book</Link>
             {/* <Link href='https://oneleafsalon.setmore.com/#our-team' target='_blank'>
               Book Now
             </Link> */}
@@ -86,7 +86,7 @@ const MobileHeader = () => {
                   </Link>
                 </Button> */}
                 <Button asChild variant={'ghost'} onClick={() => setIsOpen(false)}>
-                  <Link href='tel:+16263943601'>Call</Link>
+                  <Link href='tel:+16263943601'>Book an Appointment</Link>
                   {/* <Link href='https://oneleafsalon.setmore.com/#our-team' target='_blank'>
                     <CalendarClock size={20} color='black' className='hover:text-green-300 transition-colors mr-2' />
                     Call
