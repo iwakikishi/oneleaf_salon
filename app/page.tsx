@@ -51,7 +51,7 @@ export default function Page() {
               <Button
                 asChild
                 className='bg-white/70 hover:bg-white text-black p-3 xs:p-2 sm:p-4 md:p-6 lg:p-8 text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl'>
-                <Link href='tel:+16263943601'>Call</Link>
+                <Link href='tel:+16263943601'>Book an Appointment</Link>
               </Button>
             </div>
           </div>
