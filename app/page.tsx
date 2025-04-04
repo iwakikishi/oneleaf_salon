@@ -51,7 +51,7 @@ export default function Page() {
               <Button
                 asChild
                 className='bg-white/70 hover:bg-white text-black p-3 xs:p-2 sm:p-4 md:p-6 lg:p-8 text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl'>
-                <Link href='tel:+16263943601'>Appointment</Link>
+                <Link href='tel:+16263943601'>Call</Link>
               </Button>
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function Page() {
         </div>
       </section>
       {/* Instagram Section */}
-      <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
+      {/* <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Instagram</SectionTitle>
         <div className=' flex flex-row gap-2 bg-[#f0f9ff] p-4 rounded-xl'>
           <Instagram size={24} className='text-green-900' />
@@ -130,7 +130,7 @@ export default function Page() {
           </Link>
         </div>
         <InstagramFeed />
-      </section>
+      </section> */}
       {/* Price Section */}
       <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Prices</SectionTitle>
@@ -201,13 +201,13 @@ export default function Page() {
         </div>
       </section>
       {/* Reviews Section */}
-      <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
+      {/* <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Thank you for your reviews</SectionTitle>
         <p className='text-gray-500 sm:mt-2 md:mt-4 lg:mt-8 px-4'>Thank you for your reviews. We are grateful for your support and feedback.</p>
         <div className='flex sm:mt-8 md:mt-12 lg:mt-18'>
           <TopReviews />
         </div>
-      </section>
+      </section> */}
       {/* Giftcard Section */}
       <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Giftcard</SectionTitle>
