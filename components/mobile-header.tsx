@@ -86,11 +86,11 @@ const MobileHeader = () => {
                   </Link>
                 </Button> */}
                 <Button asChild variant={'ghost'} onClick={() => setIsOpen(false)}>
-                  <Link href='tel:+16263943601'>Book an Appointment</Link>
-                  {/* <Link href='https://oneleafsalon.setmore.com/#our-team' target='_blank'>
+                  {/* <Link href='tel:+16263943601'>Book an Appointment</Link> */}
+                  <Link href='https://oneleafsalon.setmore.com/oneleaf' target='_blank'>
                     <CalendarClock size={20} color='black' className='hover:text-green-300 transition-colors mr-2' />
                     Call
-                  </Link> */}
+                  </Link>
                 </Button>
               </div>
             </PopoverContent>
