@@ -77,8 +77,10 @@ export default function AboutPage() {
         </p>
         <div className='flex justify-center'>
           <Button asChild className='p-6 bg-lime-700/30 text-lime-700 text-lg font-poppins hover:bg-lime-700/50'>
-            {/* <Link href='https://oneleafsalon.setmore.com/' target='_blank'> */}
-            <Link href='tel:+16263943601'>Book Your Experience</Link>
+            <Link href='https://oneleafsalon.setmore.com/oneleaf' target='_blank'>
+              Book Your Experience
+            </Link>
+            {/* <Link href='tel:+16263943601'>Book Your Experience</Link> */}
           </Button>
         </div>
       </section>

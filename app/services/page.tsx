@@ -41,10 +41,10 @@ export default function page() {
         <div className='flex flex-col gap-8'>
           <PriceAccordion />
           <Button asChild className='p-8 bg-lime-700/30 text-lime-700 text-xl font-poppins hover:bg-lime-700/50'>
-            <Link href='tel:+16263943601'>Appointment</Link>
-            {/* <Link href='https://oneleafsalon.setmore.com/' target='_blank'>
+            {/* <Link href='tel:+16263943601'>Appointment</Link> */}
+            <Link href='https://oneleafsalon.setmore.com/oneleaf' target='_blank'>
               Book an appointment
-            </Link> */}
+            </Link>
           </Button>
         </div>
       </section>

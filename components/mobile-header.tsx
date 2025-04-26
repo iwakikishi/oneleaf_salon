@@ -47,10 +47,10 @@ const MobileHeader = () => {
         </Link>
         <div className='flex gap-2'>
           <Button size={'sm'} asChild className={bookNowButtonClass}>
-            <Link href='tel:+16263943601'>Book</Link>
-            {/* <Link href='https://oneleafsalon.setmore.com/#our-team' target='_blank'>
+            {/* <Link href='tel:+16263943601'>Book</Link> */}
+            <Link href='https://oneleafsalon.setmore.com/oneleaf' target='_blank'>
               Book Now
-            </Link> */}
+            </Link>
           </Button>
           <Popover open={isOpen} onOpenChange={() => setIsOpen(!isOpen)}>
             <PopoverTrigger asChild>
