@@ -10,7 +10,12 @@ import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import { DialogFlipbook } from '@/components/dialog-flipbook';
 import { X } from 'lucide-react';
 
-const Booklet = (props: any) => {
+interface BookletProps {
+  pages?: React.ReactNode[];
+  [key: string]: any; // Allow additional props
+}
+
+const Booklet = (props: BookletProps) => {
   const { width = 0 } = useWindowSize() || {};
   const isMobile = width < 640;
   // Calculate responsive padding
@@ -322,7 +327,7 @@ const Booklet = (props: any) => {
         setShowPrevButton(true);
       }
     },
-    [currentPage]
+    []
   );
 
   useEffect(() => {
@@ -330,7 +335,6 @@ const Booklet = (props: any) => {
   }, [adjustedWidth]);
 
   const handleVideoLoaded = () => {
-    console.log('video loaded');
     setIsVideoLoaded(true);
   };
 

@@ -1,15 +1,9 @@
 /// <reference types="@types/google.maps" />
+'use client';
 
-// グローバルな google オブジェクトを宣言
-declare global {
-  interface Window {
-    google: any;
-  }
-}
-
-('use client');
 import { useEffect, useRef } from 'react';
 import { Loader } from '@googlemaps/js-api-loader';
+import { env, hasEnv } from '@/lib/env';
 
 interface MapProps {
   address: string;
@@ -19,8 +13,16 @@ function Map({ address }: MapProps) {
   const mapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Check if API key is configured
+    if (!hasEnv('GOOGLE_MAPS_API_KEY')) {
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('Google Maps API key not configured');
+      }
+      return;
+    }
+
     const loader = new Loader({
-      apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
+      apiKey: env.GOOGLE_MAPS_API_KEY!,
       version: 'weekly',
       libraries: ['places'],
     });
@@ -39,7 +41,10 @@ function Map({ address }: MapProps) {
               position: results[0].geometry.location,
             });
           } else {
-            console.error(`Geocode was not successful for the following reason: ${status}`);
+            // Geocoding failed - silently handle or log to monitoring service
+            if (process.env.NODE_ENV === 'development') {
+              console.error(`Geocode was not successful for the following reason: ${status}`);
+            }
           }
         });
       }
