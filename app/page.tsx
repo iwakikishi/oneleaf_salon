@@ -3,14 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import Booklet from '@/components/booklet';
-import TopReviews from '@/components/reviews';
 import Contact from '@/components/contact';
 import ImageCarousel from '@/components/image-carousel';
 import { SectionTitle } from '@/components/section-title';
 import { PriceAccordion } from '@/components/PriceAccordion';
 import { ServicesCardComponent } from '@/components/services-card';
-import { InstagramFeed } from '@/components/instagram-feed';
-import { Instagram } from 'lucide-react';
 
 export default function Page() {
   return (
@@ -118,19 +115,6 @@ export default function Page() {
           </div>
         </div>
       </section>
-      {/* Instagram Section */}
-      {/* <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
-        <SectionTitle>Instagram</SectionTitle>
-        <div className=' flex flex-row gap-2 bg-[#f0f9ff] p-4 rounded-xl'>
-          <Instagram size={24} className='text-green-900' />
-          <Link href='https://www.instagram.com/kazuyohairstyle/?hl=en' target='_blank'>
-            <p className='text-green-900 text-sm sm:text-sm md:text-md lg:text-lg font-poppins underline'>
-              Click here to take a look at our Instagram to discover the style that suits you best!
-            </p>
-          </Link>
-        </div>
-        <InstagramFeed />
-      </section> */}
       {/* Price Section */}
       <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Prices</SectionTitle>
@@ -200,14 +184,6 @@ export default function Page() {
           </p>
         </div>
       </section>
-      {/* Reviews Section */}
-      {/* <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
-        <SectionTitle>Thank you for your reviews</SectionTitle>
-        <p className='text-gray-500 sm:mt-2 md:mt-4 lg:mt-8 px-4'>Thank you for your reviews. We are grateful for your support and feedback.</p>
-        <div className='flex sm:mt-8 md:mt-12 lg:mt-18'>
-          <TopReviews />
-        </div>
-      </section> */}
       {/* Giftcard Section */}
       <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Giftcard</SectionTitle>
@@ -267,59 +243,6 @@ export default function Page() {
           <Contact />
         </div>
       </section>
-      {/* <section className='flex flex-col w-full font-poppins mt-24 px-8 md:px-12 lg:px-48'>
-        <SectionTitle>Services</SectionTitle>
-        <div className='flex flex-col sm:mt-4 md:mt-8 lg:mt-12 sm:flex-row gap-4'>
-          {['cut', 'makeup', 'perm'].map((service) => (
-            <div key={service} className='p-6'>
-              <Image src={`/images/services/${service}.webp`} alt={service} layout='responsive' width={1000} height={1000} />
-              <p className='text-black p-4 text-center text-3xl font-bold'>{service.charAt(0).toUpperCase() + service.slice(1)}</p>
-            </div>
-          ))}
-        </div>
-      </section> */}
-      {/* <section className='flex flex-col w-full font-poppins sm:mt-8 md:mt-28 lg:mt-36 sm:px-8 md:px-12 lg:px-48'>
-        <SectionTitle>Sunday Appointment Only Head Spa Menus</SectionTitle>
-        {['Oily Improvement', 'Dry Scalp', 'Hair loss', 'Stress relief'].map((title) => (
-          <HeadSpaItem
-            key={title}
-            title={title}
-            description='Craft engaging titles and subtitles for a head spa&apos;s "Hair Condition Consulting" section to enhance content appeal and clarity. Titles and subtitles guide readers through understanding and benefiting from personalized hair consulting, detailing the consultation process, tailored treatments, scalp health maintenance, advanced solutions, FAQ, and booking information.'
-          />
-        ))}
-        <div className='flex mt-10'>
-          <Button asChild className='mt-8 py-5'>
-            <Link href='/agreement' className='text-xl'>
-              Book an appointment
-            </Link>
-          </Button>
-        </div>
-      </section> */}
-      {/* <section className='flex flex-col w-full font-poppins sm:mt-8 md:mt-28 lg:mt-36 sm:px-8 md:px-12 lg:px-48'>
-        <SectionTitle>Personalized Hair Condition Consulting</SectionTitle>
-        <p className='text-gray-500 sm:mt-2 md:mt-4 lg:mt-8'>
-          Craft engaging titles and subtitles for a head spa&apos;s &quot;Hair Condition Consulting&quot; section to enhance content appeal and
-          clarity. Titles and subtitles guide readers through understanding and benefiting from personalized hair consulting, detailing the
-          consultation process, tailored treatments, scalp health maintenance, advanced solutions, FAQ, and booking information.
-        </p>
-        <div className='flex mt-10'>
-          <Button asChild className='mt-8'>
-            <Link href='/conditions' className='text-xl'>
-              Check your hair condition now
-            </Link>
-          </Button>
-        </div>
-      </section> */}
-      {/* <section className='flex flex-col w-full sm:mt-8 md:mt-28 lg:mt-36 sm:px-8 md:px-12 lg:px-48'>
-        <SectionTitle>Retail</SectionTitle>
-        <p className='text-gray-500 sm:mt-2 md:mt-4 lg:mt-8'>
-          This is the space to introduce the Project section. Take this opportunity to give visitors a brief overview of the types of projects
-          they&apos;ll find featured in the showcase below. Consider adding an image or video to spark their interest.
-        </p>
-        <div className='flex sm:mt-8 md:mt-12 lg:mt-18'>
-          <TopGoods />
-        </div>
-      </section> */}
     </main>
   );
 }

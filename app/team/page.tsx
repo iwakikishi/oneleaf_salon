@@ -17,7 +17,7 @@ const teamMembers = [
   {
     name: 'Daisy',
     role: 'Stylist',
-    image: '/images/daisy.webp',
+    image: '/images/daisy.jpg',
     description:
       "Meet Daisy, our emerging artist who strives to bring her client's vision to life. Whether it's a balayage, highlights, vivid color, or haircut, she will undoubtedly work her magic behind the chair!",
     specialties: [`Balayage`, `Head spa`, `Women's cut`],
