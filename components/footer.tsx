@@ -39,7 +39,7 @@ const Footer = () => {
                   );
                 }
                 return (
-                  <Link key={link.href} href={link.href} className='text-sm hover:text-green-300 transition-colors'>
+                  <Link key={link.label} href={link.href} className='text-sm hover:text-green-300 transition-colors'>
                     {link.label}
                   </Link>
                 );
@@ -61,7 +61,7 @@ const Footer = () => {
           </div> */}
         </div>
         <div className='mt-8 pt-8 border-t border-green-700 text-center text-sm'>
-          <p>
+          <p suppressHydrationWarning>
             &copy; {new Date().getFullYear()} OneLeaf Salon Hair by Kazuyo. <br />
             All rights reserved.
           </p>

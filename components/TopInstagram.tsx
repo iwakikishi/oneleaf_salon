@@ -14,7 +14,7 @@ export default function TopInstagram() {
         ))}
       </div>
       <div className='flex justify-center mt-4'>
-        <button className='bg-black text-white font-bold py-2 px-4 rounded-md'>View All</button>
+        <button className='bg-gray-900 text-white font-bold py-2 px-4 rounded-md'>View All</button>
       </div>
     </div>
   );

@@ -3,6 +3,12 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { SectionTitle } from '@/components/section-title';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About | OneLeaf Salon',
+  description: 'Learn about OneLeaf Salon — a Japanese luxury hair salon in Sierra Madre, CA, led by master hairstylist Kazuyo with 20+ years of Tokyo experience.',
+};
 
 export default function AboutPage() {
   return (

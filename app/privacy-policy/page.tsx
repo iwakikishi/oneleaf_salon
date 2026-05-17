@@ -2,6 +2,12 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy & Terms of Service | OneLeaf Salon',
+  description: 'Read the privacy policy and terms of service for OneLeaf Salon. Learn how we protect your data and the guidelines for using our services.',
+};
 
 const SectionTitle = ({ children }: { children: React.ReactNode }) => (
   <div className='flex items-center gap-2 mb-6'>

@@ -3,6 +3,12 @@ import { Card, CardContent } from '@/components/ui/card';
 import { SectionTitle } from '@/components/section-title';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Our Team | OneLeaf Salon',
+  description: 'Meet the talented stylists at OneLeaf Salon — Kazuyo and Daisy, dedicated to bringing out your natural beauty with personalized hair care.',
+};
 const teamMembers = [
   {
     name: 'Kazuyo',
@@ -35,7 +41,7 @@ export default function TeamPage() {
             <Card key={member.name} className='overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300'>
               <CardContent className='p-0'>
                 <div className='relative h-80'>
-                  <Image src={member.image} alt={member.name} fill className='object-cover' />
+                  <Image src={member.image} alt={member.name} fill sizes='(max-width: 768px) 100vw, 50vw' className='object-cover' />
                 </div>
                 <div className='p-6'>
                   <h2 className='text-2xl font-semibold text-green-800 mb-2 font-poppins'>{member.name}</h2>

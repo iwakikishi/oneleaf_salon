@@ -162,7 +162,7 @@ export default function ImageCarousel() {
               <Card onClick={() => openModal(index)} className='cursor-pointer hover:shadow-lg transition-shadow duration-300'>
                 <CardContent className='p-0'>
                   <div className='relative aspect-[4/3]'>
-                    <Image src={image.src} alt={image.alt} fill className='object-cover' />
+                    <Image src={image.src} alt={image.alt} fill sizes='(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw' className='object-cover' />
                     <div className='absolute bottom-1 left-1 bg-black/30 rounded-md px-3 py-1'>
                       <p className='text-white text-sm font-poppins'>{image.alt}</p>
                     </div>
@@ -186,7 +186,7 @@ export default function ImageCarousel() {
                 {images.map((image, index) => (
                   <div key={index} className='flex-[0_0_100%] h-full min-w-0'>
                     <div className='relative w-full h-full'>
-                      <Image src={image.src} alt={image.alt} fill style={{ objectFit: 'contain' }} className='p-4' />
+                      <Image src={image.src} alt={image.alt} fill sizes='100vw' style={{ objectFit: 'contain' }} className='p-4' />
                     </div>
                   </div>
                 ))}

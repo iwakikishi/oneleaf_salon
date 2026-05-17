@@ -17,7 +17,7 @@ const MobileHeader = () => {
       setIsScrolled(window.scrollY > scrollThreshold);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -72,6 +72,9 @@ const MobileHeader = () => {
                 </Button>
                 <Button asChild variant={'ghost'} onClick={() => setIsOpen(false)}>
                   <Link href='/team'>Team</Link>
+                </Button>
+                <Button asChild variant={'ghost'} onClick={() => setIsOpen(false)}>
+                  <Link href='https://www.clover.com/online-ordering/oneleaf-inc-pasadena' target='_blank'>Gift Card</Link>
                 </Button>
                 <Button asChild variant={'ghost'} onClick={() => setIsOpen(false)}>
                   <Link href='/contact'>Contact</Link>

@@ -1,6 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
 import { CheckboxForm } from './components/CheckboxForm';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Head Spa Agreement Form | OneLeaf Salon',
+  description: 'Complete the Head Spa agreement form at OneLeaf Salon before your appointment in Sierra Madre, CA.',
+};
 
 export default function page() {
   const today = new Date();

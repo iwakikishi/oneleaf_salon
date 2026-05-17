@@ -170,10 +170,10 @@ const Booklet = (props: BookletProps) => {
         </h2>
         <div className={`flex w-full gap-2`}>
           <div className='w-full'>
-            <Image src={`/images/booklet/kazuyo-past-1.jpg`} alt='kazuyo' width={adjustedWidth / 4} height={adjustedHeight / 2} objectFit='cover' />
+            <Image src={`/images/booklet/kazuyo-past-1.jpg`} alt='kazuyo' width={adjustedWidth / 4} height={adjustedHeight / 2} style={{ objectFit: 'cover', height: 'auto' }} />
           </div>
           <div className='w-full'>
-            <Image src={`/images/booklet/otera.jpg`} alt='kazuyo' width={adjustedWidth / 4} height={adjustedHeight / 2} objectFit='cover' />
+            <Image src={`/images/booklet/otera.jpg`} alt='kazuyo' width={adjustedWidth / 4} height={adjustedHeight / 2} style={{ objectFit: 'cover', height: 'auto' }} />
           </div>
         </div>
       </div>
@@ -218,11 +218,11 @@ const Booklet = (props: BookletProps) => {
         </div>
         <div className={`flex w-full gap-2`}>
           <div className='w-1/2'>
-            <Image src={`/images/booklet/head-spa-2.jpg`} alt='kazuyo' width={adjustedWidth / 4} height={adjustedHeight / 2} objectFit='cover' />
-            <Image src={`/images/booklet/head-spa-1.jpg`} alt='kazuyo' width={adjustedWidth / 4} height={adjustedHeight / 2} objectFit='cover' />
+            <Image src={`/images/booklet/head-spa-2.jpg`} alt='head spa' width={adjustedWidth / 4} height={adjustedHeight / 2} style={{ objectFit: 'cover', height: 'auto' }} />
+            <Image src={`/images/booklet/head-spa-1.jpg`} alt='head spa' width={adjustedWidth / 4} height={adjustedHeight / 2} style={{ objectFit: 'cover', height: 'auto' }} />
           </div>
           <div className='w-1/2'>
-            <Image src={`/images/booklet/head-spa-4.jpg`} alt='kazuyo' width={adjustedWidth / 4} height={adjustedHeight / 2} objectFit='cover' />
+            <Image src={`/images/booklet/head-spa-4.jpg`} alt='head spa' width={adjustedWidth / 4} height={adjustedHeight / 2} style={{ objectFit: 'cover', height: 'auto' }} />
           </div>
         </div>
       </div>
@@ -255,7 +255,7 @@ const Booklet = (props: BookletProps) => {
       }}>
       <div className={`p-4 sm:p-6 md:p-8 w-full flex flex-col justify-around gap-2`} style={{ height: `${adjustedHeight}px` }}>
         <h2 className='text-lime-700/70 text-sm sm:text-3xl font-poppins font-bold'>Zen spa & Shojin Monk Mode</h2>
-        <Image src={'/images/booklet/shoujin-1.jpg'} alt='kazuyo' width={adjustedWidth / 2} height={adjustedHeight} />
+        <Image src={'/images/booklet/shoujin-1.jpg'} alt='Zen spa shojin' width={adjustedWidth / 2} height={adjustedHeight} style={{ height: 'auto' }} />
       </div>
     </div>,
 

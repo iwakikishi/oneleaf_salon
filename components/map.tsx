@@ -30,7 +30,7 @@ function Map({ address }: MapProps) {
     loader.load().then((google) => {
       if (google && mapRef.current) {
         const geocoder = new google.maps.Geocoder();
-        geocoder.geocode({ address: address }, (results: google.maps.GeocoderResult[] | null, status: google.maps.GeocoderStatus) => {
+        geocoder.geocode({ address: address }, (results, status) => {
           if (status === 'OK' && results) {
             const map = new google.maps.Map(mapRef.current as HTMLElement, {
               center: results[0].geometry.location,

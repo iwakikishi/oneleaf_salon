@@ -2,12 +2,32 @@
 
 import React, { useState, useEffect, ReactNode } from 'react';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface Page {
   content: ReactNode;
   imageUrl: string;
 }
+
+// モジュールスコープに定義することで、毎レンダリングで新インスタンスが生成されるのを防ぐ
+const PageContent: React.FC<{ page: Page | undefined }> = ({ page }) => (
+  <div className='flex flex-col items-center justify-center h-full p-4'>
+    {page && (
+      <>
+        <div className='relative w-32 h-32 mb-4'>
+          <Image
+            src={page.imageUrl}
+            alt='ページ画像'
+            className='rounded-full object-cover'
+            width={128}
+            height={128}
+            style={{ aspectRatio: '1 / 1' }}
+          />
+        </div>
+        <div className='text-center overflow-auto max-h-[calc(100%-8rem)]'>{page.content}</div>
+      </>
+    )}
+  </div>
+);
 
 const pages: Page[] = [
   {
@@ -131,25 +151,7 @@ export default function PageFlip() {
     return null;
   };
 
-  const PageContent: React.FC<{ page: Page | undefined }> = ({ page }) => (
-    <div className='flex flex-col items-center justify-center h-full p-4'>
-      {page && (
-        <>
-          <div className='relative w-32 h-32 mb-4'>
-            <Image
-              src={page.imageUrl}
-              alt='ページ画像'
-              className='rounded-full object-cover'
-              width={128}
-              height={128}
-              style={{ aspectRatio: '1 / 1' }}
-            />
-          </div>
-          <div className='text-center overflow-auto max-h-[calc(100%-8rem)]'>{page.content}</div>
-        </>
-      )}
-    </div>
-  );
+
 
   const bookWidth = windowWidth < 640 ? '90vw' : '80vw';
   const bookHeight = `calc(${bookWidth} * 0.7)`;

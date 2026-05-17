@@ -1,4 +1,10 @@
 import React from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Retail Products | OneLeaf Salon',
+  description: 'Browse professional hair care products available at OneLeaf Salon in Sierra Madre, CA.',
+};
 
 export default function page() {
   return (

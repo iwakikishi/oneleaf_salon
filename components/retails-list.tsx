@@ -40,7 +40,7 @@ export default function TopGoods() {
       </div>
       <div className='flex justify-center mt-4'>
         <Link href='/retail'>
-          <Button className='bg-black text-white font-bold py-2 px-4 rounded-md'>View All</Button>
+          <Button className='bg-gray-900 text-white font-bold py-2 px-4 rounded-md'>View All</Button>
         </Link>
       </div>
     </div>

@@ -232,6 +232,7 @@ export default function Page() {
         <div className='w-full aspect-square relative mb-10'>
           <iframe
             src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.402952049803!2d-118.05619732447848!3d34.16161397311594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2dc70abd9e333%3A0x8436c838e56c8dc5!2s38%20W%20Sierra%20Madre%20Blvd%2C%20Sierra%20Madre%2C%20CA%2091024%2C%20USA!5e0!3m2!1sen!2sus!4v1716251840342!5m2!1sen!2sus'
+            title='OneLeaf Salon location on Google Maps'
             className='absolute top-0 left-0 w-full h-full'
             loading='lazy'
             referrerPolicy='no-referrer-when-downgrade'></iframe>

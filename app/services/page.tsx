@@ -5,6 +5,12 @@ import Link from 'next/link';
 import { SectionTitle } from '@/components/section-title';
 import { PriceAccordion } from '@/components/PriceAccordion';
 import { ServicesCardComponent } from '@/components/services-card';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Services & Prices | OneLeaf Salon',
+  description: 'Explore our full range of hair services including cuts, color, perms, and the exclusive ZEN Head Spa at OneLeaf Salon in Sierra Madre, CA.',
+};
 
 export default function page() {
   return (

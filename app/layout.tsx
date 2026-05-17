@@ -1,13 +1,10 @@
 import type { Metadata } from 'next';
 import { Inter, Montserrat, Poppins } from 'next/font/google';
 import { cn } from '@/lib/utils';
-import dynamic from 'next/dynamic';
 import Script from 'next/script';
+import { ClientHeader, ClientFooter } from '@/components/ClientLayout';
 
 import './globals.css';
-
-const Header = dynamic(() => import('@/components/header'), { ssr: false });
-const Footer = dynamic(() => import('@/components/footer'), { ssr: false });
 
 const inter = Inter({
   subsets: ['latin'],
@@ -95,7 +92,7 @@ export default function RootLayout({
         <meta name='theme-color' content='#ffffff' />
       </head>
       {/* 構造化データ */}
-      <body className={cn(`${inter.variable} ${montserrat.variable} ${poppins.variable}`, 'min-h-dvh')}>
+      <body suppressHydrationWarning className={cn(`${inter.variable} ${montserrat.variable} ${poppins.variable}`, 'min-h-dvh')}>
         <Script id='schema-org' type='application/ld+json'>
           {`
             {
@@ -138,9 +135,9 @@ export default function RootLayout({
             }
           `}
         </Script>
-        <Header />
+        <ClientHeader />
         {children}
-        <Footer />
+        <ClientFooter />
       </body>
     </html>
   );
