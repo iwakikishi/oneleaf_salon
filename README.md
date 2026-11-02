@@ -20,7 +20,7 @@ npm run dev      # http://localhost:3000
 | `npm run start` | Serve the production build                                                      |
 | `npm run lint`  | Run ESLint                                                                      |
 
-Both `package-lock.json` and `pnpm-lock.yaml` are committed. When you add or remove a dependency, update both (`npm install …` and `pnpm install --lockfile-only`).
+Both `package-lock.json` and `pnpm-lock.yaml` are committed. When you add or remove a dependency, update both (`npm install …` and `npx pnpm@10 install --lockfile-only`; pnpm 11 drops the `overrides` section that pnpm 9/10 expect).
 
 ## Project structure
 
