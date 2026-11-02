@@ -253,13 +253,13 @@ export const newServices: ServiceCategory[] = [
     icon: '',
     items: [
       { name: 'Head Spa (original) 20 mins no blow dry', time: '25 mins', description: ['No waterfall'], price: '$60' },
-      { name: 'Head Spa (original) 20 mins with blow dry', time: '1 hr', description: ['No waterfall'], price: '$115' },
+      { name: 'Head Spa (original) 20 mins with blow dry', time: '1 hr', description: ['No waterfall'], price: '$120' },
       { name: 'Head Spa (original) 40 mins no blow dry', time: '45 mins', description: ['No waterfall'], price: '$105' },
-      { name: 'Head Spa (original) 40 mins with blow dry', time: '1 hr', description: ['No waterfall'], price: '$160' },
+      { name: 'Head Spa (original) 40 mins with blow dry', time: '1 hr', description: ['No waterfall'], price: '$165' },
       { name: 'New! Zen Head Spa 30 mins no blow dry', time: '35 mins', description: ['Waterfall Head Spa'], price: '$85' },
-      { name: 'New! Zen Head Spa 30 mins with blow dry', time: '1 hr', description: ['Waterfall Head Spa'], price: '$140' },
+      { name: 'New! Zen Head Spa 30 mins with blow dry', time: '1 hr', description: ['Waterfall Head Spa'], price: '$145' },
       { name: 'New! Zen Head Spa 50 mins no blow dry', time: '1 hr', description: ['Waterfall Head Spa'], price: '$130' },
-      { name: 'New! Zen Head Spa 50 mins with blow dry', time: '1 hr and 20 mins', description: ['Waterfall Head Spa'], price: '$185' },
+      { name: 'New! Zen Head Spa 50 mins with blow dry', time: '1 hr and 20 mins', description: ['Waterfall Head Spa'], price: '$190' },
       {
         name: 'Deep treatment Milbon',
         time: '20 mins',
