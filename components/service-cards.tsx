@@ -1,19 +1,19 @@
 import Image from 'next/image';
 
-type ServiceCardProps = {
+type ServiceCard = {
   image: string;
   title: string;
   description: string;
 };
 
-const services: ServiceCardProps[] = [
+const services: ServiceCard[] = [
   { image: 'hair_cut_retro', title: 'Cut & Style', description: '' },
   { image: 'hair_color_retro', title: 'Color & Bleach', description: '' },
   { image: 'hair_perm_retro', title: 'Texture', description: '' },
   { image: 'make_up_retro', title: 'Makeup', description: '' },
 ];
 
-export function ServicesCardComponent() {
+export function ServiceCards() {
   return (
     <>
       {services.map((service) => (

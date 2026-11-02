@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Montserrat, Poppins } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import Script from 'next/script';
-import { ClientHeader, ClientFooter } from '@/components/ClientLayout';
+import { ClientHeader, ClientFooter } from '@/components/client-layout';
 
 import './globals.css';
 
@@ -68,7 +68,6 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'cgQ28Oau24Xjix4LZKuA-WrvaTRcrnC2cJGsTw0pmgM',
-    // bing: 'your-bing-verification-code',
   },
   category: 'Beauty & Personal Care',
   other: {
@@ -91,8 +90,8 @@ export default function RootLayout({
         <link rel='icon' href='/favicon.ico' />
         <meta name='theme-color' content='#ffffff' />
       </head>
-      {/* 構造化データ */}
       <body suppressHydrationWarning className={cn(`${inter.variable} ${montserrat.variable} ${poppins.variable}`, 'min-h-dvh')}>
+        {/* Structured data (schema.org) */}
         <Script id='schema-org' type='application/ld+json'>
           {`
             {

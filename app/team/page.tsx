@@ -13,7 +13,6 @@ const teamMembers = [
   {
     name: 'Kazuyo',
     role: 'Owner',
-    // role: 'Owner & Lead Stylist',
     image: '/images/kazuyo_photo.png',
     description:
       "Kazuyo has been a Master Hairstylist in Japan with more than 20 years of experience working in Tokyo's leading hair salons. She bases each style on drawing out a person's inner beauty, creating balance with their structural features, and listening to the customers' vision on who they want to become as their best selves. The experience will be relaxed and fun as we work together to find the beautiful energy you want to project into the world.",

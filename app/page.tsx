@@ -6,10 +6,10 @@ import Booklet from '@/components/booklet';
 import Contact from '@/components/contact';
 import ImageCarousel from '@/components/image-carousel';
 import { SectionTitle } from '@/components/section-title';
-import { PriceAccordion } from '@/components/PriceAccordion';
-import { ServicesCardComponent } from '@/components/services-card';
+import { PriceAccordion } from '@/components/price-accordion';
+import { ServiceCards } from '@/components/service-cards';
 
-export default function Page() {
+export default function HomePage() {
   return (
     <main className='flex flex-col w-full overflow-x-hidden scrollbar-transparent'>
       {/* Booklet Section */}
@@ -45,11 +45,6 @@ export default function Page() {
                   Book an appointment
                 </Link>
               </Button>
-              {/* <Button
-                asChild
-                className='bg-white/70 hover:bg-white text-black p-3 xs:p-2 sm:p-4 md:p-6 lg:p-8 text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl'>
-                <Link href='tel:+16263943601'>Book an Appointment</Link>
-              </Button> */}
             </div>
           </div>
         </div>
@@ -89,7 +84,7 @@ export default function Page() {
       <section className='flex flex-col gap-8 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Services</SectionTitle>
         <div className='grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2'>
-          <ServicesCardComponent />
+          <ServiceCards />
         </div>
         {/* Head Spa */}
         <div className='flex flex-col bg-[#fffaeb] p-8 pb-10 rounded-xl gap-8 mt-8'>
@@ -99,7 +94,6 @@ export default function Page() {
           </div>
           <div className='flex flex-col gap-5'>
             <h1 className='text-green-900 text-3xl font-poppins font-bold'>ZEN Head Spa</h1>
-            {/* <p className='text-green-900 text-base sm:text-sm md:text-md lg:text-lg font-poppins'>Something about head spa</p> */}
             <div className='flex flex-col aspect-video rounded-xl overflow-hidden'>
               <video autoPlay muted loop playsInline className='w-full h-full rounded-xl object-cover xs:object-contain mt-4'>
                 <source src='/images/booklet/waterfall.mp4' type='video/mp4' />
@@ -122,7 +116,6 @@ export default function Page() {
         <div className='flex flex-col gap-8'>
           <PriceAccordion />
           <Button asChild className='p-8 bg-lime-700/30 text-lime-700 text-xl font-poppins hover:bg-lime-700/50'>
-            {/* <Link href='tel:+16263943601'>Book an Appointment</Link> */}
             <Link href='https://oneleafsalon.setmore.com/oneleaf' target='_blank'>
               Book an appointment
             </Link>
@@ -184,7 +177,7 @@ export default function Page() {
           </p>
         </div>
       </section>
-      {/* Giftcard Section */}
+      {/* Gift Card Section */}
       <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Giftcard</SectionTitle>
         <p className='text-gray-500 sm:mt-2 md:mt-4 lg:mt-8 px-4'>
@@ -238,6 +231,7 @@ export default function Page() {
             referrerPolicy='no-referrer-when-downgrade'></iframe>
         </div>
       </section>
+      {/* Contact Section */}
       <section className='flex flex-col gap-6 px-2 mt-12 sm:mt-16 md:mt-20 lg:mt-24 py-8 md:px-12 lg:px-56'>
         <SectionTitle>Contact</SectionTitle>
         <div className='flex flex-col gap-8 px-4'>

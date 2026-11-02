@@ -25,7 +25,7 @@ const PolicyItem = ({ title, children }: { title: string; children: React.ReactN
   </div>
 );
 
-export default function Page() {
+export default function PrivacyPolicyPage() {
   return (
     <main className='flex flex-col w-full h-full bg-white font-poppins mt-8'>
       <div className='max-w-4xl mx-auto px-4 py-12 md:py-24'>

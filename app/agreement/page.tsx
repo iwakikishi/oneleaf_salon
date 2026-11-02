@@ -1,6 +1,4 @@
-import React from 'react';
-import Image from 'next/image';
-import { CheckboxForm } from './components/CheckboxForm';
+import { CheckboxForm } from './components/checkbox-form';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -8,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Complete the Head Spa agreement form at OneLeaf Salon before your appointment in Sierra Madre, CA.',
 };
 
-export default function page() {
+export default function AgreementPage() {
   const today = new Date();
   const date = today.toLocaleDateString('en-US', {
     year: 'numeric',
@@ -33,14 +31,6 @@ export default function page() {
             care of my extensions and if I fail to do so or fail to make it back into the salon for regular upkeep, that I may see wear and tear on my
             natural hair in which case the salon and my stylist are not liable for.
           </p>
-          {/* <p className='text-black text-lg mb-4'>
-            I agree to pay a 1 non-refundable deposit at the time of booking, and an additional 2 due at the time of service. This means I agree to
-            pay 3 as my overall total for my desired services. I acknowledge that my stylist and I have agreed on a specific color and method for my
-            extensions and if that should change before the time of install, an additional deposit may be required. I understand that in the event I
-            do need to reschedule my appointment I will give my stylist a 48-hour notice and my deposit will be transferred to a new appointment. If I
-            fail to do so an additional deposit may be required. If I cancel my appointment entirely I understand I will not receive my deposit back.
-            If I decide I do not want to keep my extensions in, I understand there will be a removal fee.
-          </p> */}
           <p className='text-black text-lg mb-4'>My appointment is scheduled for MM/DD/YYY at ex. 9:00 am .</p>
           <p className='text-black text-lg mb-4'>Client First and Last Name</p>
           <p className='text-black text-lg mb-4'>

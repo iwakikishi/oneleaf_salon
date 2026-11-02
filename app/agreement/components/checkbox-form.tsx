@@ -21,7 +21,6 @@ export function CheckboxForm() {
   });
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
-    // Handle form submission
     if (process.env.NODE_ENV === 'development') {
       console.log(data);
     }

@@ -1,14 +1,14 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
-import { Button } from './ui/button';
+import { Button } from '@/components/ui/button';
 
-const MobileHeader = dynamic(() => import('./mobile-header'), { ssr: false });
+const MobileHeader = dynamic(() => import('@/components/mobile-header'), { ssr: false });
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,7 +60,6 @@ const Header = () => {
           <Link href='/contact'>Contact</Link>
         </Button>
         <Button asChild variant={'ghost'}>
-          {/* <Link href='tel:+16263943601'>Appointment</Link> */}
           <Link href='https://oneleafsalon.setmore.com/oneleaf' target='_blank'>
             Appointment
           </Link>
