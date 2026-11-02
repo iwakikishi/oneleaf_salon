@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { currentServices, type ServiceCategory } from '@/lib/prices';
+import { newServices, type ServiceCategory } from '@/lib/prices';
 
 // URL of the updated (November 2026) price list page
 const NEW_PRICE_LIST_URL = '/new-prices';
@@ -12,7 +12,7 @@ type PriceAccordionProps = {
   showNotice?: boolean;
 };
 
-export function PriceAccordion({ services = currentServices, showNotice = true }: PriceAccordionProps) {
+export function PriceAccordion({ services = newServices, showNotice = false }: PriceAccordionProps) {
   return (
     <>
       {showNotice && (

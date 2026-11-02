@@ -22,13 +22,6 @@ export default function page() {
               <span className='font-semibold'>Effective Date:</span> The prices below apply to all appointments taking place on or after November
               1, 2026.
             </p>
-            <p>
-              For appointments before that date, please see our{' '}
-              <Link href='/services' className='font-semibold text-green-900 underline underline-offset-2'>
-                current price list
-              </Link>
-              .
-            </p>
           </div>
           <PriceAccordion services={newServices} showNotice={false} />
           <Button asChild className='p-8 bg-lime-700/30 text-lime-700 text-xl font-poppins hover:bg-lime-700/50'>
