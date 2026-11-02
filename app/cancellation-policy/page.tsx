@@ -25,7 +25,7 @@ const PolicyItem = ({ title, children }: { title: string; children: React.ReactN
   </div>
 );
 
-export default function Page() {
+export default function CancellationPolicyPage() {
   return (
     <main className='flex flex-col w-full h-full bg-white mt-8'>
       <div className='max-w-4xl mx-auto px-4 py-12 md:py-24'>
@@ -41,10 +41,6 @@ export default function Page() {
                 Please be aware that if you are more than 10 minutes late, we may not be able to provide your scheduled service. Additionally, in such
                 cases, a cancellation fee of 50% of the service cost may apply.
               </p>
-              {/* <ul className='list-disc list-inside mt-2 space-y-1'>
-              <li>Less than 24 hours notice: 50% of the reserved service amount</li>
-              <li>No-shows: 100% of the reserved service amount</li>
-            </ul> */}
             </PolicyItem>
 
             <PolicyItem title='No Show:'>

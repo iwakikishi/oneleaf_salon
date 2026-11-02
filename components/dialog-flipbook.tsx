@@ -37,21 +37,17 @@ export const DialogFlipbook: React.FC<DialogFlipbookProps> = ({ width, height, p
     backgroundColor: 'white',
   };
 
-  const dialogContentStyle = isMobile
-    ? 'w-full h-full flex flex-col justify-center items-center bg-white'
-    : `w-full h-full flex flex-col justify-center items-center bg-white`;
-
   const dialogPages = [
-    // カバーページ
+    // Cover
     <div key='dialog-cover' className='page' style={dialogPageStyle}>
       <video autoPlay muted playsInline className='w-full h-full object-cover'>
         <source src='/images/booklet/booklet-cover.mp4' type='video/mp4' />
       </video>
     </div>,
-    // その他のページ
+    // Content pages
     ...pages.map((page, index) => (
       <div key={`dialog-page-${index}`} className='page shadow-page' style={dialogPageStyle}>
-        <div className={dialogContentStyle}>
+        <div className='w-full h-full flex flex-col justify-center items-center bg-white'>
           {React.cloneElement(page as React.ReactElement, {
             className: isMobile
               ? 'w-full h-full flex flex-col justify-start items-center bg-white'

@@ -7,25 +7,19 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { DotButton } from '@/components/ui/dot-button';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
-import { useSwipeable } from 'react-swipeable';
 
 const images = [
   { src: '/images/store/exterior.png', alt: 'exterior' },
   { src: '/images/store/interior.png', alt: 'interior' },
   { src: '/images/store/chair.png', alt: 'chair' },
-  // { src: '/images/store/display.png', alt: 'display' },
-  // { src: '/images/store/mirror.png', alt: 'mirror' },
 ];
 
 export default function ImageCarousel() {
   const [slidesToShow, setSlidesToShow] = useState(4);
-  const [isMobile, setIsMobile] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [selectedIndexModal, setSelectedIndexModal] = useState(0);
-
-  const [direction, setDirection] = useState(0);
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: 'start',
@@ -48,18 +42,12 @@ export default function ImageCarousel() {
   useEffect(() => {
     const handleResize = () => {
       const width = window.innerWidth;
-      if (width < 640) {
+      if (width < 768) {
         setSlidesToShow(2);
-        setIsMobile(true);
-      } else if (width < 768) {
-        setSlidesToShow(2);
-        setIsMobile(false);
       } else if (width < 1024) {
         setSlidesToShow(3);
-        setIsMobile(false);
       } else {
         setSlidesToShow(4);
-        setIsMobile(false);
       }
     };
 
@@ -71,6 +59,7 @@ export default function ImageCarousel() {
   useEffect(() => {
     if (!emblaApi) return;
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- read the initial slide once the carousel API is ready
     onSelect();
     emblaApi.on('select', onSelect);
     emblaApi.on('reInit', onSelect);
@@ -106,6 +95,7 @@ export default function ImageCarousel() {
   useEffect(() => {
     if (!emblaApiModal) return;
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- read the initial slide once the carousel API is ready
     onSelectModal();
     emblaApiModal.on('select', onSelectModal);
     emblaApiModal.on('reInit', onSelectModal);
@@ -127,31 +117,6 @@ export default function ImageCarousel() {
     setCurrentImageIndex(index);
     setModalOpen(true);
   };
-
-  const nextImage = () => {
-    setDirection(1);
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  const prevImage = () => {
-    setDirection(-1);
-    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
-  };
-
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
-
-  const handlers = useSwipeable({
-    onSwipedLeft: () => nextImage(),
-    onSwipedRight: () => prevImage(),
-    preventScrollOnSwipe: true,
-    trackMouse: true,
-  });
 
   return (
     <div className='w-full'>

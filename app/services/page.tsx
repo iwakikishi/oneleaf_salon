@@ -1,10 +1,9 @@
-import React from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { SectionTitle } from '@/components/section-title';
-import { PriceAccordion } from '@/components/PriceAccordion';
-import { ServicesCardComponent } from '@/components/services-card';
+import { PriceAccordion } from '@/components/price-accordion';
+import { ServiceCards } from '@/components/service-cards';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -12,13 +11,13 @@ export const metadata: Metadata = {
   description: 'Explore our full range of hair services including cuts, color, perms, and the exclusive ZEN Head Spa at OneLeaf Salon in Sierra Madre, CA.',
 };
 
-export default function page() {
+export default function ServicesPage() {
   return (
     <main className='flex flex-col w-full h-full bg-white pb-24'>
       <section className='flex flex-col gap-5 px-2 mt-24 md:px-12 lg:px-48'>
         <SectionTitle>Services</SectionTitle>
         <div className='grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-2'>
-          <ServicesCardComponent />
+          <ServiceCards />
         </div>
       </section>
       <section className='flex flex-col gap-5 px-2 mt-24 md:px-12 lg:px-48'>
@@ -47,7 +46,6 @@ export default function page() {
         <div className='flex flex-col gap-8'>
           <PriceAccordion />
           <Button asChild className='p-8 bg-lime-700/30 text-lime-700 text-xl font-poppins hover:bg-lime-700/50'>
-            {/* <Link href='tel:+16263943601'>Appointment</Link> */}
             <Link href='https://oneleafsalon.setmore.com/oneleaf' target='_blank'>
               Book an appointment
             </Link>

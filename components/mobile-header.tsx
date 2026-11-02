@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Button } from './ui/button';
-import { Instagram, Menu, CalendarClock } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Menu, CalendarClock } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import Image from 'next/image';
 
@@ -47,7 +47,6 @@ const MobileHeader = () => {
         </Link>
         <div className='flex gap-2'>
           <Button size={'sm'} asChild className={bookNowButtonClass}>
-            {/* <Link href='tel:+16263943601'>Book</Link> */}
             <Link href='https://oneleafsalon.setmore.com/oneleaf' target='_blank'>
               Book Now
             </Link>
@@ -82,14 +81,7 @@ const MobileHeader = () => {
                 <Button asChild variant={'ghost'} onClick={() => setIsOpen(false)}>
                   <Link href='/cancellation-policy'>Cancellation Policy</Link>
                 </Button>
-                {/* <Button asChild variant={'ghost'} className='mt-8' onClick={() => setIsOpen(false)}>
-                  <Link href='https://www.instagram.com/kazuyohairstyle/?hl=en' target='_blank' className='flex items-center'>
-                    <Instagram size={20} color='black' className='hover:text-green-300 transition-colors mr-2' />
-                    Instagram
-                  </Link>
-                </Button> */}
                 <Button asChild variant={'ghost'} onClick={() => setIsOpen(false)}>
-                  {/* <Link href='tel:+16263943601'>Book an Appointment</Link> */}
                   <Link href='https://oneleafsalon.setmore.com/oneleaf' target='_blank'>
                     <CalendarClock size={20} color='black' className='hover:text-green-300 transition-colors mr-2' />
                     Call

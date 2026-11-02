@@ -1,9 +1,7 @@
-import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { SectionTitle } from '@/components/section-title';
-import { PriceAccordion } from '@/components/PriceAccordion';
-import { newServices } from '@/lib/prices';
+import { PriceAccordion } from '@/components/price-accordion';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -11,7 +9,7 @@ export const metadata: Metadata = {
   description: 'Updated service prices at OneLeaf Salon in Sierra Madre, CA, effective for all appointments on or after November 1, 2026.',
 };
 
-export default function page() {
+export default function NewPricesPage() {
   return (
     <main className='flex flex-col w-full h-full bg-white pb-24'>
       <section className='flex flex-col gap-5 px-2 mt-24 md:px-12 lg:px-48'>
@@ -23,7 +21,7 @@ export default function page() {
               1, 2026.
             </p>
           </div>
-          <PriceAccordion services={newServices} showNotice={false} />
+          <PriceAccordion />
           <Button asChild className='p-8 bg-lime-700/30 text-lime-700 text-xl font-poppins hover:bg-lime-700/50'>
             <Link href='https://oneleafsalon.setmore.com/oneleaf' target='_blank'>
               Book an appointment

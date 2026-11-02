@@ -5,9 +5,8 @@ import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Link from 'next/link';
-import React from 'react';
 
-export default function page() {
+export default function ConditionsPage() {
   return (
     <main className='flex flex-col w-full h-full sm:px-4 md:px-16 lg:px-24'>
       <section className='flex flex-col items-center justify-center py-12 sm:px-4 md:px-16 lg:px-24 mt-16'>

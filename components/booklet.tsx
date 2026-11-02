@@ -1,31 +1,22 @@
 'use client';
-import React, { useRef, useState, useEffect, useCallback } from 'react';
+import { useRef, useState, useEffect, useCallback } from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { useWindowSize } from '../hook/useWindowSize';
-import { Fullscreen, Instagram } from 'lucide-react';
-import Link from 'next/link';
+import { useWindowSize } from '@/hooks/use-window-size';
+import { Fullscreen, X } from 'lucide-react';
 import { Dialog, DialogContent, DialogTitle } from '@/components/ui/dialog';
 import { DialogFlipbook } from '@/components/dialog-flipbook';
-import { X } from 'lucide-react';
 
-interface BookletProps {
-  pages?: React.ReactNode[];
-  [key: string]: any; // Allow additional props
-}
-
-const Booklet = (props: BookletProps) => {
-  const { width = 0 } = useWindowSize() || {};
+const Booklet = () => {
+  const { width = 0 } = useWindowSize();
   const isMobile = width < 640;
-  // Calculate responsive padding
   const padding = width >= 1024 ? 240 : width >= 768 ? 48 : width >= 640 ? 24 : 12;
   const adjustedWidth = width - padding * 2;
   const adjustedHeight = adjustedWidth * 0.73;
 
   const [dialogWidth, setDialogWidth] = useState(0);
   const [dialogHeight, setDialogHeight] = useState(0);
-  const dialogFlipBook = useRef(null);
 
   useEffect(() => {
     const updateDialogDimensions = () => {
@@ -34,7 +25,7 @@ const Booklet = (props: BookletProps) => {
       const maxHeight = screenHeight * 0.9;
       const maxWidth = screenWidth * 0.9;
 
-      // アスペクト比を10:7に設定
+      // Height-to-width ratio of a dialog page (10:7, portrait)
       const aspectRatio = 10 / 7;
 
       let height = maxHeight;
@@ -58,24 +49,15 @@ const Booklet = (props: BookletProps) => {
   const [showNextButton, setShowNextButton] = useState(true);
   const [showPrevButton, setShowPrevButton] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
-  const [coverMargin, setCoverMargin] = useState(`-${adjustedWidth / 4}px`);
-  const [fontSize, setFontSize] = useState(12);
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const coverMargin = `-${adjustedWidth / 4}px`;
+  // Never read, but setting it on video load triggers a re-render that the flipbook may rely on
+  const [, setIsVideoLoaded] = useState(false);
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const textRef = useRef<HTMLParagraphElement>(null);
   const flipBook = useRef(null);
-  const pageRef = useRef<HTMLDivElement>(null);
-  const pageCoverRef = useRef<HTMLDivElement>(null);
   const divRef = useRef<HTMLDivElement>(null);
-  const coverImageRef = useRef<HTMLImageElement>(null);
   const coverVideoRef = useRef<HTMLVideoElement>(null);
 
-  // const [dialogPages, setDialogPages] = useState<React.ReactNode[]>([]);
-
-  const [dialogCurrentPage, setDialogCurrentPage] = useState(0);
-
-  // Define pages array
   const pages = [
     // Page 1-1
     <div
@@ -100,12 +82,6 @@ const Booklet = (props: BookletProps) => {
           <div className='text-xs sm:text-md text-gray-700' style={{ fontSize: isMobile ? '8px' : '12px' }}>
             OneLeaf Salon Hair by Kazuyo
           </div>
-          {/* <div className='flex items-center text-xs sm:text-md text-gray-700' style={{ fontSize: isMobile ? '8px' : '12px' }}>
-            <Instagram color='gray' size={isMobile ? 12 : 16} />
-            <Link href='https://www.instagram.com/kazuyohairstyle/' target='_blank'>
-              <span className='ml-1'>kazuyohairstyle</span>
-            </Link>
-          </div> */}
         </div>
       </div>
     </div>,
@@ -283,17 +259,6 @@ const Booklet = (props: BookletProps) => {
     </div>,
   ];
 
-  // useEffect(() => {
-  //   if (props.pages && Array.isArray(props.pages)) {
-  //     const newDialogPages = props.pages.map((page, index) => (
-  //       <div key={`dialog-page-${index}`} className='page' style={{ width: dialogWidth, height: dialogHeight }}>
-  //         {page}
-  //       </div>
-  //     ));
-  //     setDialogPages(newDialogPages);
-  //   }
-  // }, [props.pages, dialogWidth, dialogHeight]);
-
   const onFlip = useCallback(
     (e: any) => {
       const newPage = e.data;
@@ -330,10 +295,6 @@ const Booklet = (props: BookletProps) => {
     []
   );
 
-  useEffect(() => {
-    setCoverMargin(`-${adjustedWidth / 4}px`);
-  }, [adjustedWidth]);
-
   const handleVideoLoaded = () => {
     setIsVideoLoaded(true);
   };
@@ -357,65 +318,6 @@ const Booklet = (props: BookletProps) => {
       (flipBook.current as any).pageFlip().flipPrev();
     }
   };
-
-  const PageCover = React.forwardRef((props: any, ref) => {
-    return (
-      <div className='page page-cover' ref={pageCoverRef} data-density='hard'>
-        <div className='page-content'>
-          <h2>{props.children}</h2>
-        </div>
-      </div>
-    );
-  });
-  PageCover.displayName = 'PageCover';
-
-  const Page = React.forwardRef((props: any, ref) => {
-    return (
-      <div className='page' ref={pageRef}>
-        <div className='page-content'>
-          <h2 className='page-header'>Page header - {props.number}</h2>
-          <div className='page-image'></div>
-          <div className='page-text'>{props.children}</div>
-          <div className='page-footer'>{props.number + 1}</div>
-        </div>
-      </div>
-    );
-  });
-  Page.displayName = 'Page';
-
-  const dialogPageStyle = {
-    width: dialogWidth,
-    height: dialogHeight,
-    display: 'flex',
-    flexDirection: 'column' as const,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: '20px',
-    boxSizing: 'border-box' as const,
-  };
-
-  const dialogPages = [
-    // カバーページ
-    <div key='dialog-cover' className='page' style={dialogPageStyle}>
-      <video
-        autoPlay
-        muted
-        playsInline
-        style={{
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-        }}>
-        <source src='/images/booklet/booklet-cover.mp4' type='video/mp4' />
-      </video>
-    </div>,
-    // その他のページ
-    ...pages.map((page, index) => (
-      <div key={`dialog-page-${index}`} className='page' style={dialogPageStyle}>
-        <div style={{ width: '100%', height: '100%', overflow: 'auto' }}>{page}</div>
-      </div>
-    )),
-  ];
 
   return adjustedWidth && adjustedHeight ? (
     <div className='flex flex-col w-full items-center justify-center' style={{ minHeight: `${adjustedHeight + 64}px` }}>

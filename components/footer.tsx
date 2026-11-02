@@ -1,6 +1,5 @@
-import React from 'react';
 import Link from 'next/link';
-import { Instagram, Phone, MapPin } from 'lucide-react';
+import { Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const links = [
@@ -46,19 +45,6 @@ const Footer = () => {
               })}
             </nav>
           </div>
-          {/* <div className='flex flex-col'>
-            <h3 className='text-xl font-semibold mb-4'>Follow Us</h3>
-            <div className='flex space-x-4'>
-              <Link
-                href='https://www.instagram.com/kazuyohairstyle/?hl=en'
-                target='_blank'
-                className='text-white hover:text-green-300 transition-colors'>
-                <span className='text-white hover:text-green-300 transition-colors'>
-                  <Instagram size={20} />
-                </span>
-              </Link>
-            </div>
-          </div> */}
         </div>
         <div className='mt-8 pt-8 border-t border-green-700 text-center text-sm'>
           <p suppressHydrationWarning>
